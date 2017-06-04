@@ -17,13 +17,13 @@ using Linx_Seller_QA.App_Code;
 public class DeletaeCopia : System.Web.Services.WebService
 {
     [WebMethod]
-    public void Atualiza(string tkt,string site)
+    public void Atualiza(string tkt, string site)
     {
 
         DeletaCopia DC = new DeletaCopia();
         List<string> retorno = new List<string>();
-        //faz a copia do tkt no E
-        string zip=DC.baixatkt(tkt);
+        //faz a copia do tkt no E e retorna o nome do zip novo
+        string zip = DC.baixatkt(tkt);
         //se conseguiu baixar segue para atualizar
         if (DC.erro.Equals(""))
         {
@@ -43,7 +43,6 @@ public class DeletaeCopia : System.Web.Services.WebService
         {
             retorno.Add(DC.erro);
         }
-
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));
     }
@@ -52,27 +51,29 @@ public class DeletaeCopia : System.Web.Services.WebService
     {
         //vai cravado até pensar direito
         string dir = "";
-		Boolean b;
-	
+        Boolean b;
+
         if (op.Contains("tkt"))
         {
-           // dir = "C:\\Suporte Seller\\BaseWEb\\TKTS";
-		   dir="\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS";
-		   b=true;
+            //local, no trampo
+            // dir = "C:\\Suporte Seller\\BaseWEb\\TKTS";
+            //em rede, no trampo
+            //dir = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS";
+            //em casa
+            dir = "C:\\Users\\bruno\\Desktop\\Teste";
+             b = true;
         }
         else
         {
-            dir = "C:\\inetpub\\wwwroot";
-			b=false;
+            //dir = "C:\\inetpub\\wwwroot";
+            //para testes em casa
+            dir ="C:\\Users\\bruno\\Desktop\\Teste";
+             b = false;
         }
-		//dir=op;
+        //dir=op;
         DeletaCopia DC = new DeletaCopia();
-        List<Generica> retorno = DC.listatkt(dir,b);
+        List<Generica> retorno = DC.listatkt(dir, b);
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));
     }
-
-
-
-
 }

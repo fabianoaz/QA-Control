@@ -11,8 +11,8 @@ using Linx_Seller_QA.App_Code;
 [Serializable]
 public class DeletaCopia
 {
-    public string data="";
-    public string erro="";
+    public string data = "";
+    public string erro = "";
 
     public void atualizasite(string zip, string site)
     {
@@ -25,9 +25,9 @@ public class DeletaCopia
             //    zip = @"C:\Users\bruno\Desktop\Teste\a.zip";
             //    site = @"C:\Users\bruno\Desktop\Teste\a";
             //se o site ou o TKT não existirem, retorna o erro já
-            if(!System.IO.Directory.Exists(site) || !System.IO.File.Exists(zip) || site.StartsWith("\\") )
+            if (!System.IO.Directory.Exists(site) || !System.IO.File.Exists(zip) || site.StartsWith("\\"))
             {
-                erro = "Não foi possível localizar o diretório do site ou o zip do TKT\nSite: "+site+"\ntkt.zip: "+zip;
+                erro = "Não foi possível localizar o diretório do site ou o zip do TKT\nSite: " + site + "\ntkt.zip: " + zip;
                 return;
             }
             //data = "";
@@ -66,6 +66,7 @@ public class DeletaCopia
             dataini = datafim; datafim = "";
             erro = "Erro ao extrair arquivos do ZIP no temp2";
             //coloca o zip na temp. necessário testar quando o zip não estiver na mesma root, pois na doc não diz nada disso
+            //para funcionar o ZipFile, além da referência, tem que por na mão o assembly do FileSystem, não sei por que 
             ZipFile.ExtractToDirectory(zip, temp);
             datafim = "" + DateTime.Now;
             data = data + "\nExtraindo .zip:\n" + dataini + " - " + datafim;
@@ -142,16 +143,20 @@ public class DeletaCopia
     public string baixatkt(string tkt)
     {
         string zip = "";
-        string dataini="";
-        string datafim="";
-        dataini= "" + DateTime.Now;
+        string dataini = "";
+        string datafim = "";
+        dataini = "" + DateTime.Now;
         if (System.IO.File.Exists(tkt))
         {
             erro = "\nOcorreu um erro ao baixar o tkt\n";
             //copiaria \\ip\tkt.zip, para E:\sites\tkt.zip, com sobreescrita
-            //zip = "C:\\Suporte Seller\\BaseWEb\\TKTS2\\" + System.IO.Path.GetFileName(tkt);
-			zip = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS\\" + System.IO.Path.GetFileName(tkt);
-			
+            Random r = new Random();
+            //vai gerar com um numero aleatório no final ^^
+            //zip = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS\\" + System.IO.Path.GetFileNameWithoutExtension(tkt)+""+ r.Next()+System.IO.Path.GetExtension(tkt);
+            //para testes em casa
+            zip = "C:\\teste\\" + System.IO.Path.GetFileNameWithoutExtension(tkt) + "" + r.Next() + System.IO.Path.GetExtension(tkt);
+
+
             System.IO.File.Copy(tkt, zip, true);
             datafim = "" + DateTime.Now;
             erro = "";
@@ -165,43 +170,41 @@ public class DeletaCopia
 
         return zip;
     }
-    
-    public List<Generica> listatkt(string diretoriotkts,Boolean tipo)
+
+    public List<Generica> listatkt(string diretoriotkts, Boolean tipo)
     {
         List<Generica> li = new List<Generica>();
         System.IO.DirectoryInfo dir = new System.IO.DirectoryInfo(@diretoriotkts);
         if (dir.Exists)
         {
-			Generica selecione = new Generica();
-			selecione.nome="Selecione";
-			selecione.caminho="";
-			li.Add(selecione);
-			if(tipo)
-			{
-				foreach (System.IO.FileInfo tkt in dir.GetFiles())
-				{
-					if (tkt.Extension.Equals(".zip"))
-					{
-						Generica g = new Generica();
-						g.nome = tkt.Name;
-						g.caminho = tkt.FullName;
-						li.Add(g);
-					}
-				}
-			}
-			else
-			{
-				foreach (System.IO.DirectoryInfo site in dir.GetDirectories())
-				{
-					Generica g = new Generica();
-					g.nome = site.Name;
-					g.caminho = site.FullName;
-					li.Add(g);
-				}
-			}
+            Generica selecione = new Generica();
+            selecione.nome = "Selecione";
+            selecione.caminho = "";
+            li.Add(selecione);
+            if (tipo)
+            {
+                foreach (System.IO.FileInfo tkt in dir.GetFiles())
+                {
+                    if (tkt.Extension.Equals(".zip"))
+                    {
+                        Generica g = new Generica();
+                        g.nome = tkt.Name;
+                        g.caminho = tkt.FullName;
+                        li.Add(g);
+                    }
+                }
+            }
+            else
+            {
+                foreach (System.IO.DirectoryInfo site in dir.GetDirectories())
+                {
+                    Generica g = new Generica();
+                    g.nome = site.Name;
+                    g.caminho = site.FullName;
+                    li.Add(g);
+                }
+            }
         }
         return li;
     }
-
-
 }
