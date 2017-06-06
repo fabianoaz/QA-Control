@@ -89,6 +89,11 @@ public class DeletaCopia
             criadiretorio(temp, true, false);
             datafim = "" + DateTime.Now;
             data = data + "\nLimpando residuos finais:\n" + dataini + " - " + datafim;
+			if(System.IO.File.Exists(zip))
+			{
+				System.IO.File.Delete(zip);
+			}
+			
             erro = "";
         }
         catch (Exception err)
@@ -99,9 +104,7 @@ public class DeletaCopia
 
     private void parainiciapool(string caminhosite, string com)
     {
-        //split para pegar o nome do pool
-        //se o nome não estiver no padrão, vai dar erro
-        //string[] pool = caminhosite.Split('\\');
+
         string pool = System.IO.Path.GetFileName(caminhosite);
 
         Process cmd = new Process();

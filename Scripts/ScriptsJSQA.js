@@ -2,8 +2,8 @@
 
 var myApp = angular
     .module("Module", [])
-    .controller("ControllerQA", function ($scope, ListaSites, ListaTtks, AtualizaSite,$window) {
-        $scope.botaobloqueado = false; $scope.label = "Atualizar"
+    .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,$window) {
+        $scope.botaobloqueado = false; $scope.label = "Atualizar";
         $scope.tkts2 = [
 		 {nome:'Selecione', caminho:'sa'}];
         $scope.sites2 = [
@@ -35,3 +35,49 @@ var myApp = angular
             AtualizaSite.atualiza($scope);
         }
     })
+	.controller("ControllerQADB", function ($scope,$window){
+		$scope.botaobloqueado = false; $scope.label="Criar Banco"; botaobloqueado=false;
+		$scope.tipossistema =[
+		{nome:'Seller Web', check:true},
+		{nome:'CPBR', check:false},
+		{nome:'Serviço', check:false},
+		{nome:'Auditoria', check:false}];
+		$scope.tiposambiente =[
+		{nome:'Teste', check:true},
+		{nome:'Desenvolvimento',check:false},
+		{nome:'Homologação',check:false},
+		{nome:'Documentação',check:false}];
+		
+		$scope.projeto="";
+		$scope.cliente="";
+		$scope.criador="";
+		$scope.bak="";
+		$scope.destino="";
+		$scope.email="";
+
+		$scope.alterarsenhas=true;
+		$scope.usanfe=false;
+		$scope.usanfce=false;
+		$scope.nomemaquina="";
+		$scope.ativarpista=false;
+		$scope.criaecf=false;
+		$scope.serial="";
+		
+		$scope.marcasecf=[
+		{nome: 'Bematech', id:0},
+		{nome: 'Sweda', id:1},
+		{nome: 'Daruma', id:2}];
+		$scope.serieecf="";
+		$scope.numeroequipamento="";
+	
+		$scope.tiposistema=$scope.tipossistema[0];
+		$scope.tipoambiente=$scope.tiposambiente[0];
+		$scope.marcaecf=$scope.marcasecf[0];
+		
+		$scope.ciarbanco = function () 
+		{
+			botaobloqueado=true;
+		}
+		
+		
+	})
