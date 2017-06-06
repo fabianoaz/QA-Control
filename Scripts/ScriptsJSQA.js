@@ -68,18 +68,57 @@ var myApp = angular
 		$scope.serial="";
 		
 		$scope.marcasecf=[
-		{nome: 'Bematech', id:0},
-		{nome: 'Sweda', id:1},
-		{nome: 'Daruma', id:2}];
+		{nome: 'Selecione', id:0},
+		{nome: 'Bematech', id:1},
+		{nome: 'Sweda', id:2},
+		{nome: 'Daruma', id:3}];
 		$scope.serieecf="";
 		$scope.numeroequipamento="";
 	
-
 		$scope.marcaecf=$scope.marcasecf[0];
 		
 		$scope.ciarbanco = function () 
 		{
-			botaobloqueado=true;
+			$scope.msg=""
+			$scope.botaobloqueado=true;
+			
+			/*Valida os dados básicos necessários*/
+			if($scope.projeto=="" || $scope.cliente=="" || $scope.criador =="" )
+			{
+				$scope.msg+="\nInforme corretamente as Informações do Ambiente\n";
+			}
+			if($scope.bak=="" || $scope.destino=="")
+			{
+				$scope.msg+="\nInforme corretamente os dados para Restaurar Base de Dados\n";
+			}
+			/*validações para personalização*/
+			if($scope.ativarpista==true && $scope.nomemaquina=="")
+			{
+				$scope.msg+="\nVocê ativou a pista e não informou o Nome Maquina\n";
+			}
+			if($scope.criaecf && ($scope.serial<=0 || $scope.marcaecf.id<=0 || $scope.serieecf=="" || $scope.numeroequipamento<=0))
+			{
+				$scope.msg+="\nVocê selecionou para criar ECF e não preencheu corretamente os campos:\n'Serial','Marca ECF', 'Nº Série' ou 'Número Equipamento'\n";	
+			}
+			
+			/*se encontrou erro exibe na tela, caso contrário, faz a chamada da web*/
+			if($scope.msg!="")
+			{
+				$window.alert($scope.msg);
+				$scope.botaobloqueado=false;
+				return;
+			}
+			else
+			{
+				$scope.label = "Restaurando/Personalizando.."
+				
+				//faz os procedimentos para chamar o web service
+				
+				$scope.label="Criar Banco";
+				$scope.botaobloqueado=false;			
+			}
+				
+			
 		}
 		
 		
