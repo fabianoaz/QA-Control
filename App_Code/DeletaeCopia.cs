@@ -56,18 +56,19 @@ public class DeletaeCopia : System.Web.Services.WebService
         if (op.Contains("tkt"))
         {
             //local, no trampo
-            // dir = "C:\\Suporte Seller\\BaseWEb\\TKTS";
+             dir = "C:\\Suporte Seller\\BaseWEb\\TKTS";
             //em rede, no trampo
             //dir = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS";
             //em casa
-            dir = "C:\\Users\\bruno\\Desktop\\Teste";
+            //dir = "C:\\Users\\bruno\\Desktop\\Teste";
              b = true;
         }
         else
         {
-            //dir = "C:\\inetpub\\wwwroot";
+			//no trampo
+            dir = "C:\\inetpub\\wwwroot";
             //para testes em casa
-            dir ="C:\\Users\\bruno\\Desktop\\Teste";
+            //dir ="C:\\Users\\bruno\\Desktop\\Teste";
              b = false;
         }
         //dir=op;

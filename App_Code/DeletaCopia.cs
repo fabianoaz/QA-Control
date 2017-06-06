@@ -152,9 +152,9 @@ public class DeletaCopia
             //copiaria \\ip\tkt.zip, para E:\sites\tkt.zip, com sobreescrita
             Random r = new Random();
             //vai gerar com um numero aleatório no final ^^
-            //zip = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS\\" + System.IO.Path.GetFileNameWithoutExtension(tkt)+""+ r.Next()+System.IO.Path.GetExtension(tkt);
+            zip = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS\\" + System.IO.Path.GetFileNameWithoutExtension(tkt)+""+ r.Next()+System.IO.Path.GetExtension(tkt);
             //para testes em casa
-            zip = "C:\\teste\\" + System.IO.Path.GetFileNameWithoutExtension(tkt) + "" + r.Next() + System.IO.Path.GetExtension(tkt);
+            //zip = "C:\\teste\\" + System.IO.Path.GetFileNameWithoutExtension(tkt) + "" + r.Next() + System.IO.Path.GetExtension(tkt);
 
 
             System.IO.File.Copy(tkt, zip, true);
