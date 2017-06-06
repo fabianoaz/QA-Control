@@ -37,6 +37,7 @@ var myApp = angular
     })
 	.controller("ControllerQADB", function ($scope,$window){
 		$scope.botaobloqueado = false; $scope.label="Criar Banco"; botaobloqueado=false;
+		/*
 		$scope.tipossistema =[
 		{nome:'Seller Web', check:true},
 		{nome:'CPBR', check:false},
@@ -47,6 +48,9 @@ var myApp = angular
 		{nome:'Desenvolvimento',check:false},
 		{nome:'Homologação',check:false},
 		{nome:'Documentação',check:false}];
+		*/
+		$scope.tiposistema="seller web";
+		$scope.tipoambiente="teste";
 		
 		$scope.projeto="";
 		$scope.cliente="";
@@ -70,8 +74,7 @@ var myApp = angular
 		$scope.serieecf="";
 		$scope.numeroequipamento="";
 	
-		$scope.tiposistema=$scope.tipossistema[0];
-		$scope.tipoambiente=$scope.tiposambiente[0];
+
 		$scope.marcaecf=$scope.marcasecf[0];
 		
 		$scope.ciarbanco = function () 
