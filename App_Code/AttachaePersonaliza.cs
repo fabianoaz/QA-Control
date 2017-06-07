@@ -18,15 +18,29 @@ namespace Linx_Seller_QA.App_Code
     [System.Web.Script.Services.ScriptService]
     public class AttachaePersonaliza : System.Web.Services.WebService
     {
+		
         [WebMethod]
-        public void attacha(string tkt, string site)
-        {
-            /*fazer a logica para chama a classe para attachar*/
+        public void attacha(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string bak, string caminho)
+        {                                                            
+            /*fazer a logica para chama a classe para attachar*/    
+
+			//tiposistema; tipoambiente; projetostring; cliente; criador;
+			string maquinabanco="POASRVVM0011\\SQL2012";
+			//bak; caminho
+			string ipsite="172.16.148.110";
         }
+		
         [WebMethod]
-        public void personaliza(string op)
+        public void personaliza(string tiposistema,string tipoambiente, string projeto, string cliente, string criador,
+		bool alterarsenhas, bool utilizanfe, bool utilizanfce, bool criarmaquina, bool ativapista, bool criarecf,
+		string nomemaquina, string portaserial, string serie, string marca, string numero, string email)
         {
             /*fazer a logica para chama a classe para personaliza*/
+			
+			//tiposistema; tipoambiente; projeto; cliente; criador; nomemaquina; alterarsenhas; utilizanfe; utilizanfce; criarmaquina; 
+			//ativapista; criarecf; portaserial; marca; serie; numero, email
+			string a="";
         }
+		
     }
 }
