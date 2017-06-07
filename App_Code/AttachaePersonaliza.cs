@@ -21,10 +21,21 @@ public class AttachaePersonaliza : System.Web.Services.WebService
     {                                                            
         /*fazer a logica para chama a classe para attachar*/    
 
-		//tiposistema; tipoambiente; projetostring; cliente; criador;
 		string maquinabanco="POASRVVM0011\\SQL2012";
-		//bak; caminho
 		string ipsite="172.16.148.110";
+		AttachaPersonaliza AP = new AttachaPersonaliza();
+		
+		tiposistema=tiposistema.Replace(" ","");
+		tipoambiente=tipoambiente.Replace(" ","");
+		projeto=projeto.Replace(" ","");
+		cliente=cliente.Replace(" ","");
+		criador=criador.Replace(" ","");
+		
+		AP.attachabanco(tiposistema,tipoambiente, projeto, cliente, criador, maquinabanco, bak, caminho,ipsite);
+		List<string> retorno = new List<string>();
+		retorno.Add(AP.str);
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        Context.Response.Write(js.Serialize(retorno));		
     }
 
     [WebMethod]

@@ -124,23 +124,24 @@ var myApp = angular
 				$scope.serieecf
 				$scope.numeroequipamento
 				*/
-				
 
                 var respostaattacha = function (resattacha) {
-					$window.alert("deu certo")
-                 //   $scope.sites2 = listasite.data;
-                  //  $scope.site = $scope.sites2[0];
+					//$window.alert("deu certo");
+					$window.alert(""+resattacha.data);
+					$scope.botaobloqueado=false;
                 }
                 var respostaerrattacha = function (reserrattacha) {
-					$window.alert("deu m")
-                    //$window.alert(listaerrosite.data);
+					$window.alert("deu m\n"+reserrattacha.data);
+                    //$window.alert(reserrattacha.data);
                     //$scope.site = $scope.sites2[0];
+					$scope.botaobloqueado=false;
                 }
-                /*faz a solicitação dos sites*/
+                /*faz a solicitação para attachar o DB*/
+				//$window.alert('AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino);
                 $http({ method: 'GET', url: 'AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino})
                 .then(respostaattacha, respostaerrattacha);
-				//tiposistema, string tipoambiente, string projeto, string cliente, string criador, string bak, string caminho
-				$scope.botaobloqueado=false;
+				
+
 				$scope.label="Criar Banco";
 				
 			}
