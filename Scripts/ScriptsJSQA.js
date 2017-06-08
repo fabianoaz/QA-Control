@@ -1,8 +1,8 @@
 ﻿/// <reference path="angular.js" />
-
+/// <reference path="~/jQuery/jquery-3.2.1.min.js" />
 var myApp = angular
     .module("Module", [])
-    .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,$window) {
+    .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,Mensagem) {
         $scope.botaobloqueado = false; $scope.label = "Atualizar";
         $scope.tkts2 = [
 		 {nome:'Selecione', caminho:'sa'}];
@@ -23,7 +23,7 @@ var myApp = angular
                 || $scope.tkt.nome.toLocaleLowerCase() == "selecione" ||
                 $scope.site.nome.toLocaleLowerCase() == "selecione")
             {
-                $window.alert("Selecione Tkt e Site!");
+				Mensagem.msg("Inconsistências","<br/>Selecione Tkt e Site!<br/>");
                 $scope.botaobloqueado = false;
                 return;
             }
@@ -35,7 +35,8 @@ var myApp = angular
             AtualizaSite.atualiza($scope);
         }
     })
-	.controller("ControllerQADB", function ($scope,$window, $http){
+	.controller("ControllerQADB", function ($scope,AttachaBanco,Mensagem, $http){
+
 		$scope.botaobloqueado = false; $scope.label="Criar Banco"; botaobloqueado=false;
 		$scope.tiposistema="seller web";
 		$scope.tipoambiente="teste";
@@ -67,6 +68,7 @@ var myApp = angular
 		
 		$scope.ciarbanco = function () 
 		{
+
 			$scope.msg=""
 			$scope.botaobloqueado=true;
 			
@@ -74,33 +76,33 @@ var myApp = angular
 			if($scope.projeto.trim()=="" || $scope.cliente.trim()=="" || $scope.criador.trim() =="")
 			{
 				//esse cara não pode ter espaços (eu acho)
-				$scope.msg+="\nInforme corretamente as Informações do Ambiente\n";
+				$scope.msg+="<br/>Informe corretamente as Informações do Ambiente<br/>";
 			}
 			if($scope.bak.trim()=="" || $scope.destino.trim()=="")
 			{
-				$scope.msg+="\nInforme corretamente os dados para Restaurar Base de Dados\n";
+				$scope.msg+="<br/>Informe corretamente os dados para Restaurar Base de Dados<br/>";
 			}
 			/*validações para personalização*/
 			if($scope.ativarpista==true && $scope.nomemaquina.trim()=="")
 			{
-				$scope.msg+="\nVocê ativou a pista e não informou o Nome Maquina\n";
+				$scope.msg+="<br/>Você ativou a pista e não informou o Nome Maquina<br/>";
 			}
 			if($scope.criaecf && ($scope.serial<=0 || $scope.marcaecf.id<=0 || $scope.serieecf.trim()=="" || $scope.numeroequipamento<=0))
 			{
-				$scope.msg+="\nVocê selecionou para criar ECF e não preencheu corretamente os campos:\n'Serial','Marca ECF', 'Nº Série' ou 'Número Equipamento'\n";	
+				$scope.msg+="<br/>Você selecionou para criar ECF e não preencheu corretamente os campos:\n'Serial','Marca ECF', 'Nº Série' ou 'Número Equipamento'<br/>";	
 			}
 			
 			/*se encontrou erro exibe na tela, caso contrário, faz a chamada da web*/
 			if($scope.msg!="")
 			{
-				$window.alert($scope.msg);
+				Mensagem.msg("Inconsistências",$scope.msg);
 				$scope.botaobloqueado=false;
 				return;
 			}
 			else
 			{
 				$scope.label = "Restaurando/Personalizando.."
-				
+				AttachaBanco.attacha($scope)
 				//faz os procedimentos para chamar o web service
 				/*				Parâmetros   */
 				
@@ -124,23 +126,6 @@ var myApp = angular
 				$scope.serieecf
 				$scope.numeroequipamento
 				*/
-
-                var respostaattacha = function (resattacha) {
-					//$window.alert("deu certo");
-					$window.alert(""+resattacha.data);
-					$scope.botaobloqueado=false;
-                }
-                var respostaerrattacha = function (reserrattacha) {
-					$window.alert("deu m\n"+reserrattacha.data);
-                    //$window.alert(reserrattacha.data);
-                    //$scope.site = $scope.sites2[0];
-					$scope.botaobloqueado=false;
-                }
-                /*faz a solicitação para attachar o DB*/
-				//$window.alert('AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino);
-                $http({ method: 'GET', url: 'AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino})
-                .then(respostaattacha, respostaerrattacha);
-				
 
 				$scope.label="Criar Banco";
 				
