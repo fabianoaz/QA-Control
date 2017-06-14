@@ -17,10 +17,11 @@ using Linx_Seller_QA.App_Code;
 public class AttachaePersonaliza : System.Web.Services.WebService
 {		
     [WebMethod]
-    public void attacha(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string bak, string caminho)
+    public void attacha(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string bak, string caminho,
+	string nomemaquina,bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email)
     {                                                            
         /*fazer a logica para chama a classe para attachar*/    
-
+		
 		string maquinabanco="POASRVVM0011\\SQL2012";
 		string ipsite="172.16.148.110";
 		AttachaPersonaliza AP = new AttachaPersonaliza();
@@ -33,12 +34,38 @@ public class AttachaePersonaliza : System.Web.Services.WebService
 		
 		AP.attachabanco(tiposistema,tipoambiente, projeto, cliente, criador, maquinabanco, bak, caminho,ipsite);
 		List<string> retorno = new List<string>();
-		retorno.Add(AP.str);
+		if(AP.erro!="")
+		{
+			retorno.Add(AP.erro);
+			//retorno.Add(AP.str);
+		}
+		else
+		{
+			retorno.Add(AP.str);
+			
+			AP.personaliza(tiposistema,tipoambiente,projeto,cliente,criador,nomemaquina,alterarsenhas,utilizarnfe,utilizarnfce,criarmaquina,ativapista,ecf,portaserial,marca,serie,num,email);
+			if(AP.erro!="")
+			{
+				retorno.Add(AP.erro);
+			}
+			else
+			{
+				retorno.Add(AP.str);
+			}
+		}
+		
+		/*
+string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string nomemaquina,
+	bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email		
+		*/
+		
+		
+		
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));		
     }
 
-    [WebMethod]
+  //  [WebMethod]
     public void personaliza(string tiposistema,string tipoambiente, string projeto, string cliente, string criador,
 	bool alterarsenhas, bool utilizanfe, bool utilizanfce, bool criarmaquina, bool ativapista, bool criarecf,
 	string nomemaquina, string portaserial, string serie, string marca, string numero, string email)

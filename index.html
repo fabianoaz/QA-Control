@@ -66,13 +66,13 @@
         </div>
         <!-- FIM DO PAINEL ACCORDION PARA SITES -->
         <!-- PAINEL ACCORDION PARA BANCOS -->
-        <div class="panel panel-default" ng-controller="ControllerQADB">
+        <div class="panel panel-default" ng-controller="ControllerQADB" ng-init="inicializa()">
             <div class="panel-heading">
                 <a class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" href="#bancos">Restauração de Banco</a>
             </div>
             <div id="bancos" class="panel-collapse collapse">
                 <div class="jumbotron">
-                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; height: 250px; width: 35%; float:left">
+                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; height: 257px; width: 35%; float:left">
                         <legend> Configurações do Ambiente </legend>
                         <div style="margin-left: 1%; margin-top: 5%; margin-right: 1%; height: auto; width: 100%;">
                             <label>Tipo Sistema:</label>
@@ -89,14 +89,15 @@
                             <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="documentacao" ng-model="tipoambiente">Documentação</label>
                         </div>
                     </div>
-                    <div class="form-control" style="margin-left: 45%; margin-top: 0.5%; margin-right: 10%; height: 250px; width: 45%;">
+                    <div class="form-control" style="margin-left: 45%; margin-top: 0.5%; margin-right: 10%; height: 257px; width: 45%;">
                         <legend> Informações do Ambiente </legend>
                         <label style="margin-left: 5%;">Projeto:</label>
-                        <input style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do projeto." ng-model="projeto"/>
+                        <input id="projeto" style="margin-left: 5%; width: 90%;" onblur="caracteres()" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do projeto." ng-model="projeto"/>
                         <label style="margin-left: 5%;">Cliente:</label>
                         <input style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do cliente." ng-model="cliente"/>
                         <label style="margin-left: 5%;">Criador:</label>
                         <input style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do criador." ng-model="criador"/>
+						<label style="margin-left: 5%; font-size: 10px; font-style: oblique">Nome do banco: {{nomesite()}}</label>
                     </div>
                     <div id="banco" class="form-control;" style="margin-top: 0.5%;">
                         <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80%; width: 80%;">

@@ -10,25 +10,67 @@ using System.Data.SqlClient;
 public class AttachaPersonaliza
 {
 	public string str="";
+	public string erro="";
 	public void attachabanco(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string maquinabanco, string bak, string caminho,string ipsite)
 	{
 
-		if(!System.IO.File.Exists(bak) || !System.IO.Directory.Exists(caminho))
-		{
-			str = "<br/>Não foi encontrado o arquivo .BAK ou o diretório de destino<br/> BAK: "+bak+"<br/>Caminho: "+caminho;
+		//if(!System.IO.File.Exists(bak) || !System.IO.Directory.Exists(caminho))
+		//{
+			//str = "<br/>Não foi encontrado o arquivo .BAK ou o diretório de destino<br/> BAK: "+bak+"<br/>Caminho: "+caminho;
 			//str="valores recebido:\n Tipo Sis "+tiposistema +", Tipo Amb "+ tipoambiente+"\nProj "+ projeto+", Cli "+ cliente+", Criador "+ criador+"\nMaquinaDB "+ maquinabanco+", BAK "+ bak+", Destino "+ caminho+" IPSite " +ipsite;			
-			return;
-		}
+			//return;
+		//}
 		if(!caminho.EndsWith("\\"))
 		{
 			caminho=caminho+"\\";
 		}
+		erro="erro ao procurar conexão no webconfig";
 		String cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 	using (SqlConnection con = new SqlConnection(cs))
         {
+				erro="Erro ao Executar comando de attachar";
                 //diz o comando que será executado
 				string comando="exec ATTACHA '"+tiposistema+"','"+tipoambiente+"','"+projeto+"','"+cliente+"','"+criador+"','"+bak+"','"+maquinabanco+"','"+caminho+"','"+ ipsite+"'";
-				str="<br/> as " + DateTime.Now+" iniciou o comando<br/>"+comando;
+				str="<br/>Iniciou o comando de attachar as " + DateTime.Now;//+" iniciou o comando de attachar<br/>";//+comando+"<br/>";
+                SqlCommand cmd = new SqlCommand(comando, con);
+				cmd.CommandTimeout = 0;
+                //abre a conexão com o banco
+                con.Open();
+                //executa o SQL e guarda no sdr
+                SqlDataReader sdr= cmd.ExecuteReader();  
+				//str=""; 
+				str=str+"<br/>e terminou as "+DateTime.Now;//+"<br/>";
+				erro="";
+				//caso tenha mais de duas coluna, é a mensagem de sucesso, que são as estatísticas do procedimento de attachar, se for menos que duas colunas, é a mensagem de erro, aí tem guru
+				while (sdr.Read())
+				{
+					//if(sdr.FieldCount<2)
+					erro=erro+sdr[0].ToString()+"<br/>";
+				}
+				
+				//str="sucesso2";
+				con.Close();
+				
+		}
+	}
+
+
+	public void personaliza(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string nomemaquina,
+	bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email)
+	{
+		str="";
+		if(tiposistema!="sweb")
+		{
+			return;
+		}
+	erro="erro ao procurar conexão no webconfig";
+	String cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
+	using (SqlConnection con = new SqlConnection(cs))
+        {
+				erro="Erro ao Executar comando de personalizar";
+                //diz o comando que será executado
+				string comando="exec PERSONALIZA '"+tiposistema+"','"+tipoambiente+"','"+projeto+"','"+cliente+"','"+criador+"','"+nomemaquina+"',"+alterarsenhas+","+utilizarnfe+","+utilizarnfce+","+criarmaquina+","+ativapista+","+ecf+","+portaserial+","+marca+",'"+serie+"',"+num+",'"+email+"'";
+				str="<br/>Iniciou o comando de personalizar as " + DateTime.Now;//+" iniciou o comando de personalizar <br/>";//+comando;
                 SqlCommand cmd = new SqlCommand(comando, con);
 				cmd.CommandTimeout = 0;
                 //abre a conexão com o banco
@@ -36,18 +78,19 @@ public class AttachaPersonaliza
                 //executa o SQL e guarda no sdr
                 SqlDataReader sdr= cmd.ExecuteReader();  
 				//str="";
-				str=str+"<br/>terminou as "+DateTime.Now;
+				str=str+"<br/>e terminou as "+DateTime.Now;
+				erro="";
 				while (sdr.Read())
 				{
-					str=str+sdr[0].ToString();
+					erro=erro+sdr[0].ToString();
 				}
 				
 				//str="sucesso2";
 				con.Close();
+
 		}
+	}	
+
 	
-
-
-
-	}
+	
 }

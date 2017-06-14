@@ -35,49 +35,79 @@ var myApp = angular
             AtualizaSite.atualiza($scope);
         }
     })
-	.controller("ControllerQADB", function ($scope,AttachaBanco,Mensagem, $http){
+	.controller("ControllerQADB", function ($scope,AttachaBanco,Mensagem, Opcao, $http){
+		$scope.inicializa = function ()
+		{
+			$scope.botaobloqueado = false;	$scope.op=0;							$scope.nomedosite="";
+			$scope.label="Criar Banco";		$scope.tiposistema="sweb"; 				$scope.tipoambiente="teste";
+			$scope.projeto="";				$scope.cliente="";						$scope.criador="";		
+			$scope.bak="";					$scope.destino="";
 
-		$scope.botaobloqueado = false; $scope.label="Criar Banco"; botaobloqueado=false;
-		$scope.tiposistema="seller web";
-		$scope.tipoambiente="teste";
+			/*Personalizações*/
+			$scope.email="";				$scope.alterarsenhas=true;
+			$scope.usanfe=false;			$scope.usanfce=false;
+			$scope.nomemaquina="";			$scope.ativarpista=false;
+			$scope.criaecf=false;			$scope.serial="";
+			$scope.criamaquina=false;
+			
+			$scope.marcasecf=[
+			{nome: 'Selecione', id:0},{nome: 'Bematech', id:1},
+			{nome: 'Sweda', id:2},{nome: 'Daruma', id:3}];
+			
+			$scope.serieecf="";				$scope.numeroequipamento=""; 			$scope.marcaecf=$scope.marcasecf[0];
+		}
+		$scope.nomesite = function()
+		{
+			
+			$scope.nomedosite=$scope.tiposistema+"_"+$scope.tipoambiente;
+				
+			if($scope.projeto!="")
+			{
+				$scope.nomedosite=$scope.nomedosite+"_"+$scope.projeto;
+			}
+			if($scope.cliente!="")
+			{
+				$scope.nomedosite=$scope.nomedosite+"_"+$scope.cliente;
+			}
+			if($scope.criador!="")
+			{
+				$scope.nomedosite=$scope.nomedosite+"_"+$scope.criador;
+			}			
+			return $scope.retiraespaco(); 
+		}
+		$scope.retiraespaco=function()
+		{
+			while ($scope.nomedosite.toString().match(" "))
+			{
+				$scope.nomedosite=$scope.nomedosite.toString().replace(" ","");
+			}
+			//$scope.cliente=$scope.cliente.replace("a","b");
+			return $scope.nomedosite.toLocaleLowerCase();
+		}
 		
-		$scope.projeto="";
-		$scope.cliente="";
-		$scope.criador="";
-		$scope.bak="";
-		$scope.destino="";
-		$scope.email="";
+		
+		
+		$scope.faca=function()
+		{
+			$scope.label = "Restaurando/Personalizando.."
+			$scope.botaobloqueado=true;
+			AttachaBanco.attacha($scope);
+		};
+		$scope.naofaca=function()
+		{
+			if($scope.op==0)
+			{
+				$scope.botaobloqueado=false;
+				$scope.label="Criar Banco";		
+			}
 
-		$scope.alterarsenhas=true;
-		$scope.usanfe=false;
-		$scope.usanfce=false;
-		$scope.nomemaquina="";
-		$scope.ativarpista=false;
-		$scope.criaecf=false;
-		$scope.serial="";
-		
-		$scope.marcasecf=[
-		{nome: 'Selecione', id:0},
-		{nome: 'Bematech', id:1},
-		{nome: 'Sweda', id:2},
-		{nome: 'Daruma', id:3}];
-		$scope.serieecf="";
-		$scope.numeroequipamento="";
-	
-		$scope.marcaecf=$scope.marcasecf[0];
+		};
+
 		
 		$scope.ciarbanco = function () 
 		{
-
-			$scope.msg=""
-			$scope.botaobloqueado=true;
-			
-			/*Valida os dados básicos necessários*/
-			if($scope.projeto.trim()=="" || $scope.cliente.trim()=="" || $scope.criador.trim() =="")
-			{
-				//esse cara não pode ter espaços (eu acho)
-				$scope.msg+="<br/>Informe corretamente as Informações do Ambiente<br/>";
-			}
+			$scope.op==0;
+			$scope.msg="";
 			if($scope.bak.trim()=="" || $scope.destino.trim()=="")
 			{
 				$scope.msg+="<br/>Informe corretamente os dados para Restaurar Base de Dados<br/>";
@@ -97,41 +127,25 @@ var myApp = angular
 			{
 				Mensagem.msg("Inconsistências",$scope.msg);
 				$scope.botaobloqueado=false;
+				$scope.label="Criar Banco";
 				return;
 			}
 			else
 			{
-				$scope.label = "Restaurando/Personalizando.."
-				AttachaBanco.attacha($scope)
-				//faz os procedimentos para chamar o web service
-				/*				Parâmetros   */
-				
-				/*
-				$scope.tiposistema
-				$scope.tipoambiente
-				$scope.projeto
-				$scope.cliente
-				$scope.criador
-				$scope.bak
-				$scope.destino
-				$scope.email
-				$scope.alterarsenhas
-				$scope.usanfe
-				$scope.usanfce
-				$scope.nomemaquina
-				$ativarpista
-				$scope.criaecf
-				$scope.serial
-				$scope.marcaecf.id
-				$scope.serieecf
-				$scope.numeroequipamento
-				*/
-
-				$scope.label="Criar Banco";
-				
+				if ($scope.nomemaquina.trim()!="" && !$scope.nomemaquina.Equals(null))
+				{
+					$scope.criamaquina=true;
+				}
+				if($scope.numeroequipamento=="" || $scope.numeroequipamento==0 ||  $scope.numeroequipamento==null)
+				{
+					$scope.numeroequipamento=1;
+				}
+				if($scope.serial=="" || $scope.serial==0 || $scope.serial==null)
+				{
+					$scope.serial=1;
+				}
+				Opcao.qst("Tem Certeza?","Você está prestes a vincular um banco de dados com o nome abaixo:<br/>"+$scope.nomesite()+"<br/>Caso exista um banco de dados attachado com esse mesmo nome, o mesmo será excluído, confirma está operação?",$scope);
 			}
-				
-			
 		}
 		
 	})

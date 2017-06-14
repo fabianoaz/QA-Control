@@ -5,19 +5,17 @@ myApp
     return {
         sitesl: function ($scope)
             {
-                //   $window.alert("vai ver a lista de sites");
                 var respostadirsite = function (listasite) {
                     $scope.sites2 = listasite.data;
                     $scope.site = $scope.sites2[0];
                 }
                 var respostadirersite = function (listaerrosite) {
 					Mensagem.msg("Erro no WebService",listaerrosite.data)
-                    //$window.alert(listaerrosite.data);
                     $scope.site = $scope.sites2[0];
                 }
-                /*faz a solicitação dos sites*/
                 $http({ method: 'GET', url: 'DeletaeCopia.asmx/listadir?op="site"' })
                 .then(respostadirsite, respostadirersite);
+				/*Retorna a lista de sites*/
             }
         }
     })
@@ -31,12 +29,11 @@ myApp
                 }
                 var respostadirertkt = function (listaerrotkt) {
 					Mensagem.msg("Erro no WebService",listaerrotkt.data)
-                    //$window.alert(listaerrotkt.data);
                     $scope.tkt = $scope.tkts2[0];
                 }
-                /*faz a solicitação dos tkt*/
                 $http({ method: 'GET', url: 'DeletaeCopia.asmx/listadir?op="tkt"' })
                 .then(respostadirtkt, respostadirertkt);
+				/*Retorna a lista de tkts*/
             }
         }
     })
@@ -47,20 +44,19 @@ myApp
                 $scope.dados = respostadowebservice.data;
                 $log.info(respostadowebservice);
 				Mensagem.msg("Tempos da Atualização",$scope.dados)
-                //$window.alert($scope.dados);
                 $scope.botaobloqueado = false;
                 $scope.label = "Atualizar"
             }
             var respostaerro = function (motivo) {
                 $scope.erro = motivo.data;
                 $log.info(motivo);
-                //$window.alert($scope.erro);
 				Mensagem.msg("Erro no WebService",$scope.erro)
                 $scope.botaobloqueado = false;
                 $scope.label = "Atualizar"
             }
             $http({ method: 'GET', url: 'DeletaeCopia.asmx/Atualiza?tkt=' + $scope.tkt.caminho + '&site=' + $scope.site.caminho })
             .then(respostasucesso, respostaerro);
+			/*Efetua a atualização do site*/
         }
     }
 })
@@ -68,25 +64,26 @@ myApp
     return {
         attacha: function ($scope) {
                 var respostaattacha = function (resattacha) {
-					//$window.alert("deu certo");
 					$log.info(resattacha);
-					
 					Mensagem.msg("Attachou",""+resattacha.data)
-					//$window.alert(""+resattacha.data);
 					$scope.botaobloqueado=false;
+					$scope.label="Criar Banco";
                 }
                 var respostaerrattacha = function (reserrattacha) {
-					$window.alert("deu m\n"+reserrattacha.data);
+					Mensagem.msg("Deu ruim",""+reserrattacha.data)
 					$log.info(reserrattacha);
-                    //$window.alert(reserrattacha.data);
-                    //$scope.site = $scope.sites2[0];
 					$scope.botaobloqueado=false;
-                }
-                /*faz a solicitação para attachar o DB*/
-				//$window.alert('AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino);
-                $http({ method: 'GET', url: 'AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino})
+					$scope.label="Criar Banco";
+               }
+                $http({ method: 'GET', url: 'AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino
+				+'&nomemaquina='+$scope.nomemaquina+'&alterarsenhas='+$scope.alterarsenhas+'&utilizarnfe='+$scope.usanfe
+				+'&utilizarnfce='+$scope.usanfce
+				+'&criarmaquina='+$scope.criamaquina
+				+'&ativapista='+$scope.ativarpista
+				+'&ecf='+$scope.criaecf
+				+'&portaserial='+$scope.serial+'&marca='+$scope.marcaecf.id+'&serie='+$scope.serieecf+'&num='+$scope.numeroequipamento+'&email='+$scope.email})
                 .then(respostaattacha, respostaerrattacha);
-				
+				/*Efetuar o procedimento de Attachar e Personalizar*/
         }
     }
 })
@@ -97,7 +94,7 @@ myApp
 					modal: true,
 					draggable: false,
 					resizable: false,
-					position: ['center', 'center'],
+					position: {my: 'center', at: 'center', of: window},
 					width: 500,
 					height: 250,
 					dialogClass: 'ui-dialog-osx',
@@ -107,6 +104,37 @@ myApp
 						}
 					}
 				});
+				/*Exibe mensagens na tela*/
+        }
+    }
+})
+.factory('Opcao', function () {
+    return {
+        qst: function (titulo,texto,$scope) {
+		$("<div id='dialogq' title='"+titulo+"' visible=false> <p>"+texto+"</p></div>").dialog({
+					modal: true,
+					draggable: false,
+					resizable: false,
+					position: {my: 'center', at: 'center', of: window},
+					width: 500,
+					height: 250,
+					dialogClass: 'ui-dialog-osx',
+					buttons: {
+						"Sim, Quero Fazer Isto!": function() {
+							$scope.op=1;
+							$scope.faca();
+							$(this).dialog("close");
+						},
+						"Não, Não Quero!": function() {
+							$scope.op=0;							
+							$scope.naofaca();
+							$(this).dialog("close");
+						}
+					}
+
+				})
+				.on( "dialogclose",function(event, ui){ if($scope.op==0){$scope.naofaca();}});
+				/*Efetuar uma Pergunta, e se escolher 1, é para fazer algo, se escolher 0 (ou fechar), nada deve ser feito*/
         }
     }
 })
