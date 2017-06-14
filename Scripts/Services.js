@@ -43,15 +43,17 @@ myApp
             var respostasucesso = function (respostadowebservice) {
                 $scope.dados = respostadowebservice.data;
                 $log.info(respostadowebservice);
-				Mensagem.msg("Tempos da Atualização",$scope.dados)
+				Mensagem.msg("Tempos da atualização",$scope.dados)
                 $scope.botaobloqueado = false;
+				$scope.loading=false;
                 $scope.label = "Atualizar"
             }
             var respostaerro = function (motivo) {
                 $scope.erro = motivo.data;
                 $log.info(motivo);
-				Mensagem.msg("Erro no WebService",$scope.erro)
+				Mensagem.msg("Algo deu Errado ao atualizar..",$scope.erro)
                 $scope.botaobloqueado = false;
+				$scope.loading=false;
                 $scope.label = "Atualizar"
             }
             $http({ method: 'GET', url: 'DeletaeCopia.asmx/Atualiza?tkt=' + $scope.tkt.caminho + '&site=' + $scope.site.caminho })
@@ -65,14 +67,16 @@ myApp
         attacha: function ($scope) {
                 var respostaattacha = function (resattacha) {
 					$log.info(resattacha);
-					Mensagem.msg("Attachou",""+resattacha.data)
+					Mensagem.msg("Tempos da restauração",""+resattacha.data)
 					$scope.botaobloqueado=false;
+					$scope.loading=false;
 					$scope.label="Criar Banco";
                 }
                 var respostaerrattacha = function (reserrattacha) {
-					Mensagem.msg("Deu ruim",""+reserrattacha.data)
+					Mensagem.msg("Algo deu errado ao attachar..",""+reserrattacha.data)
 					$log.info(reserrattacha);
 					$scope.botaobloqueado=false;
+					$scope.loading=false;
 					$scope.label="Criar Banco";
                }
                 $http({ method: 'GET', url: 'AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino

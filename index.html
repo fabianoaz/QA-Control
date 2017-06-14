@@ -29,7 +29,14 @@
 	
 	
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script>
+        window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+    </script>
+	
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+        window.jqueryuijs || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
+    </script>
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico"> 
     <title> Atualiza Sites</title>
@@ -59,8 +66,11 @@
                         <select class="form-control" ng-model="site" ng-options="s.nome for s in sites2"></select>
                     </div>
                     <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
-                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-click="retorno()" ng-disabled="botaobloqueado" />
+                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-click="retorno()" ng-disabled="botaobloqueado" style="float: left"/>
                     </div>
+					<div>
+						<img style="width: 3%; height: 3%;" src="Gifs\loading2.gif" ng-show="loading" />
+					</div>
                 </div>
             </div>
         </div>
@@ -137,8 +147,11 @@
                         </div>
                     </div>
                     <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
-                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-disabled="botaobloqueado" ng-click="ciarbanco()"  />
+                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-disabled="botaobloqueado" ng-click="ciarbanco()" style="float: left" />
                     </div>
+					<div style="background-color: #eee;">
+						<img style="width: 3%; height: 3%; background-color: #eee;" src="Gifs\loading2.gif" ng-show="loading" />
+					</div>
                 </div>
                 <!-- Fim do Jumbotron -->
             </div>
@@ -148,7 +161,6 @@
         <!-- FIM DO PAINEL ACCORDION PARA BANCOS -->
     </div>
     <!-- DEVERIA FECHAR O PANEL-CONTROL -->
-	
 </body>
 <script>
 

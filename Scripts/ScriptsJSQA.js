@@ -4,6 +4,7 @@ var myApp = angular
     .module("Module", [])
     .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,Mensagem) {
         $scope.botaobloqueado = false; $scope.label = "Atualizar";
+		$scope.loading=false;
         $scope.tkts2 = [
 		 {nome:'Selecione', caminho:'sa'}];
         $scope.sites2 = [
@@ -16,6 +17,15 @@ var myApp = angular
             $scope.sites2 = ListaSites.sitesl($scope);
             $scope.tkts2 = ListaTtks.tktsl($scope);
         }
+		$scope.bloqueia= function()
+		{
+			$scope.label = "Atualizando.."
+            $scope.botaobloqueado = true;
+			$scope.loading=true;			
+		}
+		
+		
+		
         /*faz a treta dos TKTs*/
         $scope.retorno = function () {
             //valida o basico das combos
@@ -25,12 +35,12 @@ var myApp = angular
             {
 				Mensagem.msg("Inconsistências","<br/>Selecione Tkt e Site!<br/>");
                 $scope.botaobloqueado = false;
+				$scope.loading=false;
                 return;
             }
-            //altera o texto do botão para atualizando
-            $scope.label = "Atualizando.."
-            //e bloqueia o botão
-            $scope.botaobloqueado = true;
+            //altera o texto do botão para atualizando, bloqueia o botão e exibe o loading
+			$scope.bloqueia();
+
             /*chama o factory para atualizar*/
             AtualizaSite.atualiza($scope);
         }
@@ -41,7 +51,7 @@ var myApp = angular
 			$scope.botaobloqueado = false;	$scope.op=0;							$scope.nomedosite="";
 			$scope.label="Criar Banco";		$scope.tiposistema="sweb"; 				$scope.tipoambiente="teste";
 			$scope.projeto="";				$scope.cliente="";						$scope.criador="";		
-			$scope.bak="";					$scope.destino="";
+			$scope.bak="";					$scope.destino="";						$scope.loading=false;
 
 			/*Personalizações*/
 			$scope.email="";				$scope.alterarsenhas=true;
@@ -51,8 +61,8 @@ var myApp = angular
 			$scope.criamaquina=false;
 			
 			$scope.marcasecf=[
-			{nome: 'Selecione', id:0},{nome: 'Bematech', id:1},
-			{nome: 'Sweda', id:2},{nome: 'Daruma', id:3}];
+			{nome: 'Selecione', id:0},{nome: 'Bematech', id:2},
+			{nome: 'Sweda', id:1},{nome: 'Daruma', id:5}];
 			
 			$scope.serieecf="";				$scope.numeroequipamento=""; 			$scope.marcaecf=$scope.marcasecf[0];
 		}
@@ -91,12 +101,14 @@ var myApp = angular
 		{
 			$scope.label = "Restaurando/Personalizando.."
 			$scope.botaobloqueado=true;
+			$scope.loading=true;
 			AttachaBanco.attacha($scope);
 		};
 		$scope.naofaca=function()
 		{
 			if($scope.op==0)
 			{
+				$scope.loading=false;
 				$scope.botaobloqueado=false;
 				$scope.label="Criar Banco";		
 			}
@@ -126,6 +138,7 @@ var myApp = angular
 			if($scope.msg!="")
 			{
 				Mensagem.msg("Inconsistências",$scope.msg);
+				$scope.loading=false;
 				$scope.botaobloqueado=false;
 				$scope.label="Criar Banco";
 				return;

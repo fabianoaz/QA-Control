@@ -18,7 +18,7 @@ public class DeletaCopia
     {
         string dataini;
         string datafim;
-        erro = "\nErro na criação do temp ou ao deletar residuos antigos\n";
+        erro = "<br/>Erro na criação do temp ou ao deletar residuos antigos<br/>";
         try
         {
             //    debugs
@@ -27,7 +27,7 @@ public class DeletaCopia
             //se o site ou o TKT não existirem, retorna o erro já
             if (!System.IO.Directory.Exists(site) || !System.IO.File.Exists(zip) || site.StartsWith("\\"))
             {
-                erro = "Não foi possível localizar o diretório do site ou o zip do TKT\nSite: " + site + "\ntkt.zip: " + zip;
+                erro = "Não foi possível localizar o diretório do site ou o zip do TKT<br/>Site: " + site + "<br/>tkt.zip: " + zip;
                 return;
             }
             //data = "";
@@ -48,7 +48,7 @@ public class DeletaCopia
             //se o site já foi renomeado uma vez para old, tem que limpar a sujeira e não cria um novo pq o mov já faz isso
             criadiretorio(site + "__old", true, false);
             datafim = "" + DateTime.Now;
-            data = "\nDeletando risiduos:\n" + dataini + " - " + datafim;
+            data = "<br/>Deletando risiduos:<br/>" + dataini + " - " + datafim;
 
             dataini = datafim; datafim = "";
             //copia o web.config
@@ -61,7 +61,7 @@ public class DeletaCopia
             //renomeia o site
             System.IO.Directory.Move(site, site + "__old");
             datafim = "" + DateTime.Now;
-            data = data + "\nCriando temp2, copiando webconfig, parando pool e renomeando site:\n" + dataini + " - " + datafim;
+            data = data + "<br/>Criando temp2, copiando webconfig, parando pool e renomeando site:<br/>" + dataini + " - " + datafim;
 
             dataini = datafim; datafim = "";
             erro = "Erro ao extrair arquivos do ZIP no temp2";
@@ -69,7 +69,7 @@ public class DeletaCopia
             //para funcionar o ZipFile, além da referência, tem que por na mão o assembly do FileSystem, não sei por que 
             ZipFile.ExtractToDirectory(zip, temp);
             datafim = "" + DateTime.Now;
-            data = data + "\nExtraindo .zip:\n" + dataini + " - " + datafim;
+            data = data + "<br/>Extraindo .zip:<br/>" + dataini + " - " + datafim;
 
             dataini = datafim; datafim = "";
             erro = "Erro ao mover arquivos descompactados para o site ou ao copiar o web.config";
@@ -77,7 +77,7 @@ public class DeletaCopia
             System.IO.Directory.Move(temp + @"\Precompiledweb\DGRP", @site);
             System.IO.File.Move(temp + @"\web.config", @site + @"\web.config");
             datafim = "" + DateTime.Now;
-            data = data + "\nCriando o novo Site e Copiando webconfig:\n" + dataini + " - " + datafim;
+            data = data + "<br/>Criando o novo Site e Copiando webconfig:<br/>" + dataini + " - " + datafim;
 
             //inicia o pool novamente
             parainiciapool(site, "start");
@@ -88,7 +88,7 @@ public class DeletaCopia
             criadiretorio(site + "__old", true, false);
             criadiretorio(temp, true, false);
             datafim = "" + DateTime.Now;
-            data = data + "\nLimpando residuos finais:\n" + dataini + " - " + datafim;
+            data = data + "<br/>Limpando residuos finais:<br/>" + dataini + " - " + datafim;
 			if(System.IO.File.Exists(zip))
 			{
 				System.IO.File.Delete(zip);
@@ -98,7 +98,7 @@ public class DeletaCopia
         }
         catch (Exception err)
         {
-            erro += "\nerro interno:\n" + err;
+            erro += "<br/>erro interno:<br/>" + err;
         }
     }
 
@@ -151,7 +151,7 @@ public class DeletaCopia
         dataini = "" + DateTime.Now;
         if (System.IO.File.Exists(tkt))
         {
-            erro = "\nOcorreu um erro ao baixar o tkt\n";
+            erro = "<br/>Ocorreu um erro ao baixar o tkt<br/>";
             //copiaria \\ip\tkt.zip, para E:\sites\tkt.zip, com sobreescrita
             Random r = new Random();
             //vai gerar com um numero aleatório no final ^^
@@ -163,11 +163,11 @@ public class DeletaCopia
             System.IO.File.Copy(tkt, zip, true);
             datafim = "" + DateTime.Now;
             erro = "";
-            data = "\nBaixando o TKT:\n" + dataini + " - " + datafim;
+            data = "Baixando o TKT:<br/>" + dataini + " - " + datafim;
         }
         else
         {
-            erro = "O Tkt não foi encontrado para ser baixado:\n" + tkt;
+            erro = "O Tkt não foi encontrado para ser baixado:<br/>" + tkt;
         }
 
 
