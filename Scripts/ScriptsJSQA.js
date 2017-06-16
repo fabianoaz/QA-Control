@@ -48,6 +48,7 @@ var myApp = angular
 	.controller("ControllerQADB", function ($scope,AttachaBanco,Mensagem, Opcao, $http){
 		$scope.inicializa = function ()
 		{
+			document.getElementById('dados').style.display = 'none';
 			$scope.botaobloqueado = false;	$scope.op=0;							$scope.nomedosite="";
 			$scope.label="Criar Banco";		$scope.tiposistema="sweb"; 				$scope.tipoambiente="teste";
 			$scope.projeto="";				$scope.cliente="";						$scope.criador="";		
@@ -162,3 +163,14 @@ var myApp = angular
 		}
 		
 	})
+	.controller("paginas", function ($scope){
+	$scope.pag=function(menu) 
+	{
+		if (menu=="sitesebancos")
+		{
+			$scope.pagina="./sitesebancos.html";
+		}
+		return $scope.pagina;
+	}
+	});
+	

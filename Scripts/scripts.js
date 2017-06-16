@@ -1,7 +1,4 @@
 
-	function desabPDV(){
-		document.getElementById('dados').style.display = 'none';
-	}
 	function marcaCheck(){
 		if(document.getElementById('dados').style.display == 'none'){
 			document.getElementById('criaPDV').checked = true;
