@@ -1,7 +1,7 @@
  <!--<input type="button" ng-click="listatktesite()"/>-->
-    <div class="panel-group" id="accordion">
+    <div class="panel-group" id="accordion" style="height: 80%; width: 100%; %; float:left">
         <!-- PAINEL ACCORDION PARA SITES -->
-        <div class="panel panel-default" ng-controller="ControllerQASITES" ng-init="listatktesite()">
+        <div class="panel panel-default" ng-controller="ControllerQASITES" ng-init="listatktesite()" style="margin-left: 0%; margin-top: 0.5%; width: 100%; min-width: 16.5%; %; float:left">
             <div class="panel-heading">
                 <a id="a" class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" ng-href="#sites">Atualização de Sites</a>
             </div>
@@ -26,13 +26,13 @@
         </div>
         <!-- FIM DO PAINEL ACCORDION PARA SITES -->
         <!-- PAINEL ACCORDION PARA BANCOS -->
-        <div class="panel panel-default" ng-controller="ControllerQADB" ng-init="inicializa()">
+        <div class="panel panel-default" ng-controller="ControllerQADB" ng-init="inicializa()" style="margin-left: 0%; margin-top: 0.5%; width: 100%; min-width: 16.5%; %; float:left">
             <div class="panel-heading">
                 <a class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" ng-href="#bancos">Restauração de Banco</a>
             </div>
             <div id="bancos" class="panel-collapse collapse">
-                <div class="jumbotron" style="height: auto; width: 100%; %; float:left">
-				<div style="margin-left: 7%; margin-top: 0%; width: 93%; min-width: 16.5%; %; float:left" >
+                <div class="jumbotron" style="height: 70%; width: 100%; margin-bottom:-4%; %; float:left">
+				<div style="margin-left: 7%; margin-top: 0%; width: 93%; min-width: 10px; %; float:left" >
                     <div class="form-control" style="margin-left: 0%; margin-top: 0.5%; height: auto; min-height: 266px; min-width: 356px; width: 46%; float:left">
                         <legend> Configurações do Ambiente </legend>
                         <div style="margin-left: 1%; margin-top: 5%; margin-right: 1%; height: auto; width: 100%;">
@@ -110,6 +110,5 @@
 				</div>
 				</div>
             </div>
-
-        </div>
-    </div>
+        </div> <!-- FIM DO PAINEL ACCORDION PARA BANCOS -->
+    </div> <!-- FIM DO GRUPO DE ACCORDIONS -->
