@@ -177,7 +177,8 @@ var myApp = angular
 				
 				
 				
-				Opcao.qst("Tem Certeza?","Você está prestes a vincular um banco de dados com o nome abaixo:<br/>"+$scope.nomesite()+"<br/>Caso exista um banco de dados attachado com esse mesmo nome, o mesmo será excluído, confirma está operação?",$scope);
+				//Opcao.qst("Tem Certeza?","Você está prestes a vincular um banco de dados com o nome abaixo:<br/>"+$scope.nomesite()+"<br/>Caso exista um banco de dados atachado com esse mesmo nome, o mesmo será excluído, confirma esta operação?",$scope);
+				Opcao.qst("Tem Certeza?","Você está prestes a vincular um banco de dados com o nome abaixo:<br/>"+$scope.nomesite()+"<br/>Caso exista um banco de dados atachado com esse mesmo nome, o mesmo será excluído, deseja realmente fazer isto?",$scope);
 			}
 		}
 		
