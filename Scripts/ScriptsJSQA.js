@@ -1,18 +1,56 @@
 ﻿/// <reference path="angular.js" />
 /// <reference path="~/jQuery/jquery-3.2.1.min.js" />
 var myApp = angular
-    .module("Module", [])
-	.controller("paginas", function ($scope){
+    .module("Module", ['ngCookies'])
+	.controller("paginas", function ($scope, $cookies, verificaseestalogado, verificasejalogou,Loga){
+		//include
 	$scope.pag=function(menu) 
 	{
-		if (menu=="sitesebancos")
+		$scope.nomedousuario="";
+		var temp;
+		//realiza o include somente se está logado, caso contrario, vai para o login
+		if(verificaseestalogado.verlog()==true)
 		{
-			$scope.pagina="./sitesebancos.html";
+			if (menu=="sitesebancos")
+			{
+				$scope.pagina="./sitesebancos.html";
+				temp=$cookies.get("U-ID").split('_');
+				if(temp.length>2)
+				{
+					$scope.nomedousuario=temp[2];
+				}
+				return $scope.pagina;
+			}
 		}
-		return $scope.pagina;
+		else
+		{
+			window.location.assign("login.html");
+		}
 	}
+	$scope.tentativas=0;
+	$scope.pass="";
+	$scope.name="";
+	//faz o login
+	$scope.efetualogin=function()
+	{
+		//se não esta logado, bota o cookie e vai para o index
+		if (verificaseestalogado.verlog()==false)
+			{
+				Loga.loga($scope)
+			}
+		//window.location.assign("index.html");
+	}
+	//se está na tela de login, ve se já está logado, caso esteja, vai para o index (não precisa clicar no botão)
+	$scope.versejalogou = function(){verificasejalogou.verlogou()}
+	//faz o logout
+	$scope.desloga = function ()
+	{
+		$cookies.remove("U-ID");
+	}
+	
+	
 	})	
-    .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,Mensagem) {
+    .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,Mensagem, Opcao) {
         $scope.botaobloqueado = false; $scope.label = "Atualizar";
 		$scope.loading=false;
         $scope.tkts2 = [
@@ -21,11 +59,15 @@ var myApp = angular
 		{nome:'selecione', caminho:''}];
         $scope.site = $scope.sites2[0];	
         $scope.tkt = $scope.tkts2[0];
-
+		$scope.bool=true;
         /*retorna a lista tkts e sites*/
         $scope.listatktesite = function () {
-            $scope.sites2 = ListaSites.sitesl($scope);
-            $scope.tkts2 = ListaTtks.tktsl($scope);
+			if ($scope.bool)
+			{
+				$scope.sites2 = ListaSites.sitesl($scope);
+				$scope.tkts2 = ListaTtks.tktsl($scope);
+				$scope.bool=false;
+			}
         }
 		$scope.bloqueia= function()
 		{
@@ -35,6 +77,24 @@ var myApp = angular
 		}
 		
 		
+		$scope.faca=function()
+		{
+			$scope.label = "Atualizando.."
+			$scope.botaobloqueado=true;
+			$scope.loading=true;
+			AtualizaSite.atualiza($scope);
+		};
+		//se respondeu que não quer fazer o processo
+		$scope.naofaca=function()
+		{
+			if($scope.op==0)
+			{
+				$scope.loading=false;
+				$scope.botaobloqueado=false;
+				$scope.label="Atualizar";		
+			}
+		};
+
 		
         /*faz a treta dos TKTs*/
         $scope.retorno = function () {
@@ -49,13 +109,14 @@ var myApp = angular
                 return;
             }
             //altera o texto do botão para atualizando, bloqueia o botão e exibe o loading
-			$scope.bloqueia();
+			//$scope.bloqueia();
 
             /*chama o factory para atualizar*/
-            AtualizaSite.atualiza($scope);
+			Opcao.qst("Tem Certeza?","Você está prestes a atualizar o site abaixo:<br/>"+$scope.site.nome.toLocaleLowerCase()+"<br/>Deseja realmente fazer isto?",$scope);
+            //AtualizaSite.atualiza($scope);
         }
     })
-	.controller("ControllerQADB", function ($scope,AttachaBanco,Mensagem, Opcao, LimpaCaracteres,LimpaCaracteresDir,LimpaNumeros){
+	.controller("ControllerQADB", function ($scope,AttachaBanco,Mensagem, Opcao, LimpaCaracteres,LimpaCaracteresDir,LimpaCaracteresMail,LimpaNumeros){
 		$scope.inicializa = function ()
 		{
 			//document.getElementById('dados').style.display = 'none';
@@ -92,6 +153,7 @@ var myApp = angular
 			$scope.numeroequipamento=LimpaNumeros.limpa($scope.numeroequipamento,'numeroequipamento',1,99,true);
 			$scope.bak=LimpaCaracteresDir.limpa($scope.bak,'bak');
 			$scope.destino=LimpaCaracteresDir.limpa($scope.destino,'destino');
+			$scope.email=LimpaCaracteresMail.limpa($scope.email,'email');
 			
 			if($scope.projeto!="")
 			{
@@ -155,7 +217,7 @@ var myApp = angular
 			}
 			else
 			{
-				if ($scope.nomemaquina.trim()!="" && !$scope.nomemaquina.Equals(null))
+				if ($scope.nomemaquina.trim()!="" && !$scope.nomemaquina==null)
 				{
 					$scope.criamaquina=true;
 				}

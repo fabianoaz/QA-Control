@@ -17,9 +17,10 @@ using Linx_Seller_QA.App_Code;
 public class DeletaeCopia : System.Web.Services.WebService
 {
     [WebMethod]
-    public void Atualiza(string tkt, string site)
+    public void Atualiza(string tkt, string site,string user)
     {
-
+		LogApp log = new LogApp();
+		log.logar("Solicitção de atualização de site, cookie: '"+ user +"' Site: '"+site+"' Tkt: '"+tkt+"'");
         DeletaCopia DC = new DeletaCopia();
         List<string> retorno = new List<string>();
         //faz a copia do tkt no E e retorna o nome do zip novo
@@ -33,15 +34,19 @@ public class DeletaeCopia : System.Web.Services.WebService
             if (DC.erro.Equals(""))
             {
                 retorno.Add(DC.data);
+				log.logar("Site atualizado, cookie: '"+user+"' site: '"+site+" com o Tkt: '"+tkt+"'");
             }
             else
             {
                 retorno.Add(DC.erro);
+				log.logar("Erro ao atualizar o site, cookie: '"+user+"' site: '"+site+"' com o Tkt: '"+tkt+"' erro: '"+DC.erro+"'");
+				
             }
         }
         else
         {
             retorno.Add(DC.erro);
+			log.logar("Erro ao atualizar o site, cookie: '"+user+"' site: '"+site+"' com o Tkt: '"+tkt+"' erro: '"+DC.erro+"'");
         }
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));
@@ -52,12 +57,13 @@ public class DeletaeCopia : System.Web.Services.WebService
         //vai cravado até pensar direito
         string dir = "";
         Boolean b;
-
+		List<Generica> retorno;
         if (op.Contains("tkt"))
         {
             //local, no trampo
-             dir = "C:\\Suporte Seller\\BaseWEb\\TKTS";
+             dir = "\\\\192.168.56.87\\public\\sellerweb\\TKT";
             //em rede, no trampo
+			//dir = "\\\\192.168.56.87\\public\\sellerweb\\VERSION";
             //dir = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS";
             //em casa
             //dir = "C:\\Users\\bruno\\Desktop\\Teste";
@@ -66,14 +72,22 @@ public class DeletaeCopia : System.Web.Services.WebService
         else
         {
 			//no trampo
-            dir = "C:\\inetpub\\wwwroot";
+            dir = "E:\\SitesSeller\\DefaultWebSite";
             //para testes em casa
             //dir ="C:\\Users\\bruno\\Desktop\\Teste";
              b = false;
         }
         //dir=op;
         DeletaCopia DC = new DeletaCopia();
-        List<Generica> retorno = DC.listatkt(dir, b);
+        retorno = DC.listatkt(dir, b);
+		//tkts e versões depois será verificado 
+		//if (b)
+		//{
+			//dir="\\\\192.168.56.87\\public\\sellerweb\\VERSION";
+			//retorno.AddRange(DC.listatkt(dir, b));
+		//}
+		
+		
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));
     }

@@ -1,0 +1,33 @@
+14/07/2017 09:33:06 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17087.zip
+14/07/2017 09:34:16 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17087.zip
+14/07/2017 09:37:51 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17087.zip
+14/07/2017 09:38:50 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+14/07/2017 09:38:53 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+14/07/2017 09:39:01 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17087.zip
+14/07/2017 09:46:18 * Solicitção de vinculo de banco de dados, cache sol:'id: 1_14/07/2017 09:36:00' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller\'
+14/07/2017 09:48:04 * Terminou o procedimento de attachar.. 
+14/07/2017 09:48:05 * Terminou o procedimento de personalizar.. 
+14/07/2017 16:21:29 * Solicitção de vinculo de banco de dados, cache sol:'1_14/07/2017 16:18:00_Bruno Maslinkiewicz' ambiente: 'teste' projeto: 'teste' cliente: 'teste' criador: 'teste' bak: '\s' caminho: '\b'
+14/07/2017 16:21:29 * Terminou o procedimento de attachar.. O Caminho destino não existe <br/>\b\
+14/07/2017 16:29:16 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_pedro Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17077.zip
+14/07/2017 16:30:12 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_pedro Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_pedro
+14/07/2017 16:30:16 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_pedro Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_pedro
+14/07/2017 16:30:24 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_pedro com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17077.zip
+14/07/2017 16:39:32 * Solicitção de vinculo de banco de dados, cache sol:'5_14/07/2017 16:29:00_Pedro Fernandes' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'pedro' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_liderbandeiras_120717.bak' caminho: 'g:\data'
+14/07/2017 16:40:25 * Terminou o procedimento de attachar.. 
+14/07/2017 16:40:25 * Terminou o procedimento de personalizar.. 
+14/07/2017 16:44:02 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_pedro Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17102.zip
+14/07/2017 16:45:03 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_pedro Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_pedro
+14/07/2017 16:45:07 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_pedro Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_pedro
+14/07/2017 16:45:15 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_pedro com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17102.zip
+14/07/2017 16:45:21 * Solicitção de vinculo de banco de dados, cache sol:'5_14/07/2017 16:29:00_Pedro Fernandes' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'pedro' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_liderbandeiras_120717.bak' caminho: 'g:\data'
+14/07/2017 16:46:23 * Terminou o procedimento de attachar.. 
+14/07/2017 16:46:24 * Terminou o procedimento de personalizar.. 
+14/07/2017 17:44:30 * Solicitção de atualização de site, cookie: 1_14/07/2017 16:18:00_Bruno Maslinkiewicz Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip
+14/07/2017 17:45:29 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+14/07/2017 17:45:33 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+14/07/2017 17:45:41 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip
+14/07/2017 17:58:02 * Solicitção de atualização de site, cookie: '1_14/07/2017 16:18:00_Bruno Maslinkiewicz' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+14/07/2017 17:59:04 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+14/07/2017 17:59:07 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+14/07/2017 17:59:15 * Site atualizado, cookie: '1_14/07/2017 16:18:00_Bruno Maslinkiewicz' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'

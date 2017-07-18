@@ -1,8 +1,8 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="Module">
 <!--[if lte IE 10]><script>
     ie = 7;
-	alert("O navegador est√° desatualizado, Vers√£o atual "+ ie+ " Vers√£o m√≠nima 10");
+	alert("O navegador est· desatualizado, Vers„o atual "+ ie+ " Vers„o mÌnima 10");
 	location.href="./erro.html"
 </script><![endif]-->
 <head>
@@ -11,9 +11,9 @@
         window.angular || document.write('<script src="Scripts/angular.js"> <\/script/>');
     </script>
 
-    <script src="Scripts/ScriptsJSQA.js?6"></script>
+    <script src="Scripts/ScriptsJSQA.js?1"></script>
     <script src="Scripts/scripts.js"></script>
-    <script src="Scripts/Services.js?6"></script>
+    <script src="Scripts/Services.js"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
@@ -41,28 +41,37 @@
         window.jqueryuijs || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
     </script>
 
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
 		<script>
 			window.cookiesjs || document.write('<script src="Scripts/angular-cookies.js"> <\/script/>');
 		</script>
-		
-		
-		
-	
+
+
 	<link rel="icon" type="image/x-icon" href="favicon.ico"> 
     <title> QA Seller </title>
 	<base href="./Accordion">
 </head>
 
 <body  ng-controller="paginas"  >
-	<div style="background-color: #eee">
-		<button class="btn btn-info glyphicon glyphicon-circle-arrow-left" style="margin-left: 0.3%; margin-top:2px" ng-click="desloga()"> Logout.. </button>
+<div>
+	<div style="margin-left: 35.3%; margin-top: 15%; width: 50%;" id="divnome">
+		<label style="margin-left: auto; width: 80px;">Usu·rio:</label> <input style="width: 400px" class="form-control" type="text" ng-model="name" />
 	</div>
-	<div class="jumbotron" style="height: 5px;margin-top: 0px">		
-		<h3 style="margin-top: -20px" class="text-center">QA Seller - Gerenciamento de Vers√µes</h3>
-		<h4 style="margin-top: 10px" class="text-center">Bem-vindo {{nomedousuario}}</h4>
+	<div style="margin-left: 35.3%; margin-top: 0.5%; width: 50%;" id="divsenha">
+		<label style="margin-left: auto; width: 80px;">Senha:</label> <input style="width: 400px" class="form-control" type="password" ng-model="pass" />
 	</div>
-	
-	<div ng-include="pag('sitesebancos')">  </div>
+	<div style="margin-left: 35.3%; margin-top: 0.3%; width: 30%;" id="divbotao">
+		<input style="width: 400px; position: absolute" class="btn btn-primary btn-block" type="button" ng-click="efetualogin()" value="logar" type="button" value="Login"/> <!--   Login</button> -->
+	</div>
+</div>
+<div style="margin-top: 3%">
+	<div style="margin-left: 35.3%; margin-top: 2.3%; width: 50%;">
+		<div style="font-family: arial; font-size: 20px;">{{msg}}</div>
+	</div>
+</div>	
+	<div style="margin-left: 35.3%; margin-top: 0.3%; width: 50%;">
+		{{versejalogou()}}
+	</div>
 </body>
 </html>

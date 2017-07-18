@@ -18,6 +18,7 @@ public class DeletaCopia
     {
         string dataini;
         string datafim;
+		LogApp log = new LogApp();
         erro = "<br/>Erro na criação do temp ou ao deletar residuos antigos<br/>";
         try
         {
@@ -48,7 +49,7 @@ public class DeletaCopia
             //se o site já foi renomeado uma vez para old, tem que limpar a sujeira e não cria um novo pq o mov já faz isso
             criadiretorio(site + "__old", true, false);
             datafim = "" + DateTime.Now;
-            data = "<br/>Deletando risiduos:<br/>" + dataini + " - " + datafim;
+            data = "<br/>Deletando residuos:<br/>" + dataini + " - " + datafim;
 
             dataini = datafim; datafim = "";
             //copia o web.config
@@ -98,31 +99,42 @@ public class DeletaCopia
         }
         catch (Exception err)
         {
-            erro += "<br/>erro interno:<br/>" + err;
+			log.logar("Erro ao Atualizar ambiente, erro:" +erro+"\nErro interno:"+err);
+            //erro += "<br/>erro interno:<br/>" + err;
         }
     }
 
     private void parainiciapool(string caminhosite, string com)
     {
+		LogApp log = new LogApp();
+		string pool="";
+		string comando="";
+		try
+		{
+			pool = System.IO.Path.GetFileName(caminhosite);
 
-        string pool = System.IO.Path.GetFileName(caminhosite);
-
-        Process cmd = new Process();
-        //em principio, é melhor usar a linha do format, mas vou deixar essa também para pensar depois
-        // cmd.StartInfo.Arguments = "/ALL";
-        //gera o comando
-        string comando = @"C:\Windows\System32\inetsrv\appcmd.exe " + com + " /apppool.name:" + pool;
-        //pega das variaveis o cmd.exe
-        cmd.StartInfo.FileName = Environment.GetEnvironmentVariable("comspec");
-        cmd.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
-        //faz a mesma coisa que o /all, mas de forma mais legal
-        cmd.StartInfo.Arguments = string.Format("/c {0}", comando);
-        //executa o comando
-        if (cmd.Start())
-        {
-            //    retorno = cmd.StandardOutput.ReadToEnd();
-            //  retorno = "";
-        }
+			Process cmd = new Process();
+			//em principio, é melhor usar a linha do format, mas vou deixar essa também para pensar depois
+			// cmd.StartInfo.Arguments = "/ALL";
+			//gera o comando
+			comando = @"C:\Windows\System32\inetsrv\appcmd.exe " + com + " /apppool.name:" + pool;
+			//pega das variaveis o cmd.exe
+			cmd.StartInfo.FileName = Environment.GetEnvironmentVariable("comspec");
+			cmd.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Hidden;
+			//faz a mesma coisa que o /all, mas de forma mais legal
+			cmd.StartInfo.Arguments = string.Format("/c {0}", comando);
+			//executa o comando
+			if (cmd.Start())
+			{
+				//    retorno = cmd.StandardOutput.ReadToEnd();
+				//  retorno = "";
+			}
+			log.logar("Parou/Inciou o Pool, Pool: "+pool+" Comando: "+comando);
+		}
+		catch(Exception err)
+		{
+			log.logar("Erro ao parar ou iniciar o Pool, Pool: "+pool+" Comando: "+comando+" Erro interno: "+err);
+		}
 
     }
 
@@ -155,7 +167,7 @@ public class DeletaCopia
             //copiaria \\ip\tkt.zip, para E:\sites\tkt.zip, com sobreescrita
             Random r = new Random();
             //vai gerar com um numero aleatório no final ^^
-            zip = "\\\\172.16.137.225\\Suporte Seller\\BaseWEb\\TKTS\\" + System.IO.Path.GetFileNameWithoutExtension(tkt)+""+ r.Next()+System.IO.Path.GetExtension(tkt);
+            zip = "E:\\" + System.IO.Path.GetFileNameWithoutExtension(tkt)+""+ r.Next()+System.IO.Path.GetExtension(tkt);
             //para testes em casa
             //zip = "C:\\teste\\" + System.IO.Path.GetFileNameWithoutExtension(tkt) + "" + r.Next() + System.IO.Path.GetExtension(tkt);
 
@@ -191,7 +203,7 @@ public class DeletaCopia
                     if (tkt.Extension.Equals(".zip"))
                     {
                         Generica g = new Generica();
-                        g.nome = tkt.Name;
+                        g.nome = tkt.Name.Replace("tkt-","");
                         g.caminho = tkt.FullName;
                         li.Add(g);
                     }
@@ -201,10 +213,13 @@ public class DeletaCopia
             {
                 foreach (System.IO.DirectoryInfo site in dir.GetDirectories())
                 {
-                    Generica g = new Generica();
-                    g.nome = site.Name;
-                    g.caminho = site.FullName;
-                    li.Add(g);
+					if(!site.Name.Equals("qa") && !site.Name.Equals("testlink") && !site.Name.Equals("HelpSellerWeb") && !site.Name.StartsWith("pms"))
+					{	
+						Generica g = new Generica();
+						g.nome = site.Name;
+						g.caminho = site.FullName;
+						li.Add(g);
+					}
                 }
             }
         }

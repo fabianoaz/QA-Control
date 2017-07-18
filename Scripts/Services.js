@@ -8,7 +8,7 @@ myApp
 			aceitos=[
 			{letra:'a'},{letra:'b'},{letra:'c'},{letra:'d'},{letra:'e'},{letra:'f'},{letra:'g'},{letra:'h'},{letra:'i'},{letra:'j'},{letra:'k'},{letra:'l'},
 			{letra:'m'},{letra:'n'},{letra:'o'},{letra:'p'},{letra:'q'},{letra:'r'},{letra:'s'},{letra:'t'},{letra:'u'},{letra:'v'},{letra:'w'},{letra:'y'},
-			{letra:'z'},{letra:'0'},{letra:'1'},{letra:'2'},{letra:'3'},{letra:'4'},{letra:'5'},{letra:'6'},{letra:'7'},{letra:'8'},{letra:'9'},{letra:'_'}];				
+			{letra:'z'},{letra:'0'},{letra:'1'},{letra:'2'},{letra:'3'},{letra:'4'},{letra:'5'},{letra:'6'},{letra:'7'},{letra:'8'},{letra:'9'},{letra:'_'},{letra:'x'}];				
 			
 			var ret="";
 			campo = document.getElementById(idcampo);
@@ -45,12 +45,12 @@ myApp
 			{letra:'a'},{letra:'b'},{letra:'c'},{letra:'d'},{letra:'e'},{letra:'f'},{letra:'g'},{letra:'h'},{letra:'i'},{letra:'j'},{letra:'k'},{letra:'l'},
 			{letra:'m'},{letra:'n'},{letra:'o'},{letra:'p'},{letra:'q'},{letra:'r'},{letra:'s'},{letra:'t'},{letra:'u'},{letra:'v'},{letra:'w'},{letra:'y'},
 			{letra:'z'},{letra:'0'},{letra:'1'},{letra:'2'},{letra:'3'},{letra:'4'},{letra:'5'},{letra:'6'},{letra:'7'},{letra:'8'},{letra:'9'},{letra:'ç'},
-			{letra:'_'},{letra:'\\'},{letra:' '},{letra:':'},{letra:'!'},{letra:'@'},{letra:'$'},{letra:'%'},{letra:'¨'},{letra:'('},{letra:')'},{letra:'.'},
-			{letra:','},{letra:'='},{letra:'['},{letra:']'},{letra:'{'},{letra:'}'},
+			{letra:'_'},{letra:'\\'},{letra:' '},{letra:':'},{letra:'!'},{letra:'@'},{letra:'$'},{letra:'%'},{letra:'('},{letra:')'},{letra:'.'},
+			{letra:','},{letra:'='},{letra:'['},{letra:']'},{letra:'{'},{letra:'}'},{letra:'x'},
 			{letra:'á'},{letra:'à'},{letra:'ã'},{letra:'â'},{letra:'ä'},{letra:'é'},{letra:'è'},{letra:'ê'},{letra:'ë'},
 			{letra:'í'},{letra:'ì'},{letra:'î'},{letra:'ï'},{letra:'ó'},{letra:'ò'},{letra:'õ'},{letra:'ö'},{letra:'ú'},{letra:'ù'},{letra:'ü'},{letra:'ñ'}
 			];
-			//!@#$%¨&
+			//# $ &
 			var ret="";
 			campo = document.getElementById(idcampo);
 			if(campo!=null)
@@ -71,6 +71,38 @@ myApp
             }
         }
     })	
+.factory('LimpaCaracteresMail', function () {
+    return {
+        limpa: function (vstring,idcampo)
+            {
+			//esse aceita quase todos caracteres
+			//menos +-*#&
+			aceitos=[
+			{letra:'a'},{letra:'b'},{letra:'c'},{letra:'d'},{letra:'e'},{letra:'f'},{letra:'g'},{letra:'h'},{letra:'i'},{letra:'j'},{letra:'k'},{letra:'l'},
+			{letra:'m'},{letra:'n'},{letra:'o'},{letra:'p'},{letra:'q'},{letra:'r'},{letra:'s'},{letra:'t'},{letra:'u'},{letra:'v'},{letra:'w'},{letra:'y'},
+			{letra:'z'},{letra:'0'},{letra:'1'},{letra:'2'},{letra:'3'},{letra:'4'},{letra:'5'},{letra:'6'},{letra:'7'},{letra:'8'},{letra:'9'},{letra:'ç'},
+			{letra:'_'},{letra:'-'},{letra:'@'},{letra:'.'},{letra:'x'} 
+			];
+			var ret="";
+			campo = document.getElementById(idcampo);
+			if(campo!=null)
+			{
+				for (var i=0;i<vstring.toString().length;i++)
+				{
+						for (var e=0;e<aceitos.length;e++)
+						{
+							if(vstring[i].toLocaleLowerCase()==aceitos[e].letra)
+							{
+								ret=ret+aceitos[e].letra;
+								e=aceitos.length;
+							}
+						}
+				}
+			}
+			return ret.toString().toLocaleLowerCase();			
+            }
+        }
+    })		
 .factory('LimpaNumeros', function ($log) {
     return {
         limpa: function (vstring,idcampo,min,max,atualizavalueid)
@@ -162,7 +194,7 @@ myApp
             }
         }
     })
-.factory('AtualizaSite', function ($http,$log,Mensagem) {
+.factory('AtualizaSite', function ($http,$log,Mensagem,$cookies) {
     return {
         atualiza: function ($scope) {
             var respostasucesso = function (respostadowebservice) {
@@ -173,6 +205,7 @@ myApp
 				$scope.loading=false;
                 $scope.label = "Atualizar"
             }
+			var temp = $cookies.get("U-ID").split('_');
             var respostaerro = function (motivo) {
                 $scope.erro = motivo.data;
                 $log.info(motivo);
@@ -181,13 +214,13 @@ myApp
 				$scope.loading=false;
                 $scope.label = "Atualizar"
             }
-            $http({ method: 'GET', url: 'DeletaeCopia.asmx/Atualiza?tkt=' + $scope.tkt.caminho + '&site=' + $scope.site.caminho })
+            $http({ method: 'GET', url: 'DeletaeCopia.asmx/Atualiza?tkt=' + $scope.tkt.caminho + '&site=' + $scope.site.caminho+'&user='+""+temp[0]+"_"+temp[1]})
             .then(respostasucesso, respostaerro);
 			/*Efetua a atualização do site*/
         }
     }
 })
-.factory('AttachaBanco', function ($http,$log,Mensagem) {
+.factory('AttachaBanco', function ($http,$log,Mensagem,$cookies) {
     return {
         attacha: function ($scope) {
                 var respostaattacha = function (resattacha) {
@@ -204,13 +237,16 @@ myApp
 					$scope.loading=false;
 					$scope.label="Criar Banco";
                }
+			   var temp = $cookies.get("U-ID").split('_');
                 $http({ method: 'GET', url: 'AttachaePersonaliza.asmx/attacha?tiposistema='+$scope.tiposistema+'&tipoambiente='+$scope.tipoambiente+'&projeto='+$scope.projeto+'&cliente='+$scope.cliente+'&criador='+$scope.criador+'&bak='+$scope.bak+'&caminho='+$scope.destino
 				+'&nomemaquina='+$scope.nomemaquina+'&alterarsenhas='+$scope.alterarsenhas+'&utilizarnfe='+$scope.usanfe
 				+'&utilizarnfce='+$scope.usanfce
 				+'&criarmaquina='+$scope.criamaquina
 				+'&ativapista='+$scope.ativarpista
 				+'&ecf='+$scope.criaecf
-				+'&portaserial='+$scope.serial+'&marca='+$scope.marcaecf.id+'&serie='+$scope.serieecf+'&num='+$scope.numeroequipamento+'&email='+$scope.email})
+				+'&portaserial='+$scope.serial+'&marca='+$scope.marcaecf.id+'&serie='+$scope.serieecf+'&num='+$scope.numeroequipamento+'&email='+$scope.email
+				+'&user='+""+temp[0]+"_"+temp[1]
+				})
                 .then(respostaattacha, respostaerrattacha);
 				/*Efetuar o procedimento de Attachar e Personalizar*/
         }
@@ -265,5 +301,175 @@ myApp
 				.on( "dialogclose",function(event, ui){ if($scope.op==0){$scope.naofaca();}});
 				/*Efetuar uma Pergunta, e se escolher 1, é para fazer algo, se escolher 0 (ou fechar), nada deve ser feito*/
         }
+    }
+})
+.factory('Criptografa', function () {
+    return {
+        cripto: function (texto) {
+            //ll representa a linha, rr representa a letra de substituição da coluna da linha
+            //cifra de bifid
+            var pass1=[
+            {ll:[{rr:'p'},{rr:'0'},{rr:'j'},{rr:'z'},{rr:'*'},{rr:' '},{rr:'-'}]},
+            {ll:[{rr:'o'},{rr:'k'},{rr:'@'},{rr:'v'},{rr:'d'},{rr:'e'},{rr:'4'}]},
+            {ll:[{rr:'r'},{rr:'t'},{rr:'g'},{rr:'s'},{rr:'7'},{rr:'3'},{rr:':'}]},
+            {ll:[{rr:';'},{rr:'m'},{rr:'5'},{rr:'ç'},{rr:'f'},{rr:'b'},{rr:'c'}]},
+            {ll:[{rr:'w'},{rr:'8'},{rr:'q'},{rr:','},{rr:'!'},{rr:'1'},{rr:'h'}]},
+            {ll:[{rr:'l'},{rr:'+'},{rr:'u'},{rr:'a'},{rr:'.'},{rr:'9'},{rr:'n'}]},
+            {ll:[{rr:'6'},{rr:'$'},{rr:'x'},{rr:'_'},{rr:'y'},{rr:'2'},{rr:'i'}]}
+            ];
+
+            /*
+                vai ficar assim 
+	                0	1	2	3	4	5	6
+                0	p	0	j	z	*	 	-
+                1	o	k	@	v	d	e	4
+                2	r	t	g	s	7	3	:
+                3	;	m	5	ç	f	b	c
+                4	w	8	q	,	!	1	h
+                5	l	+	u	a	.	9	n
+                6	6	$	x	_	y	2	i  
+                lógica:
+                'bruno' = 35, 20, 52, 56, 10
+                aplica periodo 3:
+                32,55,02,51,60
+                resultado:
+                m90+6
+            */
+
+            var resultado='';
+            //pelo tamanho da senha
+            for (var i=0;i<texto.length;i++)
+            {	//varrer cadea linha
+                for (var e=0;e<pass1.length;e++)
+                {	//e em cada linha, todas as colunas
+                    for(var ii=0;ii<pass1[e].ll.length;ii++)
+                    {	//se o cara da linhaxcoluna, é o igual ao digito, anota a linhaecoluna
+                        if(pass1[e].ll[ii].rr==texto[i].toLocaleLowerCase())
+                        {
+                            resultado+=""+e+""+ii;
+							//ii=pass1[e].ll.length;
+							//e=pass1.length;
+                        }
+                    }
+                }
+            }
+            //aqui já temos uma senha numerica em resultado, de acordo com a matriz,
+            //exemplo aqui devemos ter bruno = 35 20 52 56 10
+            //agora tem que descarteriz a referencia da matriz, agrupando a cada 3
+            var aux=resultado;
+            resultado="";
+            //essa parte é dificil, ao agrupar a cada 3, tem que incrementar o inicio, para não repetir
+            //e a sobra, tem que dividir para (quebrando o agrupamento) para complicar mais
+            //exemplo, a entrada bruno=3520525610, deve retornar  32 55 02 (2loopelse) 51 60
+            for (var i=0;i<aux.length;i++)
+            {
+                //pega a cada 3 digitos o primeiro digito
+                if(i+5<aux.length)
+                {
+                    resultado+=""+aux[i]+""+aux[i+2]+""+aux[i+4];	
+                    //junta com os 3 proximos de cada digito
+                    resultado+=""+aux[i+1]+""+aux[i+3]+""+aux[i+5];	
+                }
+                else
+                { //se cair no else, é pq não tem mais como dividir pelo período (que vai ser sempre 4 digitos ou 2)
+					if((aux.length-(i))>3)
+					{
+						resultado+=""+aux[i]+""+aux[i+2]
+						resultado+=""+aux[i+1]+""+aux[i+3]
+						i=aux.length;
+					}
+					else 
+					{
+						resultado+=""+aux[i]+""+aux[i+1]
+						i=aux.length;
+					}
+                }
+				
+                //incrementa o i, pq 5 digitos já foram adicionados
+                i+=5;
+            }
+            //agora, tem que pegar esse numero novo e converter na matriz novamente
+            //exemplo, a entrada bruno=3520525610 = 3255025160, deverá retornar m90+6 
+			//obs, fiz uma alteração, para inverter linha com coluna, pois senhas de um digito, retornam o proprio digito.
+			//sendo assim, bruno, retornaria s9re-
+			//debugar apenas com br depois
+            aux=resultado;
+            resultado="";
+            for(var i=0;i<aux.length;i++)
+                {
+                    //resultado+=pass1[(aux[i])].ll[(aux[i+1])].rr;
+					resultado+=pass1[(aux[i+1])].ll[(aux[i])].rr;
+                    i++;
+                }
+            return resultado;
+        }
+    }
+})
+.factory('Loga', function ($http,$log,$cookies,Criptografa,Mensagem) {
+    return {
+        loga: function ($scope) {
+            var respostasucesso = function (respostadowebservice) {
+                $log.info(respostadowebservice);
+                if (respostadowebservice.data.length > 0) {
+						//alert(""+respostadowebservice.data[0]);
+                        $cookies.put("U-ID", respostadowebservice.data[0]);
+						window.location.assign("index.html");
+                    }
+                    else
+                    {
+						$scope.tentativas+=1;
+						Mensagem.msg("Login","Alguma coisa foi digitada errada.. <br>Verifique o usuário e a senha. <br><br>Tentativas:"+$scope.tentativas);
+//                        $scope.msg="Alguma coisa foi digitada errada.. Verifique o usuário e a senha. Tentativas: "+$scope.tentativas;
+                    }
+            }
+            var respostaerro = function (motivo) {
+                $scope.erro = motivo.data;
+                $log.info(motivo);
+            }
+            $http({ method: 'GET', url: 'login.asmx/EfetuaLogin?usuario='+$scope.name+'&senha='+Criptografa.cripto($scope.pass) })
+            .then(respostasucesso, respostaerro);
+			/*Efetua a atualização do site*/
+        }
+    }
+})
+//apenas retorna true ou false 
+.factory('verificaseestalogado', function ($cookies) {
+    return {
+        verlog: function () {
+			var coo = $cookies.get("U-ID");
+			if (angular.isUndefined(coo))
+				{
+					return false;
+					//window.location.assign("login.html");
+				}
+			else
+			{
+				return true;
+			}
+		}
+    }
+})
+//usado unicamente na tela de login
+.factory('verificasejalogou', function (verificaseestalogado) {
+    return {
+        verlogou: function () {
+			//se já esta logado, e está na pagina de login, vai para o index direto
+			if (verificaseestalogado.verlog())
+				{
+					window.location.assign("index.html");
+				}
+		}
+    }
+})
+//usado pelo restante da aplicação, se não está logado, manda para o index
+.factory('validaseestalogado', function (verificaseestalogado) {
+    return {
+        verlogou: function () {
+			//se já esta logado, e está na pagina de login, vai para o index direto
+			if (!verificaseestalogado.verlog())
+				{
+					window.location.assign("login.html");
+				}
+		}
     }
 })

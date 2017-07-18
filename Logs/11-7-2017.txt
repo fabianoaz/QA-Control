@@ -1,0 +1,1 @@
+11/07/2017 17:38:27 * Solicitção de vinculo de banco de dados, ambiente: 'teste' projeto: '3' cliente: '' criador: '' bak: '\\poadskfs114\clientes 2017\redebrdistribu_060617.bak' caminho: 'g:\data'

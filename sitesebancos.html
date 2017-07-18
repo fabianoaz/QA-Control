@@ -9,7 +9,7 @@
                 <div class="jumbotron">
                     <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80px; width: 80%;">
                         <label style="margin-left: 1%;">TKTs:</label>
-                        <select class="form-control" ng-model="tkt" ng-options="t.nome for t in tkts2"></select>
+                        <select class="form-control" ng-model="tkt" ng-options="t.nome for t in tkts2 | orderBy:'-nome' "></select>
                     </div>
                     <div class="form-control" style="margin-left: 10%; margin-top: 0.5%;  margin-right: 80%; height: 80px; width: 80%;">
                         <label style="margin-left: 1%;">Sites:</label>
@@ -65,14 +65,16 @@
                     <div id="banco" class="form-control;" style="margin-top: 0.5%; margin-bottom: 0.5%; margin-right: 10%; height: auto; min-height: 257px; width: 100%; min-width: 356px; %; float:left">
                         <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80%; width: 86%;">
                             <legend> Restaurar Base de Dados </legend>
-                            <label>Backup (BAK):</label><input id="bak" class="form-control" type="text" placeholder="Informe o caminho do arquivo .BAK." ng-model="bak" data-toggle="tooltip" title="Inicie com \\ para caminho em rede, ou com unidade:\ para caminho no servidor de bancos."/>
-                            <label>Destino:</label><input id="destino" class="form-control" type="text" placeholder="Informe o caminho de destino do arquivo .MDF." ng-model="destino" data-toggle="tooltip" title="Inicie com \\ para caminho em rede, ou com unidade:\ para caminho no servidor de bancos." />
+                            <label>Backup (BAK):</label> <label style="margin-left: 0.5%; font-size: 11px;"> \\172.16.137.227\Backups\</label>
+							<input id="bak" class="form-control" type="text" placeholder="Informe o caminho do arquivo .BAK." ng-model="bak" data-toggle="tooltip" title="Inicie com \\ para caminho em rede, ou com unidade:\ para caminho no servidor de bancos."/>
+                            <label>Destino:</label> <label style="margin-left: 0.5%; font-size: 11px;"> G:\Data  ,  E:\SQL_SERVER\MSSQL11.SQL2012\MSSQL\Data  ou  \\minhamaquina\pasta</label>
+							<input id="destino" class="form-control" type="text" placeholder="Informe o caminho de destino do arquivo .MDF." ng-model="destino" data-toggle="tooltip" title="Inicie com \\ para caminho em rede, ou com unidade:\ para caminho no servidor de bancos." />
                         </div>
                         <div class="form-control" style="margin-left: 10%; margin-top: 0.5%;  margin-right: 80%; height: 130px; width: 86%;">
                             <legend> Personalização </legend>
                             <div id="mail" style="margin-top: 0.5%; height: 50% ;width: 50%; float:left">
-                                <label style="float:left; margin-top: 5px">E-mail:</label><input class="form-control" style="margin-left: 4.5% height: 30px; width: 90%;" type="text"
-                                                                                placeholder="e-mail." ng-model="email" />
+                                <label style="float:left; margin-top: 5px">E-mail:</label><input id="email" class="form-control" style="margin-left: 4.5% height: 30px; width: 90%;" type="text"
+                                                                                placeholder="E-mail." ng-model="email" />
                             </div>
                             <div id="check1" style="margin-left: 50%; height:10%;width: 50%;">
                                 <input style="margin-left: 5%; margin-top:20px" type="checkbox" value="senha" ng-model="alterarsenhas" />Alterar Senhas
