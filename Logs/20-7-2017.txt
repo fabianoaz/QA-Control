@@ -1,0 +1,38 @@
+20/07/2017 10:44:52 * Solicitção de vinculo de banco de dados, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'teste' cliente: 'versaorede' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs411\suporte seller\'
+20/07/2017 11:12:01 * Base vinculada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'teste' cliente: 'versaorede' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs411\suporte seller\'
+20/07/2017 11:12:06 * Base personalizada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'teste' cliente: 'versaorede' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs411\suporte seller\'
+20/07/2017 15:55:18 * Solicitção de vinculo de banco de dados, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller\'
+20/07/2017 15:57:32 * Base vinculada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller\'
+20/07/2017 15:57:36 * Base personalizada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller\'
+20/07/2017 16:38:42 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+20/07/2017 16:39:46 * Parou/Inciou o Pool, Pool: sweb_teste_homol_pdv Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_homol_pdv
+20/07/2017 16:39:46 * Erro ao Atualizar ambiente, erro:Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+20/07/2017 16:39:46 * Erro ao atualizar o site, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.'
+20/07/2017 16:41:54 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+20/07/2017 16:42:56 * Parou/Inciou o Pool, Pool: sweb_teste_homol_pdv Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_homol_pdv
+20/07/2017 16:42:57 * Erro ao Atualizar ambiente, erro:Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+20/07/2017 16:42:57 * Erro ao atualizar o site, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.'
+20/07/2017 17:36:01 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+20/07/2017 17:37:00 * Parou/Inciou o Pool, Pool: sweb_teste_homol_pdv Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_homol_pdv
+20/07/2017 17:37:00 * Erro ao Atualizar ambiente, erro:Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+20/07/2017 17:37:00 * Erro ao atualizar o site, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.'
+20/07/2017 17:37:30 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+20/07/2017 17:38:30 * Parou/Inciou o Pool, Pool: sweb_teste_homol_pdv Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_homol_pdv
+20/07/2017 17:38:30 * Erro ao Atualizar ambiente, erro:Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+20/07/2017 17:38:30 * Erro ao atualizar o site, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' existe. </br>Tente novamente.'
+20/07/2017 17:41:51 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+20/07/2017 17:42:52 * Parou/Inciou o Pool, Pool: sweb_teste_homol_pdv Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_homol_pdv
+20/07/2017 17:43:30 * Parou/Inciou o Pool, Pool: sweb_teste_homol_pdv Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_homol_pdv
+20/07/2017 17:43:45 * Site atualizado, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_homol_pdv com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'

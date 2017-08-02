@@ -2,8 +2,31 @@
 /// <reference path="~/jQuery/jquery-3.2.1.min.js" />
 var myApp = angular
     .module("Module", ['ngCookies'])
-	.controller("paginas", function ($scope, $cookies, verificaseestalogado, verificasejalogou,Loga){
-		//include
+	.controller("paginas", function ($scope, $cookies, verificaseestalogado, verificasejalogou, Loga, Senhas, AlterarSenha){
+	
+		$scope.Alterarasenha= function()
+		{
+			/*Chama a tela de alterar a senha*/
+			Senhas.sen('Alterar Senha',$scope);
+		}
+		//Senhas.sen('Alterar Senha',$scope);
+		$scope.faca=function()
+		{
+			/*se clicou em sim na tela de alterar senha, faz uma validação básica dos dados e chama o serviço que manda para o webservice*/
+			AlterarSenha.altera($scope);
+		};
+		//se respondeu que não quer fazer o processo
+		$scope.naofaca=function()
+		{
+			$scope.senhaatual="";
+			$scope.senhanova="";
+			$scope.senhanova2="";
+			if($scope.op==0)
+			{				
+			}
+		};	
+	
+	//include
 	$scope.pag=function(menu) 
 	{
 		$scope.nomedousuario="";
@@ -53,30 +76,61 @@ var myApp = angular
     .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,Mensagem, Opcao) {
         $scope.botaobloqueado = false; $scope.label = "Atualizar";
 		$scope.loading=false;
+		$scope.mostrando='TKTs';
+		$scope.oposto='TRUNKs';
         $scope.tkts2 = [
-		 {nome:'Selecione', caminho:'sa'}];
+		 {nome:'Selecione', caminho:'sa', tipo:-1}];
         $scope.sites2 = [
-		{nome:'selecione', caminho:''}];
-        $scope.site = $scope.sites2[0];	
+		{nome:'Selecione', caminho:'',tipo:-1}];
+        $scope.site = $scope.sites2[0];
         $scope.tkt = $scope.tkts2[0];
-		$scope.bool=true;
+		//$scope.bool=true;
+		$scope.filtro=1;
         /*retorna a lista tkts e sites*/
         $scope.listatktesite = function () {
-			if ($scope.bool)
-			{
+			//if ($scope.bool)
+			//{
+				//aqui seria interessante bloquear as combos e os botões.. 
 				$scope.sites2 = ListaSites.sitesl($scope);
 				$scope.tkts2 = ListaTtks.tktsl($scope);
-				$scope.bool=false;
-			}
+				//$scope.tkt='Selecione'
+				//$scope.bool=false;
+			//}
         }
+		/*bloqueia o botão*/
 		$scope.bloqueia= function()
 		{
 			$scope.label = "Atualizando.."
             $scope.botaobloqueado = true;
 			$scope.loading=true;			
 		}
-		
-		
+		/*altera o filtro de tkts/trunks*/
+		$scope.alterafiltro=function()
+		{
+			if($scope.filtro==1)
+			{
+				$scope.filtro=2;
+				$scope.mostrando='TRUNKs';
+				$scope.oposto='TKTs';
+			}
+			else
+			{				
+				$scope.filtro=1;
+				$scope.mostrando='TKTs';
+				$scope.oposto='TRUNKs'
+			}
+			$scope.tkt = $scope.tkts2[0];
+			$scope.site = $scope.sites2[0];
+		}
+		/*aplica o filtro nos itens*/
+		$scope.filtra= function(item)
+		{
+			if(item.tipo==$scope.filtro || item.tipo==-1)
+			{
+				return true;
+			}else return false;
+		}		
+		/*se quer atualizar*/
 		$scope.faca=function()
 		{
 			$scope.label = "Atualizando.."
@@ -94,7 +148,6 @@ var myApp = angular
 				$scope.label="Atualizar";		
 			}
 		};
-
 		
         /*faz a treta dos TKTs*/
         $scope.retorno = function () {

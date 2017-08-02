@@ -11,52 +11,60 @@
         window.angular || document.write('<script src="Scripts/angular.js"> <\/script/>');
     </script>
 
-    <script src="Scripts/ScriptsJSQA.js?6"></script>
-    <script src="Scripts/scripts.js"></script>
-    <script src="Scripts/Services.js?6"></script>
+    <script src="Scripts/ScriptsJSQA.js?10"></script>
+    <script src="Scripts/scripts.js?1"></script>
+    <script src="Scripts/Services.js?10"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        window.jquery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
+        window.jQuery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script>
-        window.bootstrap || document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
+	if (!verificaestilo('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'))
+	{	
+		document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
+	}	
+        //window.bootstrap || document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
     </script>
-
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-        window.bootstrapjs || document.write('<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"><\/script>');
+        window.jQuery.fn.modal || document.write('<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"><\/script>');
     </script>
 	
 	
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script>
-        window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+	if (!verificaestilo('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'))
+	{
+		document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+	}	
+        //window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
     </script>
 	
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
-        window.jqueryuijs || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
+        window.jQuery.ui || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
     </script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
 		<script>
+			//pendente
 			window.cookiesjs || document.write('<script src="Scripts/angular-cookies.js"> <\/script/>');
 		</script>
-		
-		
-		
-	
+
 	<link rel="icon" type="image/x-icon" href="favicon.ico"> 
     <title> QA Seller </title>
 	<base href="./Accordion">
 </head>
 
 <body  ng-controller="paginas"  >
+	<div style="background-color: #eee; float: left">
+		<button class="btn btn-info glyphicon glyphicon-off" style="margin-left: 0.3%; margin-top:2px" ng-click="desloga()" data-toggle="tooltip" title="Logoff..."></button>
+	</div>
 	<div style="background-color: #eee">
-		<button class="btn btn-info glyphicon glyphicon-circle-arrow-left" style="margin-left: 0.3%; margin-top:2px" ng-click="desloga()"> Logout.. </button>
+		<button class="btn btn-info glyphicon glyphicon-cog" style="margin-left: 0.3%; margin-top:2px" ng-click="Alterarasenha()" data-toggle="tooltip" title="Alterar Senha..."></button>
 	</div>
 	<div class="jumbotron" style="height: 5px;margin-top: 0px">		
 		<h3 style="margin-top: -20px" class="text-center">QA Seller - Gerenciamento de Versões</h3>
@@ -64,5 +72,7 @@
 	</div>
 	
 	<div ng-include="pag('sitesebancos')">  </div>
+	<div ng-include="'sitesexternos.html'">  </div>
+	
 </body>
 </html>

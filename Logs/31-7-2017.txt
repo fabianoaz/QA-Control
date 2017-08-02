@@ -1,0 +1,83 @@
+31/07/2017 11:57:25 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17123.zip'
+31/07/2017 11:58:25 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+31/07/2017 12:00:45 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+31/07/2017 12:00:57 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\sellerweb_cardeal_3105.bak' caminho: 'g:\data\'
+31/07/2017 12:00:57 * Terminou o procedimento de attachar.. Caminho do Backup não existe!! </br> \\172.16.137.227\backups\sellerweb_cardeal_3105.bak
+31/07/2017 12:00:57 * saiu da rotina
+31/07/2017 12:00:57 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\sellerweb_cardeal_3105.bak' caminho: 'g:\data\'
+31/07/2017 12:01:30 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data\'
+31/07/2017 12:02:40 * Terminou o procedimento de attachar.. 
+31/07/2017 12:02:40 * saiu da rotina
+31/07/2017 12:02:40 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data\'
+31/07/2017 12:02:43 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data\'
+31/07/2017 13:45:46 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 13:45:46 * Terminou o procedimento de attachar.. Caminho do Backup não existe!! </br> \\172.16.137.227\backups\sellerweb_cardeal_3105.bak
+31/07/2017 13:45:46 * saiu da rotina
+31/07/2017 13:45:46 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 13:46:19 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 13:46:22 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+31/07/2017 13:46:22 * saiu da rotina
+31/07/2017 13:46:22 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 13:46:56 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+31/07/2017 13:46:57 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+31/07/2017 13:46:57 * saiu da rotina
+31/07/2017 13:46:57 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+31/07/2017 13:51:00 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+31/07/2017 13:51:00 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+31/07/2017 13:51:00 * saiu da rotina
+31/07/2017 13:51:01 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+31/07/2017 13:51:13 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 13:52:35 * Terminou o procedimento de attachar.. 
+31/07/2017 13:52:35 * saiu da rotina
+31/07/2017 13:52:35 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 13:52:37 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 14:00:34 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16532.zip'
+31/07/2017 14:01:30 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_1
+31/07/2017 14:03:28 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_1
+31/07/2017 14:03:36 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1 com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16532.zip'
+31/07/2017 14:23:42 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: 'g:\data'
+31/07/2017 14:24:31 * Terminou o procedimento de attachar.. 
+31/07/2017 14:24:31 * saiu da rotina
+31/07/2017 14:24:31 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: 'g:\data'
+31/07/2017 14:24:32 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: 'g:\data'
+31/07/2017 14:24:54 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: 'g:\data'
+31/07/2017 14:25:37 * Terminou o procedimento de attachar.. 
+31/07/2017 14:25:37 * saiu da rotina
+31/07/2017 14:25:37 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: 'g:\data'
+31/07/2017 14:25:39 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: 'g:\data'
+31/07/2017 15:27:46 * Solicitção de atualização de site, cookie: '2_42945,3923611' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17020.zip'
+31/07/2017 15:28:47 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_fabiano3
+31/07/2017 15:28:47 * Erro ao renomear o site, vai tentar deletar. ErroNão foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+31/07/2017 15:30:38 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_fabiano3
+31/07/2017 15:30:41 * Site atualizado, cookie: '2_42945,3923611' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3 com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17020.zip'
+31/07/2017 15:33:04 * Solicitção de vinculo de banco de dados, cache sol:'2_42945,3923611' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'fabiano3' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 15:34:15 * Terminou o procedimento de attachar.. 
+31/07/2017 15:34:15 * saiu da rotina
+31/07/2017 15:34:15 * Base vinculada com sucesso, cache sol:'2_42945,3923611' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'fabiano3' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 15:34:16 * Base personalizada com sucesso, cache sol:'2_42945,3923611' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'fabiano3' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 17:29:28 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 17:29:29 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+31/07/2017 17:29:29 * saiu da rotina
+31/07/2017 17:29:29 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: 'g:\data'
+31/07/2017 17:36:34 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 17:36:51 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+31/07/2017 17:37:51 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+31/07/2017 17:40:01 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+31/07/2017 17:40:09 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+31/07/2017 17:47:35 * Terminou o procedimento de attachar.. 
+31/07/2017 17:47:35 * saiu da rotina
+31/07/2017 17:47:35 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 17:47:43 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_cardeal_3105.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 17:54:43 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 17:56:05 * Terminou o procedimento de attachar.. 
+31/07/2017 17:56:05 * saiu da rotina
+31/07/2017 17:56:05 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 17:56:09 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 17:58:24 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 18:02:03 * Terminou o procedimento de attachar.. 
+31/07/2017 18:02:03 * saiu da rotina
+31/07/2017 18:02:03 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: '\\poadskfs411\suporte seller'
+31/07/2017 18:02:11 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\postohipica_040117.bak' caminho: '\\poadskfs411\suporte seller'

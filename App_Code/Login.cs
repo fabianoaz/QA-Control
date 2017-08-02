@@ -20,7 +20,6 @@ public class Login : System.Web.Services.WebService
     public void EfetuaLogin(string usuario, string senha)
     {
         List<string> retorno = new List<string>();
-        //faz a copia do tkt no E e retorna o nome do zip novo
 		if (usuario=="" && senha=="")
 		{
 			
@@ -40,4 +39,25 @@ public class Login : System.Web.Services.WebService
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));
     }
+	
+    [WebMethod]
+    public void AlteraSenha(string cache, string senhaantiga, string senhanova)
+    {
+		
+        List<string> retorno = new List<string>();
+		Loga l = new Loga();
+		l.alterasenha(cache,senhaantiga,senhanova);
+		if(l.erro=="")
+		{
+			retorno.Add(""+l.str);
+		}
+		else{
+				retorno.Add(""+l.erro);
+			}
+        JavaScriptSerializer js = new JavaScriptSerializer();
+        Context.Response.Write(js.Serialize(retorno));
+		
+    }	
+	
+	
 }

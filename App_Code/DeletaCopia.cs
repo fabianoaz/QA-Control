@@ -55,12 +55,22 @@ public class DeletaCopia
             //copia o web.config
             erro = "Erro ao mover o WEB.CONFIG";
             //não achei necessário fazer função para o MOVE pq ele não tem muita validação.. por enquanto.
-            System.IO.File.Move(@site + @"\web.config", temp + @"\web.config");
-            erro = "Não foi possivel parar o pool, ou o mesmo não existe";
+            System.IO.File.Copy(@site + @"\web.config", temp + @"\web.config",true);
+            erro = "Não foi possível parar o pool, ou o mesmo não existe </br>Certifique-se de que o site não esteja em processamento ou em uso, e que o pool '"+site+"' existe. </br>Tente novamente.";
             //para o POOL
             parainiciapool(site, "stop");
             //renomeia o site
-            System.IO.Directory.Move(site, site + "__old");
+			erro ="Não foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!";
+            try
+			{
+				System.IO.Directory.Move(site, site + "__old");//aqui que geralmente da erro
+			}
+			catch(Exception err)
+			{
+				log.logar("Erro ao renomear o site, vai tentar deletar. Erro" +erro+"\nErro interno:"+err);
+				criadiretorio(site, true, false);
+			}
+			
             datafim = "" + DateTime.Now;
             data = data + "<br/>Criando temp2, copiando webconfig, parando pool e renomeando site:<br/>" + dataini + " - " + datafim;
 
@@ -85,7 +95,7 @@ public class DeletaCopia
             //deleta os lixos deixados no final
             dataini = datafim; datafim = "";
             //aqui já da para retornar que acabou, e depois chamar a rotina de limpeza bem na moita
-            erro = "Erro ao deletar residuos";
+            erro = "</br>Erro ao deletar residuos";
             criadiretorio(site + "__old", true, false);
             criadiretorio(temp, true, false);
             datafim = "" + DateTime.Now;
@@ -195,6 +205,7 @@ public class DeletaCopia
             Generica selecione = new Generica();
             selecione.nome = "Selecione";
             selecione.caminho = "";
+			selecione.tipo=-1;
             li.Add(selecione);
             if (tipo)
             {
@@ -205,9 +216,25 @@ public class DeletaCopia
                         Generica g = new Generica();
                         g.nome = tkt.Name.Replace("tkt-","");
                         g.caminho = tkt.FullName;
+						g.tipo=1;
                         li.Add(g);
                     }
                 }
+				/*para as trunks*/
+				dir=new System.IO.DirectoryInfo("\\\\192.168.56.87\\public\\sellerweb\\VERSION");
+                foreach (System.IO.FileInfo tkt in dir.GetFiles())
+                {
+                    if (tkt.Extension.Equals(".zip"))
+                    {
+                        Generica g = new Generica();
+                        g.nome = tkt.Name;
+                        g.caminho = tkt.FullName;
+						g.tipo=2;
+                        li.Add(g);
+                    }
+                }				
+				
+				
             }
             else
             {
@@ -218,6 +245,7 @@ public class DeletaCopia
 						Generica g = new Generica();
 						g.nome = site.Name;
 						g.caminho = site.FullName;
+						g.tipo=0;
 						li.Add(g);
 					}
                 }

@@ -8,11 +8,16 @@
             <div id="sites" class="panel-collapse collapse">
                 <div class="jumbotron">
                     <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80px; width: 80%;">
-                        <label style="margin-left: 1%;">TKTs:</label>
-                        <select class="form-control" ng-model="tkt" ng-options="t.nome for t in tkts2 | orderBy:'-nome' "></select>
+						<div>
+							<div style="width: 100px; float:left">
+								<label id="tkt-trunk" style="margin-left: 5px; display: hidden" ng-click="alterafiltro()" data-toggle="tooltip" title="Mostrar {{oposto}}">{{mostrando}}</label>
+								<input type="button" id="refresh" ng-disabled="botaobloqueado" style="margin-top: 0.1%; background-color: white; border: none; background-image: url(Gifs/lx_refresh.png); background-size: cover; width:20px; height:17px; background-repeat:no-repeat ;" ng-click="listatktesite()" data-toggle="tooltip" title="Atualizar..."/>
+							</div>	
+						</div>
+							<select class="form-control" ng-model="tkt" ng-options="t.nome for t in tkts2 | orderBy:'-nome' | filter: filtra"></select>
                     </div>
                     <div class="form-control" style="margin-left: 10%; margin-top: 0.5%;  margin-right: 80%; height: 80px; width: 80%;">
-                        <label style="margin-left: 1%;">Sites:</label>
+                        <label style="margin-left: 5px;">Sites:</label>
                         <select class="form-control" ng-model="site" ng-options="s.nome for s in sites2"></select>
                     </div>
                     <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">

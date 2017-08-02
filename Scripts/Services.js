@@ -170,6 +170,7 @@ myApp
 					Mensagem.msg("Erro no WebService",listaerrosite.data)
                     $scope.site = $scope.sites2[0];
                 }
+
                 $http({ method: 'GET', url: 'DeletaeCopia.asmx/listadir?op="site"' })
                 .then(respostadirsite, respostadirersite);
 				/*Retorna a lista de sites*/
@@ -183,11 +184,17 @@ myApp
                 var respostadirtkt = function (listatkt) {
                     $scope.tkts2 = listatkt.data;
                     $scope.tkt = $scope.tkts2[0];
+					$scope.botaobloqueado=false;
+					$scope.label="Atualizar";
                 }
                 var respostadirertkt = function (listaerrotkt) {
 					Mensagem.msg("Erro no WebService",listaerrotkt.data)
                     $scope.tkt = $scope.tkts2[0];
+					$scope.botaobloqueado=false;
+					$scope.label="Atualizar";					
                 }
+				$scope.botaobloqueado=true;
+				$scope.label="Carregando Tkts / Trunks / Sites..";
                 $http({ method: 'GET', url: 'DeletaeCopia.asmx/listadir?op="tkt"' })
                 .then(respostadirtkt, respostadirertkt);
 				/*Retorna a lista de tkts*/
@@ -260,7 +267,7 @@ myApp
 					draggable: false,
 					resizable: false,
 					position: {my: 'center', at: 'center', of: window},
-					width: 500,
+					width: 500,/*'40%',*/ /*500 sem aspas e sem o %*/
 					height: 250,
 					dialogClass: 'ui-dialog-osx',
 					buttons: {
@@ -281,7 +288,7 @@ myApp
 					draggable: false,
 					resizable: false,
 					position: {my: 'center', at: 'center', of: window},
-					width: 500,
+					width: 500,/*'40%',*/ /*500 sem aspas e sem o %*/
 					height: 250,
 					dialogClass: 'ui-dialog-osx',
 					buttons: {
@@ -302,6 +309,68 @@ myApp
 				/*Efetuar uma Pergunta, e se escolher 1, é para fazer algo, se escolher 0 (ou fechar), nada deve ser feito*/
         }
     }
+})
+.factory('Senhas', function (Criptografa) {
+    return {
+        sen: function (titulo,$scope) {
+		var node = document.getElementById("dialogs");
+		if (node!=null) 
+			{
+				node.parentNode.removeChild(node);
+			}	
+		$("<div id='dialogs' title='"+titulo+"' visible=false> Senha Atual <input id='senhaatual' class='form-control' type='password' ng-model='senhaatual' /> </br> Senha nova <input id='senhanova' class='form-control' type='password' /> </br> Digite novamente a senha nova <input id='senhanova2'class='form-control' type='password' /> </div>").dialog({
+					modal: true,
+					draggable: false,
+					resizable: false,
+					position: {my: 'center', at: 'center', of: window},
+					width: 500, /*'40%',*/ /*500 sem aspas e sem o %*/
+					height: '350',
+					dialogClass: 'ui-dialog-osx',
+					buttons: {
+						"Confirmo a Nova Senha!": function() {
+							/*futuramente, verificar sem fazer a busca por ID*/
+							$scope.senhaatual=Criptografa.cripto(document.getElementById('senhaatual').value)
+							$scope.senhanova=Criptografa.cripto(document.getElementById('senhanova').value)
+							$scope.senhanova2=Criptografa.cripto(document.getElementById('senhanova2').value)
+							$scope.op=1;
+							$scope.faca();
+							$(this).dialog("close");
+						},
+						"Não Quero Alterar Mais!": function() {
+							$scope.op=0;							
+							$scope.naofaca();
+							$(this).dialog("close");
+						}
+					}
+				})
+				.on( "dialogclose",function(event, ui){ if($scope.op==0){$scope.naofaca();}});
+				/*Efetuar uma Pergunta, e se escolher 1, é para fazer algo, se escolher 0 (ou fechar), nada deve ser feito*/
+        }
+    }
+})
+.factory('AlterarSenha', function (Criptografa,Mensagem,$cookies,$http,$log) {
+    return {
+        altera: function ($scope) {
+			//Mensagem.msg("DEBUG","s1"+$scope.senhanova+"S2"+$scope.senhanova2)
+			if (($scope.senhanova!=$scope.senhanova2)||($scope.senhanova=="" || $scope.senhanova2=="" || $scope.senhaatual==""))
+			{
+				Mensagem.msg("Senha incorreta","A senha nova não confere com redigitada, ou alguma das informações está em branco");
+			}
+			else{
+				var respostaattacha = function (resattacha) {
+					$log.info(resattacha);
+					Mensagem.msg("Alteração de Senha",""+resattacha.data)
+				}
+				var respostaerrattacha = function (reserrattacha) {
+					Mensagem.msg("Algo deu Errado ao Alterar a Senha..",""+reserrattacha.data)
+					$log.info(reserrattacha);
+			   }
+			   var temp = $cookies.get("U-ID").split('_');//Criptografa.cripto
+				$http({ method: 'GET', url: 'login.asmx/AlteraSenha?cache='+temp[0]+'&senhaantiga='+$scope.senhaatual+'&senhanova='+$scope.senhanova})
+				.then(respostaattacha, respostaerrattacha);
+			}
+		}
+	}
 })
 .factory('Criptografa', function () {
     return {

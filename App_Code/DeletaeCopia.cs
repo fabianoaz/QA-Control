@@ -20,37 +20,49 @@ public class DeletaeCopia : System.Web.Services.WebService
     public void Atualiza(string tkt, string site,string user)
     {
 		LogApp log = new LogApp();
+		//"A data de Login nesta máquina, não corresponde ao último login realizado por este usuário. </br>Faça login novamente.";
 		log.logar("Solicitção de atualização de site, cookie: '"+ user +"' Site: '"+site+"' Tkt: '"+tkt+"'");
-        DeletaCopia DC = new DeletaCopia();
-        List<string> retorno = new List<string>();
-        //faz a copia do tkt no E e retorna o nome do zip novo
-        string zip = DC.baixatkt(tkt);
-        //se conseguiu baixar segue para atualizar
-        if (DC.erro.Equals(""))
-        {
-            retorno.Add(DC.data);
-            DC.atualizasite(zip, site);
-            //se conseguiu atualizar, seja feliz
-            if (DC.erro.Equals(""))
-            {
-                retorno.Add(DC.data);
-				log.logar("Site atualizado, cookie: '"+user+"' site: '"+site+" com o Tkt: '"+tkt+"'");
-            }
-            else
-            {
-                retorno.Add(DC.erro);
+		Loga l = new Loga();
+		List<string> retorno = new List<string>();
+		if(l.verificalogin(user))
+		{
+			DeletaCopia DC = new DeletaCopia();
+
+			//faz a copia do tkt no E e retorna o nome do zip novo
+			string zip = DC.baixatkt(tkt);
+			//se conseguiu baixar segue para atualizar
+			if (DC.erro.Equals(""))
+			{
+				retorno.Add(DC.data);
+				DC.atualizasite(zip, site);
+				//se conseguiu atualizar, seja feliz
+				if (DC.erro.Equals(""))
+				{
+					retorno.Add(DC.data);
+					log.logar("Site atualizado, cookie: '"+user+"' site: '"+site+" com o Tkt: '"+tkt+"'");
+				}
+				else
+				{
+					retorno.Add(DC.erro);
+					log.logar("Erro ao atualizar o site, cookie: '"+user+"' site: '"+site+"' com o Tkt: '"+tkt+"' erro: '"+DC.erro+"'");
+					
+				}
+			}
+			else
+			{
+				retorno.Add(DC.erro);
 				log.logar("Erro ao atualizar o site, cookie: '"+user+"' site: '"+site+"' com o Tkt: '"+tkt+"' erro: '"+DC.erro+"'");
-				
-            }
-        }
-        else
-        {
-            retorno.Add(DC.erro);
-			log.logar("Erro ao atualizar o site, cookie: '"+user+"' site: '"+site+"' com o Tkt: '"+tkt+"' erro: '"+DC.erro+"'");
-        }
-        JavaScriptSerializer js = new JavaScriptSerializer();
-        Context.Response.Write(js.Serialize(retorno));
-    }
+			}
+
+		}
+		else
+		{
+				retorno.Add("A data de Login nesta máquina, não corresponde ao último login realizado por este usuário. </br>Faça login novamente.");
+		}
+			JavaScriptSerializer js = new JavaScriptSerializer();
+			Context.Response.Write(js.Serialize(retorno));		
+		
+	}
     [WebMethod]
     public void listadir(string op)
     {

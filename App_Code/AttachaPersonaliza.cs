@@ -16,6 +16,7 @@ public class AttachaPersonaliza
 	{
 
 		LogApp log = new LogApp();
+		try{
 		//if(!System.IO.File.Exists(bak) || !System.IO.Directory.Exists(caminho))
 		//{
 			//str = "<br/>Não foi encontrado o arquivo .BAK ou o diretório de destino<br/> BAK: "+bak+"<br/>Caminho: "+caminho;
@@ -30,11 +31,13 @@ public class AttachaPersonaliza
 		String cs = ConfigurationManager.ConnectionStrings["DBCS"].ConnectionString;
 	using (SqlConnection con = new SqlConnection(cs))
         {
-				erro="Erro ao Executar comando de attachar";
+				erro="O procedimento de attachar foi interrompido! </br> Verifique a integridade da base e se existe acesso de rede aos caminhos especificados.";
                 //diz o comando que será executado
 				string comando="exec ATTACHA '"+tiposistema+"','"+tipoambiente+"','"+projeto+"','"+cliente+"','"+criador+"','"+bak+"','"+maquinabanco+"','"+caminho+"','"+ ipsite+"'";
+				//string comando="exec ATTACHA '"+tiposistema+"','"+tipoambiente+"','"+projeto+"','"+cliente+"','"+criador+"','"+bak+"','"+maquinabanco+"','"+caminho+"','"+ ipsite+"'; "+ "exec spGET_LastErrorMessage";
 				str="<br/>Iniciou o comando de attachar</br>Iniciou em " + DateTime.Now;//+" iniciou o comando de attachar<br/>";//+comando+"<br/>";
                 SqlCommand cmd = new SqlCommand(comando, con);
+				//
 				cmd.CommandTimeout = 0;
                 //abre a conexão com o banco
                 con.Open();
@@ -55,12 +58,17 @@ public class AttachaPersonaliza
 				con.Close();
 				
 		}
+	}catch(Exception err)
+	{
+		log.logar("O procedimento de attachar foi abortado.. "+erro+" erro interno " +err);
+	}
+	
 	}
 
 
 	public void personaliza(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string nomemaquina, bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email)
 	{
-		LogApp log = new LogApp();
+		//LogApp log = new LogApp();
 		str="";
 		if(tiposistema!="sweb")
 		{
@@ -87,7 +95,7 @@ public class AttachaPersonaliza
 				{
 					erro=erro+sdr[0].ToString();
 				}
-				log.logar("Terminou o procedimento de personalizar.. "+erro);
+				//log.logar("Terminou o procedimento de personalizar.. "+erro);
 				//str="sucesso2";
 				con.Close();
 

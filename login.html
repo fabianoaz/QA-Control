@@ -11,41 +11,49 @@
         window.angular || document.write('<script src="Scripts/angular.js"> <\/script/>');
     </script>
 
-    <script src="Scripts/ScriptsJSQA.js?1"></script>
-    <script src="Scripts/scripts.js"></script>
-    <script src="Scripts/Services.js"></script>
+    <script src="Scripts/ScriptsJSQA.js?10"></script>
+    <script src="Scripts/scripts.js?1"></script>
+    <script src="Scripts/Services.js?10"></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        window.jquery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
+        window.jQuery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
     </script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script>
-        window.bootstrap || document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
+	if (!verificaestilo('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'))
+	{	
+		document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
+	}	
+        //window.bootstrap || document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
     </script>
-
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-        window.bootstrapjs || document.write('<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"><\/script>');
+        window.jQuery.fn.modal || document.write('<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"><\/script>');
     </script>
 	
 	
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script>
-        window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+	if (!verificaestilo('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'))
+	{
+		document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+	}	
+        //window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
     </script>
 	
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
-        window.jqueryuijs || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
+        window.jQuery.ui || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
     </script>
 
-	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
 		<script>
+			//pendente
 			window.cookiesjs || document.write('<script src="Scripts/angular-cookies.js"> <\/script/>');
 		</script>
+
 
 
 	<link rel="icon" type="image/x-icon" href="favicon.ico"> 
@@ -55,14 +63,18 @@
 
 <body  ng-controller="paginas"  >
 <div>
-	<div style="margin-left: 35.3%; margin-top: 15%; width: 50%;" id="divnome">
-		<label style="margin-left: auto; width: 80px;">Usuário:</label> <input style="width: 400px" class="form-control" type="text" ng-model="name" />
+	<div class="input-group" style="margin-left: 35.3%; margin-top: 15%; width: 50%;" id="divnome">
+		<!--label style="margin-left: auto; width: 80px;">Usuário:</label-->
+		<span style="margin-left: auto; width: 80px;" class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>		
+		<input style="width: 400px" class="form-control" type="text" ng-model="name"  ng-keyup="$event.keyCode == 13 ? efetualogin() : null" placeholder="Usuário" required />
 	</div>
-	<div style="margin-left: 35.3%; margin-top: 0.5%; width: 50%;" id="divsenha">
-		<label style="margin-left: auto; width: 80px;">Senha:</label> <input style="width: 400px" class="form-control" type="password" ng-model="pass" />
+	<div class="input-group" style="margin-left: 35.3%; margin-top: 0.5%; width: 50%;" id="divsenha">
+		<!--label style="margin-left: auto; width: 80px;">Senha:</label--> 
+		<span style="margin-left: auto; width: 80px;" class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+		<input style="width: 400px" class="form-control" type="password" ng-model="pass" ng-keydown="$event.keyCode == 13 ? efetualogin() : null" placeholder="Senha" required />
 	</div>
 	<div style="margin-left: 35.3%; margin-top: 0.3%; width: 30%;" id="divbotao">
-		<input style="width: 400px; position: absolute" class="btn btn-primary btn-block" type="button" ng-click="efetualogin()" value="logar" type="button" value="Login"/> <!--   Login</button> -->
+		<input style="width: 480px; height: 50px; position: absolute" class="btn btn-info btn-block" type="button" ng-click="efetualogin()" type="button" value="Efetuar Login"/>
 	</div>
 </div>
 <div style="margin-top: 3%">

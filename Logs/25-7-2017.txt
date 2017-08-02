@@ -1,0 +1,231 @@
+25/07/2017 14:28:51 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 14:30:09 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 14:30:24 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 14:30:55 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:31:05 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:42:25 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:45:16 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:46:46 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:47:16 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:49:25 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:51:57 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:51:57 * vai fazer o vinculo
+25/07/2017 14:52:34 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:54:42 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:54:42 * Terminou o procedimento de attachar.. Erro ao Executar comando de attachar erro interno System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the varchar value '</br>Erro número ' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AttachaPersonaliza.attachabanco(String tiposistema, String tipoambiente, String projeto, String cliente, String criador, String maquinabanco, String bak, String caminho, String ipsite)
+ClientConnectionId:178c1a07-2e1c-45b3-bac4-5dbf92e5be0f
+Error Number:245,State:1,Class:16
+25/07/2017 14:54:42 * saiu da rotina
+25/07/2017 14:54:42 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:56:04 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:57:57 * Terminou o procedimento de attachar.. 
+25/07/2017 14:57:57 * saiu da rotina
+25/07/2017 14:57:57 * Base vinculada com sucesso, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:57:58 * Base personalizada com sucesso, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 14:58:30 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:00:20 * Terminou o procedimento de attachar.. 
+25/07/2017 15:00:20 * saiu da rotina
+25/07/2017 15:00:20 * Base vinculada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:00:21 * Base personalizada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:01:19 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:01:19 * O procedimento de attachar foi abortado.. O procedimento de attachar foi interrompido! </br> Verifique a integridade da base, e se existe acesso de rede aos caminhos especificados. erro interno System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the varchar value '</br>Erro número ' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AttachaPersonaliza.attachabanco(String tiposistema, String tipoambiente, String projeto, String cliente, String criador, String maquinabanco, String bak, String caminho, String ipsite)
+ClientConnectionId:56005768-2dfb-420f-a163-733756e6a68a
+Error Number:245,State:1,Class:16
+25/07/2017 15:01:19 * saiu da rotina
+25/07/2017 15:01:19 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:01:33 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:01:33 * O procedimento de attachar foi abortado.. O procedimento de attachar foi interrompido! </br> Verifique a integridade da base e se existe acesso de rede aos caminhos especificados. erro interno System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the varchar value '</br>Erro número ' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AttachaPersonaliza.attachabanco(String tiposistema, String tipoambiente, String projeto, String cliente, String criador, String maquinabanco, String bak, String caminho, String ipsite)
+ClientConnectionId:61da079e-7145-4589-b51b-bee786f2689f
+Error Number:245,State:1,Class:16
+25/07/2017 15:01:33 * saiu da rotina
+25/07/2017 15:01:33 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:07:29 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:26:04 * Terminou o procedimento de attachar.. 
+25/07/2017 15:26:04 * saiu da rotina
+25/07/2017 15:26:04 * Base vinculada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:26:06 * Base personalizada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 15:27:27 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:27:28 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:27:28 * saiu da rotina
+25/07/2017 15:27:28 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:27:38 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:27:38 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:27:38 * saiu da rotina
+25/07/2017 15:27:38 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:27:53 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+25/07/2017 15:27:53 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:27:53 * saiu da rotina
+25/07/2017 15:27:53 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+25/07/2017 15:28:14 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:28:14 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:28:14 * saiu da rotina
+25/07/2017 15:28:14 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:29:55 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:29:55 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:29:55 * saiu da rotina
+25/07/2017 15:29:55 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:30:24 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'g:\data'
+25/07/2017 15:30:24 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:30:24 * saiu da rotina
+25/07/2017 15:30:24 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'g:\data'
+25/07/2017 15:34:04 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:34:04 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:34:04 * saiu da rotina
+25/07/2017 15:34:04 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:34:54 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:34:54 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:34:54 * saiu da rotina
+25/07/2017 15:34:54 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:36:48 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:36:49 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:36:49 * saiu da rotina
+25/07/2017 15:36:49 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data'
+25/07/2017 15:37:40 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\expopostos'
+25/07/2017 15:37:40 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:37:40 * saiu da rotina
+25/07/2017 15:37:41 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\expopostos'
+25/07/2017 15:39:39 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\expopostos'
+25/07/2017 15:39:39 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:39:39 * saiu da rotina
+25/07/2017 15:39:39 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: 'f:\bkp\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\expopostos'
+25/07/2017 15:43:18 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\expopostos'
+25/07/2017 15:43:18 * Terminou o procedimento de attachar.. O Caminho destino não existe </br>e:\sql_server\mssql11.sql2012\mssql\data\expopostos\
+25/07/2017 15:43:18 * saiu da rotina
+25/07/2017 15:43:18 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\expopostos'
+25/07/2017 15:43:31 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+25/07/2017 15:43:31 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 15:43:31 * saiu da rotina
+25/07/2017 15:43:31 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: 'e:\sql_server\mssql11.sql2012\mssql\data\'
+25/07/2017 15:43:45 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 16:12:42 * Terminou o procedimento de attachar.. 
+25/07/2017 16:12:42 * saiu da rotina
+25/07/2017 16:12:42 * Base vinculada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 16:12:43 * Base personalizada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos2018' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 16:15:08 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 16:15:08 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 16:15:08 * saiu da rotina
+25/07/2017 16:15:08 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 16:20:25 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 16:20:25 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+25/07/2017 16:20:25 * saiu da rotina
+25/07/2017 16:20:25 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 16:23:59 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 16:23:59 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.comando: RESTORE DATABASE sweb_homolog_expopostosFROM DISK = \\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak WITH RECOVERY, MOVE SELLERWEB_APMW_Data TO \\172.16.137.111\data2e\sweb_homolog_expopostos.mdf, MOVE SELLERWEB_APMW_Log TO \\172.16.137.111\data2e\sweb_homolog_expopostos_log.ldf
+25/07/2017 16:23:59 * saiu da rotina
+25/07/2017 16:23:59 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 16:24:35 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16739.zip'
+25/07/2017 16:25:35 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+25/07/2017 16:25:35 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+25/07/2017 16:25:35 * Erro ao atualizar o site, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16739.zip' erro: 'Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!'
+25/07/2017 16:26:26 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16739.zip'
+25/07/2017 16:26:47 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data\'
+25/07/2017 16:27:12 * Terminou o procedimento de attachar.. 
+25/07/2017 16:27:12 * saiu da rotina
+25/07/2017 16:27:12 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data\'
+25/07/2017 16:27:13 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data\'
+25/07/2017 16:27:43 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+25/07/2017 16:27:43 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+25/07/2017 16:27:43 * Erro ao atualizar o site, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16739.zip' erro: 'Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!'
+25/07/2017 16:30:19 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16739.zip'
+25/07/2017 16:31:15 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+25/07/2017 16:31:55 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+25/07/2017 16:32:02 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16739.zip'
+25/07/2017 17:21:42 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 17:27:36 * Terminou o procedimento de attachar.. 
+25/07/2017 17:27:36 * saiu da rotina
+25/07/2017 17:27:36 * Base vinculada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 17:27:36 * Base personalizada com sucesso, cache sol:'1_42939,4013889' ambiente: 'homolog' projeto: 'expopostos' cliente: '' criador: '' bak: '\\poadskfs411\suporte seller\sqlsellerweb05_prod05_sellerweb_apmw.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 17:36:49 * Solicitção de atualização de site, cookie: '1_42939,4013889' Site: 'E:\SitesSeller\DefaultWebSite\expopostos' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+25/07/2017 17:37:47 * Parou/Inciou o Pool, Pool: expopostos Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:expopostos
+25/07/2017 17:37:47 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\expopostos' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+25/07/2017 17:37:47 * Erro ao atualizar o site, cookie: '1_42939,4013889' site: 'E:\SitesSeller\DefaultWebSite\expopostos' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!'
+25/07/2017 17:39:49 * Solicitção de atualização de site, cookie: '1_42939,4013889' Site: 'E:\SitesSeller\DefaultWebSite\expopostos' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+25/07/2017 17:40:44 * Parou/Inciou o Pool, Pool: expopostos Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:expopostos
+25/07/2017 17:41:29 * Parou/Inciou o Pool, Pool: expopostos Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:expopostos
+25/07/2017 17:41:37 * Site atualizado, cookie: '1_42939,4013889' site: 'E:\SitesSeller\DefaultWebSite\expopostos com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+25/07/2017 17:56:47 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 17:56:47 * O procedimento de attachar foi abortado.. O procedimento de attachar foi interrompido! </br> Verifique a integridade da base e se existe acesso de rede aos caminhos especificados. erro interno System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near 'spGET_LastErrorMessage'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AttachaPersonaliza.attachabanco(String tiposistema, String tipoambiente, String projeto, String cliente, String criador, String maquinabanco, String bak, String caminho, String ipsite)
+ClientConnectionId:f2b5009d-cdd6-47fa-b0a2-a5a6ed7f0398
+Error Number:102,State:1,Class:15
+25/07/2017 17:56:47 * saiu da rotina
+25/07/2017 17:56:47 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\172.16.137.111\data2e'
+25/07/2017 17:57:53 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 17:57:53 * O procedimento de attachar foi abortado.. O procedimento de attachar foi interrompido! </br> Verifique a integridade da base e se existe acesso de rede aos caminhos especificados. erro interno System.Data.SqlClient.SqlException (0x80131904): Incorrect syntax near 'spGET_LastErrorMessage'.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AttachaPersonaliza.attachabanco(String tiposistema, String tipoambiente, String projeto, String cliente, String criador, String maquinabanco, String bak, String caminho, String ipsite)
+ClientConnectionId:f2b5009d-cdd6-47fa-b0a2-a5a6ed7f0398
+Error Number:102,State:1,Class:15
+25/07/2017 17:57:53 * saiu da rotina
+25/07/2017 17:57:53 * Erro ao realizar o vínculo com a base, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 17:58:13 * Solicitção de vinculo de banco de dados, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 18:00:02 * Terminou o procedimento de attachar.. 
+25/07/2017 18:00:02 * saiu da rotina
+25/07/2017 18:00:02 * Base vinculada com sucesso, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+25/07/2017 18:00:03 * Base personalizada com sucesso, cache sol:'1_42939,4013889' ambiente: 'teste' projeto: 'testeee' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
