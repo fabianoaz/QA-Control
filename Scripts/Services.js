@@ -162,12 +162,12 @@ myApp
     return {
         sitesl: function ($scope)
             {
-                var respostadirsite = function (listasite) {
-                    $scope.sites2 = listasite.data;
+                var respostadirsite = function (retornobom) {
+                    $scope.sites2 = retornobom.data;
                     $scope.site = $scope.sites2[0];
                 }
-                var respostadirersite = function (listaerrosite) {
-					Mensagem.msg("Erro no WebService",listaerrosite.data)
+                var respostadirersite = function (retornoruim) {
+					Mensagem.msg("Erro no WebService",retornoruim.data)
                     $scope.site = $scope.sites2[0];
                 }
 
@@ -181,14 +181,14 @@ myApp
     return {
         tktsl: function ($scope)
             {
-                var respostadirtkt = function (listatkt) {
-                    $scope.tkts2 = listatkt.data;
+                var respostadirtkt = function (retornobom) {
+                    $scope.tkts2 = retornobom.data;
                     $scope.tkt = $scope.tkts2[0];
 					$scope.botaobloqueado=false;
 					$scope.label="Atualizar";
                 }
-                var respostadirertkt = function (listaerrotkt) {
-					Mensagem.msg("Erro no WebService",listaerrotkt.data)
+                var respostadirertkt = function (retornoruim) {
+					Mensagem.msg("Erro no WebService",retornoruim.data)
                     $scope.tkt = $scope.tkts2[0];
 					$scope.botaobloqueado=false;
 					$scope.label="Atualizar";					
@@ -204,24 +204,132 @@ myApp
 .factory('AtualizaSite', function ($http,$log,Mensagem,$cookies) {
     return {
         atualiza: function ($scope) {
-            var respostasucesso = function (respostadowebservice) {
-                $scope.dados = respostadowebservice.data;
-                $log.info(respostadowebservice);
+            var respostasucesso = function (retornobom) {
+                $scope.dados = retornobom.data;
+                $log.info(retornobom);
 				Mensagem.msg("Resultados da atualização",$scope.dados)
                 $scope.botaobloqueado = false;
 				$scope.loading=false;
                 $scope.label = "Atualizar"
             }
 			var temp = $cookies.get("U-ID").split('_');
-            var respostaerro = function (motivo) {
-                $scope.erro = motivo.data;
-                $log.info(motivo);
+            var respostaerro = function (retornoruim) {
+                $scope.erro = retornoruim.data;
+                $log.info(retornoruim);
 				Mensagem.msg("Algo deu errado ao atualizar..",$scope.erro)
                 $scope.botaobloqueado = false;
 				$scope.loading=false;
                 $scope.label = "Atualizar"
             }
             $http({ method: 'GET', url: 'DeletaeCopia.asmx/Atualiza?tkt=' + $scope.tkt.caminho + '&site=' + $scope.site.caminho+'&user='+""+temp[0]+"_"+temp[1]})
+            .then(respostasucesso, respostaerro);
+			/*Efetua a atualização do site*/
+        }
+    }
+})
+.factory('AtualizaSiteAutomatizado', function ($http,$log,Mensagem,$cookies) {
+    return {
+        atualiza: function ($scope) {
+            var respostasucesso = function (retornobom) {
+                $scope.dados = retornobom.data;
+                $log.info(retornobom);
+				Mensagem.msg("Resultados da atualização",$scope.dados)
+                $scope.botaobloqueado = false;
+				$scope.botaobloqueado2=false;
+				$scope.loading=false;
+                $scope.label = "Atualizar"
+            }
+			var temp = $cookies.get("U-ID").split('_');
+            var respostaerro = function (retornoruim) {
+                $scope.erro = retornoruim.data;
+                $log.info(retornoruim);
+				Mensagem.msg("Algo deu errado ao atualizar..",$scope.erro)
+                $scope.botaobloqueado = false;
+				$scope.botaobloqueado2=false;
+				$scope.loading=false;
+                $scope.label = "Atualizar"
+            }
+            $http({ method: 'GET', url: 'DeletaeCopia.asmx/AtualizaAutomatizado?tkt=' + $scope.tkt.caminho + '&site=' + $scope.site.caminho+'&user='+""+temp[0]+"_"+temp[1]})
+            .then(respostasucesso, respostaerro);
+			/*Efetua a atualização do site*/
+        }
+    }
+})
+.factory('ListaLogsAutomatizados', function ($http, Mensagem) {
+    return {
+        logsl: function ($scope)
+            {
+                var respostadirlogs = function (retornobom) {
+                    $scope.logs = retornobom.data;
+                    $scope.log = $scope.logs[0];
+					$scope.botaobloqueado2=false;
+					$scope.label2="Visualizar";
+                }
+                var respostadirerlogs = function (retornoruim) {
+					Mensagem.msg("Erro no WebService","Não foi possivel listar os logs do test complete <br>Erro interno: "+retornoruim.data)
+                    $scope.log = $scope.logs[0];
+					$scope.botaobloqueado2=false;
+					$scope.label2="Visualizar";					
+                }
+				$scope.botaobloqueado2=true;
+				$scope.label2="Carregando Logs..";
+                $http({ method: 'GET', url: 'DeletaeCopia.asmx/listalogs' })
+                .then(respostadirlogs, respostadirerlogs);
+				/*Retorna a lista de tkts*/
+            }
+        }
+    })
+.factory('LeLogAutomatizado', function ($http,Mensagem,$log) {
+    return {
+        lelog: function ($scope)
+            {
+                var respostalelogs = function (retornobom) {
+					$log.info(retornobom);
+					$scope.botaobloqueado4=false;
+					$scope.casos=retornobom.data;
+					$scope.temresultado=true;
+					
+					
+					$scope.label2="Visualizar";
+                }
+                var respostaleerlogs = function (retornoruim) {
+					Mensagem.msg("Erro no WebService",retornoruim.data);
+					$log.info(retornoruim);
+					$scope.botaobloqueado4=false;
+					$scope.label2="Visualizar";	
+					$scope.temresultado=false;
+                }
+				$scope.botaobloqueado4=true;
+				$scope.nomedoarquivo=$scope.log.nome;
+				$scope.label2="Carregando Log..";
+                $http({ method: 'GET', url: 'DeletaeCopia.asmx/lerlog?logtxt='+$scope.log.caminho})
+                .then(respostalelogs, respostaleerlogs);
+				/*Retorna a lista de tkts*/
+            }
+        }
+    })	
+.factory('ChamaServico', function ($http,$log,Mensagem,$cookies) {
+    return {
+        chamaservico: function (a,$scope) {
+            var respostasucesso = function (respostadowebservice) {
+                //$scope.dados = respostadowebservice.data;
+                $log.info(respostadowebservice);
+				Mensagem.msg("Resultados do agendamento",respostadowebservice.data);
+                $scope.botaobloqueado3 = false;
+				//$scope.loading=false;
+                //$scope.label = "Atualizar"
+            }
+			var temp = $cookies.get("U-ID").split('_');
+            var respostaerro = function (motivo) {
+                //$scope.erro = motivo.data;
+                $log.info(motivo);
+				Mensagem.msg("Algo deu errado ao agendar..",motivo.data);
+				$scope.botaobloqueado3 = false;
+				//$scope.loading=false;
+                //$scope.label = "Atualizar"
+            }
+			$scope.botaobloqueado3 = true;
+            $http({ method: 'GET', url: 'DeletaeCopia.asmx/solicitarservico?serv=' + a})
             .then(respostasucesso, respostaerro);
 			/*Efetua a atualização do site*/
         }
@@ -540,5 +648,33 @@ myApp
 					window.location.assign("login.html");
 				}
 		}
+    }
+})
+.factory('Tema', function ($rootScope) {
+    return {
+        trocatema: function ($scope) {
+		if($scope.tema=="azul")
+		{
+			$rootScope.btnprimaryblock="btn btn-primary btn-block";
+			$rootScope.btninfoblock="btn btn-info btn-block";
+			$rootScope.formcontrol="form-control";
+			$rootScope.panelgroup="panel-group";
+			$rootScope.paneldefault="panel panel-default";
+			$rootScope.panelheading="panel-heading";
+			$rootScope.margintopaccordion="4px";
+		}
+		else 
+			if($scope.tema=="linx")
+			{
+				$rootScope.btnprimaryblock="linx-btn linx-btn-primary linx-btn-block";
+				$rootScope.btninfoblock="linx-btn linx-btn-info linx-btn-block";
+				$rootScope.formcontrol="linx-form-control";
+				$rootScope.panelgroup="linx-panel-group";
+				$rootScope.paneldefault="linx-panel linx-panel-default";
+				$rootScope.panelheading="linx-panel-heading";
+				$rootScope.margintopaccordion="-14px";
+			}		
+		}
+		/* else if [....] ... vai que surgem outros temas */
     }
 })

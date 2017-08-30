@@ -11,14 +11,18 @@
         window.angular || document.write('<script src="Scripts/angular.js"> <\/script/>');
     </script>
 
-    <script src="Scripts/ScriptsJSQA.js?10"></script>
-    <script src="Scripts/scripts.js?1"></script>
-    <script src="Scripts/Services.js?10"></script>
-
+    <script src="Scripts/ScriptsJSQA.js?14"></script>
+    <script src="Scripts/scripts.js?3"></script>
+    <script src="Scripts/Services.js?14"></script>
+	<script src="Scripts/Filters.js?4"></script>
+	<link href="StylesProprios/StylesProprios.css" rel="stylesheet" />
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
         window.jQuery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
     </script>
+	<!-- Tem que ajustar o head da pagina quando usar essa referencia, pois ele gera um espaço que não identifiquei a origem -->
+	<!--<link href="booststrap-linx/linx-bootstrap.css" rel="stylesheet"/> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script>
 	if (!verificaestilo('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'))
@@ -53,18 +57,24 @@
 			//pendente
 			window.cookiesjs || document.write('<script src="Scripts/angular-cookies.js"> <\/script/>');
 		</script>
-
+		<!--baixar localmente depois-->
+		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+		
+		
 	<link rel="icon" type="image/x-icon" href="favicon.ico"> 
     <title> QA Seller </title>
 	<base href="./Accordion">
 </head>
 
-<body  ng-controller="paginas"  >
+<body  ng-controller="paginas" ng-init="trocatema()" >
 	<div style="background-color: #eee; float: left">
-		<button class="btn btn-info glyphicon glyphicon-off" style="margin-left: 0.3%; margin-top:2px" ng-click="desloga()" data-toggle="tooltip" title="Logoff..."></button>
+		<button ng-class="btninfoblock + ' glyphicon glyphicon-off'" style="margin-left: 0.3%; margin-top:2x; width:40px" ng-click="desloga()" data-toggle="tooltip" title="Logoff..."></button>
+	</div>
+	<div style="background-color: #eee; margin-left:37px;">
+		<button ng-class="btninfoblock + ' glyphicon glyphicon-cog'" style="margin-left: 0.3%; margin-top:2px; width:40px" ng-click="Alterarasenha()" data-toggle="tooltip" title="Alterar Senha..."></button>
 	</div>
 	<div style="background-color: #eee">
-		<button class="btn btn-info glyphicon glyphicon-cog" style="margin-left: 0.3%; margin-top:2px" ng-click="Alterarasenha()" data-toggle="tooltip" title="Alterar Senha..."></button>
+		<button ng-class="btninfoblock" style="width:200px;" ng-click="trocatema()" ng-show=0>Troca tema para o {{tema}}</button>
 	</div>
 	<div class="jumbotron" style="height: 5px;margin-top: 0px">		
 		<h3 style="margin-top: -20px" class="text-center">QA Seller - Gerenciamento de Versões</h3>

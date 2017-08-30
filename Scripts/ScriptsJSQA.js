@@ -1,8 +1,8 @@
 ﻿/// <reference path="angular.js" />
 /// <reference path="~/jQuery/jquery-3.2.1.min.js" />
 var myApp = angular
-    .module("Module", ['ngCookies'])
-	.controller("paginas", function ($scope, $cookies, verificaseestalogado, verificasejalogou, Loga, Senhas, AlterarSenha){
+    .module("Module", ['ngCookies','ui.bootstrap'])
+	.controller("paginas", function ($scope, $cookies, verificaseestalogado, verificasejalogou, Loga, Senhas, AlterarSenha,Tema){
 	
 		$scope.Alterarasenha= function()
 		{
@@ -71,7 +71,21 @@ var myApp = angular
 		$cookies.remove("U-ID");
 	}
 	
-	
+	//Altera os Temas
+	$scope.tema="azul";
+	$scope.trocatema = function(){
+		if($scope.tema=="azul")
+		{
+			Tema.trocatema($scope);
+			$scope.tema="linx";
+		}
+		else 
+			if($scope.tema=="linx")
+			{
+				Tema.trocatema($scope);
+				$scope.tema="azul";
+			}
+	}	
 	})	
     .controller("ControllerQASITES", function ($scope, ListaSites, ListaTtks, AtualizaSite,Mensagem, Opcao) {
         $scope.botaobloqueado = false; $scope.label = "Atualizar";
@@ -298,3 +312,179 @@ var myApp = angular
 		}
 		
 	})
+    .controller("ControllerQASITESAUTOMATIZADO", function ($scope, $filter, ListaSites, ListaTtks, AtualizaSiteAutomatizado,ListaLogsAutomatizados,Mensagem, ChamaServico,Opcao,LeLogAutomatizado) {
+        $scope.botaobloqueado = false;	$scope.label = "Atualizar";		$scope.loading=false; $scope.botaobloqueado3 = false; $scope.botaobloqueado4=false;//LeLogAutomatizado
+		$scope.mostrando='TKTs';		$scope.oposto='TRUNKs';			$scope.botaobloqueado2 = false; $scope.label2 = "Visualizar";
+		$scope.temresultado=false;
+        $scope.tkts2 = [{nome:'Selecione', caminho:'sa', tipo:-1}];
+        $scope.sites2 = [{nome:'Selecione', caminho:'',tipo:-1},{nome:'SWEB', caminho:'\\\\172.16.137.227\\wwwroot\\sweb',tipo:-1}];
+		$scope.logs = [{nome:'Selecione', caminho:'',tipo:-1}];
+		$scope.casos="";
+		
+		$scope.buscarpor;
+		$scope.ver = '20';
+		$scope.totalItems = $scope.casos.length;
+    
+		$scope.paginaatual = 1;
+		$scope.itensporpagina = $scope.ver;
+		$scope.casos2=$scope.casos;
+		$scope.sortc = "oexec";
+		$scope.revers = false;
+		/*inicio dos processos de paginação e ordenação*/
+		/*faz a ordenação*/
+		$scope.sort = function (coluna) {
+			$scope.revers = ($scope.sortc == coluna) ? !$scope.revers : false
+			//se a coluna é a mesma muda o sentido dela, se não é falsa
+			$scope.sortc = coluna;
+		}
+		/*põe a setinha do lado do cabeçalho*/
+		$scope.getsortclass = function (coluna) {
+			if ($scope.sortc == coluna) { //se a coluna é a mesma, ve qual sentido ta, se ta true, manda down, se nao up
+				//se for diferente, manda vazio para não printar a seta
+				return $scope.revers ? 'arrow-down' : 'arrow-up';
+			}
+			return '';
+		}
+		/*altera a pgina*/
+		$scope.alteraitensporpagina = function (num) {
+			$scope.itensporpagina = num;
+			$scope.paginaatual = 1; //volta para a página 1 (para não ficar em tela vazia)
+			//$scope.empregados2;
+			//$scope.quantosresultados = $scope.empregados2.length;
+			//console.log('Resultados: ' + $scope.quantosresultados);
+		}
+		/*Aplica filtro de acordo com o que foi digitado*/
+		$scope.filtrar = function (item) {   //se nada foi digitado na busca, retorna true para buscar tudo
+			if ($scope.buscarpor == undefined) {
+				return true;
+			}
+			else {   //se existe um nome com o que foi digitado
+				//ou existe um genero com o que foi digitado
+				//também mostra resultados
+				//var itemgen = item.genero.toLowerCase();
+				var itemsts = $filter('status')(item.tipo);
+				if (item.nome.toLowerCase().indexOf($scope.buscarpor.toLowerCase()) != -1 ||
+					itemsts.toLowerCase().indexOf($scope.buscarpor.toLowerCase()) != -1 ||
+					item.caminho.toLowerCase().indexOf($scope.buscarpor.toLowerCase()) != -1 ||
+					item.oexec.toString().toLowerCase().indexOf($scope.buscarpor.toLowerCase()) != -1
+					) {
+					return true;
+				}
+			}
+			//se não achou, retorna falso
+			return false;
+		}
+		/*final dos processos de paginação e ordenação*/
+		
+        $scope.site = $scope.sites2[0];
+        $scope.tkt = $scope.tkts2[0];
+		$scope.log = $scope.logs[0];
+		$scope.filtro=1;
+        /*retorna a lista tkts e sites*/
+        $scope.listatkt = function () {
+				$scope.tkts2 = ListaTtks.tktsl($scope);
+				//$scope.logs = ListaLogsAutomatizados.logsl($scope);
+        }
+		/*retorna a lista de logs*/
+		$scope.listalogs = function(){
+		$scope.logs = ListaLogsAutomatizados.logsl($scope);			
+		}
+		/*inicia as duas listas*/
+		$scope.inicialistas = function(){
+			$scope.listalogs();
+			$scope.listatkt();
+		}
+		
+		$scope.baixafontes = function(){
+			ChamaServico.chamaservico(0,$scope);
+		}
+		
+		$scope.executateste = function(){
+			ChamaServico.chamaservico(1,$scope);
+		}
+		
+		$scope.lelog = function(){
+			if($scope.log.caminho=='')
+			{
+				Mensagem.msg("Selecione o Log","Por favor, selecione um log para ver o seu conteúdo.")
+			}
+			else
+			{
+				LeLogAutomatizado.lelog($scope);
+			}
+		}
+
+		
+		/*bloqueia o botão*/
+		$scope.bloqueia= function()
+		{
+			$scope.label = "Atualizando.."
+            $scope.botaobloqueado = true;
+			$scope.loading=true;			
+		}
+		/*altera o filtro de tkts/trunks*/
+		$scope.alterafiltro=function()
+		{
+			if($scope.filtro==1)
+			{
+				$scope.filtro=2;
+				$scope.mostrando='TRUNKs';
+				$scope.oposto='TKTs';
+			}
+			else
+			{				
+				$scope.filtro=1;
+				$scope.mostrando='TKTs';
+				$scope.oposto='TRUNKs'
+			}
+			$scope.tkt = $scope.tkts2[0];
+			$scope.site = $scope.sites2[0];
+		}
+		/*aplica o filtro nos itens*/
+		$scope.filtra= function(item)
+		{
+			if(item.tipo==$scope.filtro || item.tipo==-1)
+			{
+				return true;
+			}else return false;
+		}		
+		/*se quer atualizar*/
+		$scope.faca=function()
+		{
+			$scope.label = "Atualizando.."
+			$scope.botaobloqueado=true;
+			$scope.botaobloqueado2=true;
+			$scope.loading=true;
+			AtualizaSiteAutomatizado.atualiza($scope);
+		};
+		//se respondeu que não quer fazer o processo
+		$scope.naofaca=function()
+		{
+			if($scope.op==0)
+			{
+				$scope.loading=false;
+				$scope.botaobloqueado=false;
+				$scope.label="Atualizar";		
+			}
+		};
+		
+        /*faz a treta dos TKTs*/
+        $scope.retorno = function () {
+            //valida o basico das combos
+            if ($scope.tkt == undefined || $scope.site == undefined
+                || $scope.tkt.nome.toLocaleLowerCase() == "selecione" ||
+                $scope.site.nome.toLocaleLowerCase() == "selecione")
+            {
+				Mensagem.msg("Inconsistências","<br/>Selecione Tkt e Site!<br/>");
+                $scope.botaobloqueado = false;
+				$scope.loading=false;
+                return;
+            }
+            //altera o texto do botão para atualizando, bloqueia o botão e exibe o loading
+			//$scope.bloqueia();
+
+            /*chama o factory para atualizar*/
+			Opcao.qst("Tem Certeza?","Você está prestes a atualizar o site abaixo:<br/>"+$scope.site.nome.toLocaleLowerCase()+"<br/>Deseja realmente fazer isto?",$scope);
+            //AtualizaSite.atualiza($scope);
+        }
+    })

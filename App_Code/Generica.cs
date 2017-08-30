@@ -7,6 +7,7 @@ namespace Linx_Seller_QA.App_Code
 {
     public class Generica
     {
+		public int oexec {get;set;}
         public string nome { get; set; }
         public string caminho { get; set; }
 		public int tipo { get; set;}

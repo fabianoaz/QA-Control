@@ -1,0 +1,44 @@
+29/08/2017 11:52:54 * Solicitção de atualização de site, cookie: '6_42974,4715278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17357.zip'
+29/08/2017 11:53:17 * Solicitção de vinculo de banco de dados, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'd:\data'
+29/08/2017 11:53:17 * Terminou o procedimento de attachar.. O Caminho destino não existe </br>d:\data\
+29/08/2017 11:53:17 * saiu da rotina
+29/08/2017 11:53:17 * Erro ao realizar o vínculo com a base, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'd:\data'
+29/08/2017 11:53:30 * Solicitção de vinculo de banco de dados, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 11:53:50 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_kleber Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_kleber
+29/08/2017 11:54:25 * Terminou o procedimento de attachar.. 
+29/08/2017 11:54:25 * saiu da rotina
+29/08/2017 11:54:25 * Base vinculada com sucesso, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 11:54:26 * Base personalizada com sucesso, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 11:54:43 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_kleber Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_kleber
+29/08/2017 11:54:43 * Site atualizado, cookie: '6_42974,4715278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17357.zip'
+29/08/2017 14:17:32 * Solicitção de atualização de site, cookie: '6_42974,4715278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17369.zip'
+29/08/2017 14:18:09 * Solicitção de vinculo de banco de dados, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 14:18:30 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_kleber Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_kleber
+29/08/2017 14:18:30 * Erro ao renomear o site, vai tentar deletar. ErroNão foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+29/08/2017 14:19:13 * Terminou o procedimento de attachar.. 
+29/08/2017 14:19:13 * saiu da rotina
+29/08/2017 14:19:13 * Base vinculada com sucesso, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 14:19:14 * Base personalizada com sucesso, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 14:20:21 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_kleber Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_kleber
+29/08/2017 14:20:21 * Site atualizado, cookie: '6_42974,4715278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17369.zip'
+29/08/2017 14:59:32 * Solicitção de atualização de site, cookie: '6_42974,4715278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17357.zip'
+29/08/2017 15:00:35 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_kleber Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_kleber
+29/08/2017 15:01:22 * Solicitção de vinculo de banco de dados, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 15:01:53 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_kleber Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_kleber
+29/08/2017 15:01:53 * Site atualizado, cookie: '6_42974,4715278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_kleber com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17357.zip'
+29/08/2017 15:02:20 * Terminou o procedimento de attachar.. 
+29/08/2017 15:02:20 * saiu da rotina
+29/08/2017 15:02:20 * Base vinculada com sucesso, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 15:02:21 * Base personalizada com sucesso, cache sol:'6_42974,4715278' ambiente: 'teste' projeto: 'manutencao' cliente: 'kleber' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+29/08/2017 16:20:35 * Solicitção de atualização de site, cookie: '4_42974,6805556' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16635.zip'
+29/08/2017 16:21:35 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_1
+29/08/2017 16:22:07 * Solicitção de vinculo de banco de dados, cache sol:'4_42974,6805556' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.227\db'
+29/08/2017 16:23:19 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_1
+29/08/2017 16:23:22 * Site atualizado, cookie: '4_42974,6805556' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1 com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16635.zip'
+29/08/2017 16:24:39 * Terminou o procedimento de attachar.. 
+29/08/2017 16:24:39 * saiu da rotina
+29/08/2017 16:24:39 * Base vinculada com sucesso, cache sol:'4_42974,6805556' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.227\db'
+29/08/2017 16:24:41 * Base personalizada com sucesso, cache sol:'4_42974,6805556' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.227\db'
