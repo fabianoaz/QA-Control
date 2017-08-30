@@ -1,0 +1,9 @@
+01/08/2017 16:56:56 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+01/08/2017 16:57:54 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+01/08/2017 16:57:59 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+01/08/2017 16:58:07 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+01/08/2017 17:01:58 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+01/08/2017 17:05:07 * Terminou o procedimento de attachar.. 
+01/08/2017 17:05:07 * saiu da rotina
+01/08/2017 17:05:07 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+01/08/2017 17:05:09 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'

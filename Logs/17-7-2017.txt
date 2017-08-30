@@ -1,0 +1,28 @@
+17/07/2017 09:38:44 * Solicitção de vinculo de banco de dados, cache sol:'1_14/07/2017 16:18:00_Bruno Maslinkiewicz' ambiente: 'teste' projeto: 'manutencao' cliente: 'aux' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: 'c:\users\bruno.maslinkiewicz\desktop\dbs\base'
+17/07/2017 09:39:16 * Terminou o procedimento de attachar.. 
+17/07/2017 09:39:17 * Terminou o procedimento de personalizar.. 
+17/07/2017 15:34:55 * Solicitção de atualização de site, cookie: '4_14/07/2017 16:53:00_Giullia Telles' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17044.zip'
+17/07/2017 15:36:01 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+17/07/2017 15:37:49 * Solicitção de vinculo de banco de dados, cache sol:'4_14/07/2017 16:53:00_Giullia Telles' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: 'redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases\'
+17/07/2017 15:37:49 * Terminou o procedimento de attachar.. Caminho do Backup não existe!! <br/> redebrdistribu_060617.bak
+17/07/2017 15:38:19 * Solicitção de vinculo de banco de dados, cache sol:'4_14/07/2017 16:53:00_Giullia Telles' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases\'
+17/07/2017 15:38:25 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+17/07/2017 15:38:37 * Site atualizado, cookie: '4_14/07/2017 16:53:00_Giullia Telles' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17044.zip'
+17/07/2017 16:00:07 * Terminou o procedimento de attachar.. 
+17/07/2017 16:00:11 * Terminou o procedimento de personalizar.. 
+17/07/2017 16:39:31 * Solicitção de atualização de site, cookie: '1_14/07/2017 16:18:00_Bruno Maslinkiewicz' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:40:30 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:41:41 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:42:19 * Site atualizado, cookie: '1_14/07/2017 16:18:00_Bruno Maslinkiewicz' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:43:32 * Solicitção de atualização de site, cookie: '1_42931,6972222_Bruno Maslinkiewicz' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:44:31 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:45:44 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:45:52 * Site atualizado, cookie: '1_42931,6972222_Bruno Maslinkiewicz' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:49:30 * Solicitção de atualização de site, cookie: '1_42931,6972222_Bruno Maslinkiewicz' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:50:33 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:51:42 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:51:50 * Site atualizado, cookie: '1_42931,6972222_Bruno Maslinkiewicz' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:53:32 * Solicitção de atualização de site, cookie: '1_42931,6972222' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'
+17/07/2017 16:54:34 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:55:55 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+17/07/2017 16:56:03 * Site atualizado, cookie: '1_42931,6972222' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17071.zip'

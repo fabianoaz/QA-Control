@@ -1,0 +1,30 @@
+26/07/2017 17:50:36 * Solicitção de atualização de site, cookie: '2_42940,7416667' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip'
+26/07/2017 17:52:07 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_fabiano3
+26/07/2017 17:52:07 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+26/07/2017 17:52:07 * Erro ao atualizar o site, cookie: '2_42940,7416667' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip' erro: 'Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!'
+26/07/2017 17:53:07 * Solicitção de vinculo de banco de dados, cache sol:'2_42940,7416667' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'fabiano3' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: 'g:\data'
+26/07/2017 17:53:14 * Solicitção de atualização de site, cookie: '2_42940,7416667' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip'
+26/07/2017 17:53:28 * Terminou o procedimento de attachar.. 
+26/07/2017 17:53:28 * saiu da rotina
+26/07/2017 17:53:28 * Base vinculada com sucesso, cache sol:'2_42940,7416667' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'fabiano3' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: 'g:\data'
+26/07/2017 17:53:28 * Base personalizada com sucesso, cache sol:'2_42940,7416667' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'fabiano3' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: 'g:\data'
+26/07/2017 17:54:08 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_fabiano3
+26/07/2017 17:54:08 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+26/07/2017 17:54:08 * Erro ao atualizar o site, cookie: '2_42940,7416667' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip' erro: 'Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!'
+26/07/2017 17:56:09 * Solicitção de atualização de site, cookie: '2_42940,7416667' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip'
+26/07/2017 17:57:04 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_fabiano3
+26/07/2017 17:57:04 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+26/07/2017 17:57:04 * Erro ao atualizar o site, cookie: '2_42940,7416667' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip' erro: 'Não foi possivel parar o pool nem renomear o site, certifique-se que a aplicação não está em uso!'
+26/07/2017 18:05:04 * Solicitção de atualização de site, cookie: '2_42940,7416667' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip'
+26/07/2017 18:05:59 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_fabiano3
+26/07/2017 18:07:16 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_fabiano3 Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_fabiano3
+26/07/2017 18:07:23 * Site atualizado, cookie: '2_42940,7416667' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_fabiano3 com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17162.zip'

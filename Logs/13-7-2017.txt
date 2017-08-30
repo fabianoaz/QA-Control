@@ -1,0 +1,40 @@
+13/07/2017 10:04:25 * Solicitção de vinculo de banco de dados, ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+13/07/2017 10:25:02 * Solicitção de vinculo de banco de dados, ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'pedro' bak: '\\poadskfs114\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: '\\poadskfs114\bancos_em_uso'
+13/07/2017 10:50:20 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\poanotfs242\backup\bkpteste1.bak' caminho: '\\poanotfs242\backup\h020mdf'
+13/07/2017 10:51:52 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.150\backup\h020mdf'
+13/07/2017 10:52:13 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.150\backup\'
+13/07/2017 10:55:22 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.150\backup\'
+13/07/2017 10:57:57 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.150\bancorestaurado'
+13/07/2017 11:19:21 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.150\bancorestaurado'
+13/07/2017 11:38:03 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpivateste' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.171\suporte seller'
+13/07/2017 12:05:10 * Solicitção de vinculo de banco de dados, ambiente: 'desenv' projeto: 'h020' cliente: 'pe' criador: 'jpiva' bak: '\\172.16.137.150\backup\bkpteste1.bak' caminho: '\\172.16.137.150\bancorestaurado'
+13/07/2017 13:36:43 * Solicitção de vinculo de banco de dados, ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller\'
+13/07/2017 14:09:56 * Solicitção de vinculo de banco de dados, ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+13/07/2017 14:11:50 * Terminou o procedimento de attachar.. 
+13/07/2017 14:11:51 * Terminou o procedimento de personalizar.. 
+13/07/2017 14:22:33 * Solicitção de vinculo de banco de dados, ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+13/07/2017 14:24:29 * Terminou o procedimento de attachar.. 
+13/07/2017 14:24:30 * Terminou o procedimento de personalizar.. 
+13/07/2017 14:25:36 * Solicitção de vinculo de banco de dados, cache sol:'VC Logou113/07/2017 14:10:00' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+13/07/2017 14:27:53 * Terminou o procedimento de attachar.. 
+13/07/2017 14:27:55 * Terminou o procedimento de personalizar.. 
+13/07/2017 14:34:31 * Solicitção de vinculo de banco de dados, cache sol:'id: 1_13/07/2017 14:34:00' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+13/07/2017 14:36:19 * Terminou o procedimento de attachar.. 
+13/07/2017 14:36:19 * Terminou o procedimento de personalizar.. 
+13/07/2017 14:41:24 * Solicitção de vinculo de banco de dados, cache sol:'id: 1_13/07/2017 14:41:00' ambiente: 'teste' projeto: 'rede' cliente: '' criador: 'bruno' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller\'
+13/07/2017 14:43:17 * Terminou o procedimento de attachar.. 
+13/07/2017 14:43:18 * Terminou o procedimento de personalizar.. 
+13/07/2017 18:00:55 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip
+13/07/2017 18:01:56 * Erro ao atualizar o site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip erro: Não foi possivel parar o pool, ou o mesmo não existe<br/>erro interno:<br/>System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+13/07/2017 18:09:18 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip
+13/07/2017 18:11:44 * Solicitção de vinculo de banco de dados, cache sol:'id: 4_13/07/2017 18:01:00' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.111\data\'
+13/07/2017 18:11:44 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados <br/>Verifique se espaço em disco suficiente para o procedimento.
+13/07/2017 18:12:07 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip
+13/07/2017 18:15:56 * Solicitção de vinculo de banco de dados, cache sol:'id: 4_13/07/2017 18:01:00' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+13/07/2017 18:16:23 * Terminou o procedimento de attachar.. 
+13/07/2017 18:16:23 * Terminou o procedimento de personalizar.. 
+13/07/2017 18:18:44 * Solicitção de vinculo de banco de dados, cache sol:'id: 4_13/07/2017 18:01:00' ambiente: 'teste' projeto: 'manutencao' cliente: '' criador: 'giullia' bak: '\\poadskfs114\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs450\bases'
+13/07/2017 18:20:50 * Terminou o procedimento de attachar.. 
+13/07/2017 18:20:51 * Terminou o procedimento de personalizar.. 

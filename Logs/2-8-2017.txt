@@ -1,0 +1,87 @@
+02/08/2017 09:51:47 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+02/08/2017 09:52:20 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+02/08/2017 09:52:45 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+02/08/2017 09:52:45 * Erro ao renomear o site, vai tentar deletar. ErroNão foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+02/08/2017 09:53:32 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+02/08/2017 09:53:36 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+02/08/2017 09:55:26 * Terminou o procedimento de attachar.. 
+02/08/2017 09:55:26 * saiu da rotina
+02/08/2017 09:55:26 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+02/08/2017 09:55:28 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+02/08/2017 09:56:02 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'teste' cliente: '1' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 09:56:22 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16532.zip'
+02/08/2017 09:56:27 * Terminou o procedimento de attachar.. 
+02/08/2017 09:56:27 * saiu da rotina
+02/08/2017 09:56:27 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'teste' cliente: '1' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 09:56:28 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'teste' cliente: '1' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 09:57:25 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_1
+02/08/2017 09:57:25 * Erro ao renomear o site, vai tentar deletar. ErroNão foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_1' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+02/08/2017 09:58:32 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_1
+02/08/2017 09:58:36 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1 com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-16532.zip'
+02/08/2017 10:19:55 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17123.zip'
+02/08/2017 10:21:32 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 10:21:47 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_1
+02/08/2017 10:21:47 * Erro ao renomear o site, vai tentar deletar. ErroNão foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_1' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+02/08/2017 10:22:04 * Terminou o procedimento de attachar.. 
+02/08/2017 10:22:04 * saiu da rotina
+02/08/2017 10:22:04 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 10:22:05 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 10:22:43 * Parou/Inciou o Pool, Pool: sweb_teste_1 Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_1
+02/08/2017 10:22:46 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_1 com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17123.zip'
+02/08/2017 13:25:24 * Solicitção de atualização de site, cookie: '4_42933,6069444' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+02/08/2017 13:26:23 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_giullia
+02/08/2017 13:26:23 * Erro ao renomear o site, vai tentar deletar. ErroNão foi possivel renomear o site, Possivelmente algum arquivo encontra-se em aberto ou em uso por outra aplicação!
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+02/08/2017 13:27:07 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_giullia Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_giullia
+02/08/2017 13:27:10 * Site atualizado, cookie: '4_42933,6069444' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\tkt-17206.zip'
+02/08/2017 13:27:54 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 13:27:55 * Terminou o procedimento de attachar.. Ocorreu algum erro ao tentar restaurar o baco de dados </br>Verifique se existe espaço em disco, se o destino está acessível a partir servidor e se o arquivo .BAK está íntegro.
+02/08/2017 13:27:55 * saiu da rotina
+02/08/2017 13:27:55 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: 'g:\data'
+02/08/2017 13:28:08 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+02/08/2017 13:31:14 * Terminou o procedimento de attachar.. 
+02/08/2017 13:31:14 * saiu da rotina
+02/08/2017 13:31:14 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+02/08/2017 13:31:16 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\poadskfs411\suporte seller'
+02/08/2017 14:04:00 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte'
+02/08/2017 14:04:00 * Terminou o procedimento de attachar.. O Caminho destino não existe </br>\\172.16.137.171\suporte\
+02/08/2017 14:04:00 * saiu da rotina
+02/08/2017 14:04:00 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte'
+02/08/2017 14:04:59 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte seller'
+02/08/2017 14:05:02 * O procedimento de attachar foi abortado.. O procedimento de attachar foi interrompido! </br> Verifique a integridade da base e se existe acesso de rede aos caminhos especificados. erro interno System.Data.SqlClient.SqlException (0x80131904): Conversion failed when converting the varchar value '</br>Erro número ' to data type int.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlDataReader.TryConsumeMetaData()
+   at System.Data.SqlClient.SqlDataReader.get_MetaData()
+   at System.Data.SqlClient.SqlCommand.FinishExecuteReader(SqlDataReader ds, RunBehavior runBehavior, String resetOptionsString, Boolean isInternal, Boolean forDescribeParameterEncryption)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReaderTds(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, Boolean async, Int32 timeout, Task& task, Boolean asyncWrite, Boolean inRetry, SqlDataReader ds, Boolean describeParameterEncryptionRequest)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method, TaskCompletionSource`1 completion, Int32 timeout, Task& task, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.RunExecuteReader(CommandBehavior cmdBehavior, RunBehavior runBehavior, Boolean returnStream, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader(CommandBehavior behavior, String method)
+   at System.Data.SqlClient.SqlCommand.ExecuteReader()
+   at AttachaPersonaliza.attachabanco(String tiposistema, String tipoambiente, String projeto, String cliente, String criador, String maquinabanco, String bak, String caminho, String ipsite)
+ClientConnectionId:0361e8b6-cdd9-41e1-a24a-01ed74fb8448
+Error Number:245,State:1,Class:16
+02/08/2017 14:05:02 * saiu da rotina
+02/08/2017 14:05:02 * Erro ao realizar o vínculo com a base, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte seller'
+02/08/2017 14:05:53 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte seller'
+02/08/2017 14:08:44 * Terminou o procedimento de attachar.. 
+02/08/2017 14:08:44 * saiu da rotina
+02/08/2017 14:08:44 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte seller'
+02/08/2017 14:08:46 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: 'manutencao' cliente: 'giullia' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_postoortoflore_110117.bak' caminho: '\\172.16.137.171\suporte seller'
+02/08/2017 15:44:02 * Solicitção de atualização de site, cookie: '1_42946,7159722' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\VERSION\7.03.1006.zip'
+02/08/2017 15:45:03 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+02/08/2017 15:45:47 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+02/08/2017 15:45:56 * Site atualizado, cookie: '1_42946,7159722' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\VERSION\7.03.1006.zip'

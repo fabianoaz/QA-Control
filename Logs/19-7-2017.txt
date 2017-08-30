@@ -1,0 +1,65 @@
+19/07/2017 09:11:04 * Solicitção de vinculo de banco de dados, cache sol:'4_14/07/2017 16:53:00' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 09:11:04 * Erro ao realizar o vínculo com a base, cache sol:'4_14/07/2017 16:53:00' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 09:11:47 * Solicitção de vinculo de banco de dados, cache sol:'4_14/07/2017 16:53:00' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 09:25:13 * Solicitção de vinculo de banco de dados, cache sol:'2_42933,3881944' ambiente: 'teste' projeto: 'manutencao' cliente: 'fabiano' criador: '2' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+19/07/2017 09:26:20 * Base vinculada com sucesso, cache sol:'2_42933,3881944' ambiente: 'teste' projeto: 'manutencao' cliente: 'fabiano' criador: '2' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+19/07/2017 09:26:21 * Base personalizada com sucesso, cache sol:'2_42933,3881944' ambiente: 'teste' projeto: 'manutencao' cliente: 'fabiano' criador: '2' bak: '\\172.16.137.227\backups\clientes 2017\sqlsellerweb03_prod03_sellerweb_portal500.bak' caminho: 'g:\data'
+19/07/2017 09:29:51 * Base vinculada com sucesso, cache sol:'4_14/07/2017 16:53:00' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 09:29:55 * Base personalizada com sucesso, cache sol:'4_14/07/2017 16:53:00' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\redebrdistribu_060617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 09:55:40 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 09:56:41 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_aux_bruno
+19/07/2017 09:56:45 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_aux_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_aux_bruno
+19/07/2017 09:56:53 * Site atualizado, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 09:57:57 * Solicitção de vinculo de banco de dados, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'manutencao' cliente: 'aux' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 10:00:15 * Base vinculada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'manutencao' cliente: 'aux' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 10:00:19 * Base personalizada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'manutencao' cliente: 'aux' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 10:49:28 * Solicitção de atualização de site, cookie: '5_42933,4513889' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_pedro' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 10:50:56 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_pedro Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_pedro
+19/07/2017 10:51:31 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_pedro Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_pedro
+19/07/2017 10:51:40 * Site atualizado, cookie: '5_42933,4513889' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_pedro com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 11:42:57 * Solicitção de atualização de site, cookie: '2_42933,4881944' Site: 'E:\SitesSeller\DefaultWebSite\cpbr_teste' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 11:43:57 * Parou/Inciou o Pool, Pool: cpbr_teste Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:cpbr_teste
+19/07/2017 11:43:57 * Erro ao Atualizar ambiente, erro:Não foi possivel parar o pool, ou o mesmo não existe
+Erro interno:System.IO.IOException: Access to the path 'E:\SitesSeller\DefaultWebSite\cpbr_teste' is denied.
+   at System.IO.Directory.InternalMove(String sourceDirName, String destDirName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+19/07/2017 11:43:57 * Erro ao atualizar o site, cookie: '2_42933,4881944' site: 'E:\SitesSeller\DefaultWebSite\cpbr_teste' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Não foi possivel parar o pool, ou o mesmo não existe'
+19/07/2017 11:49:18 * Solicitção de atualização de site, cookie: '2_42933,4881944' Site: 'E:\SitesSeller\DefaultWebSite\cpbr_teste' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 11:50:49 * Erro ao Atualizar ambiente, erro:Erro ao mover o WEB.CONFIG
+Erro interno:System.IO.FileNotFoundException: Could not find file 'E:\SitesSeller\DefaultWebSite\cpbr_teste\web.config'.
+File name: 'E:\SitesSeller\DefaultWebSite\cpbr_teste\web.config'
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.File.InternalMove(String sourceFileName, String destFileName, Boolean checkHost)
+   at DeletaCopia.atualizasite(String zip, String site)
+19/07/2017 11:50:49 * Erro ao atualizar o site, cookie: '2_42933,4881944' site: 'E:\SitesSeller\DefaultWebSite\cpbr_teste' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Erro ao mover o WEB.CONFIG'
+19/07/2017 11:54:14 * Solicitção de atualização de site, cookie: '2_42933,4881944' Site: 'E:\SitesSeller\DefaultWebSite\cpbr_teste' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 11:55:39 * Parou/Inciou o Pool, Pool: cpbr_teste Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:cpbr_teste
+19/07/2017 11:56:14 * Parou/Inciou o Pool, Pool: cpbr_teste Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:cpbr_teste
+19/07/2017 11:56:22 * Site atualizado, cookie: '2_42933,4881944' site: 'E:\SitesSeller\DefaultWebSite\cpbr_teste com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 13:38:47 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 13:39:44 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_bruno
+19/07/2017 13:40:28 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_bruno
+19/07/2017 13:40:30 * Erro ao Atualizar ambiente, erro:Erro ao deletar residuos
+Erro interno:System.IO.IOException: The directory is not empty.
+
+   at System.IO.Directory.DeleteHelper(String fullPath, String userPath, Boolean recursive, Boolean throwOnTopLevelDirectoryNotFound)
+   at System.IO.Directory.Delete(String fullPath, String userPath, Boolean recursive, Boolean checkHost)
+   at DeletaCopia.criadiretorio(String diretorio, Boolean deleta, Boolean cria)
+   at DeletaCopia.atualizasite(String zip, String site)
+19/07/2017 13:40:30 * Erro ao atualizar o site, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_bruno' com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip' erro: 'Erro ao deletar residuos'
+19/07/2017 13:41:30 * Solicitção de atualização de site, cookie: '1_42932,7340278' Site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_bruno' Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 13:42:29 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe stop /apppool.name:sweb_teste_manutencao_bruno
+19/07/2017 13:43:05 * Parou/Inciou o Pool, Pool: sweb_teste_manutencao_bruno Comando: C:\Windows\System32\inetsrv\appcmd.exe start /apppool.name:sweb_teste_manutencao_bruno
+19/07/2017 13:43:14 * Site atualizado, cookie: '1_42932,7340278' site: 'E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_bruno com o Tkt: '\\192.168.56.87\public\sellerweb\TKT\7.03.1006.zip'
+19/07/2017 14:35:08 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 14:36:09 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 14:36:11 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs450\bases'
+19/07/2017 16:09:14 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 16:10:39 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 16:10:42 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 16:37:51 * Solicitção de vinculo de banco de dados, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 16:39:53 * Base vinculada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 16:39:55 * Base personalizada com sucesso, cache sol:'4_42933,6069444' ambiente: 'teste' projeto: '1' cliente: '' criador: '' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_apoesteplaza_130117.bak' caminho: '\\poadskfs411\suporte seller'
+19/07/2017 16:54:27 * Solicitção de vinculo de banco de dados, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'teste' cliente: 'versaorede' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller\'
+19/07/2017 16:55:52 * Base vinculada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'teste' cliente: 'versaorede' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller\'
+19/07/2017 16:55:54 * Base personalizada com sucesso, cache sol:'1_42932,7340278' ambiente: 'teste' projeto: 'teste' cliente: 'versaorede' criador: 'bruno' bak: '\\172.16.137.227\backups\clientes 2017\sellerweb_acapulco_270617.bak' caminho: '\\poadskfs411\suporte seller\'

@@ -1,0 +1,88 @@
+<!--Inicio do accordion -->
+<div class="panel panel-default" style="margin-left: 0%; margin-top: 0.5%; width: 100%; min-width: 16.5%; %; float:left">
+
+    <!--TestLink-->
+	<div class="panel-heading">
+        <a id="a" class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" ng-href="#TestLink">Test Link</a>
+    </div>
+    <div id="TestLink" class="panel-collapse collapse">
+		<iframe style="height: 950px; width: 97%; margin-top: 2.5%; margin-left: 1%;" src="http://wwh5.sellercorp.com.br:8080/testlink/index.php?caller=login&viewer=" ng-show='true'></iframe>			
+    </div>
+	<!--Final do TestLink-->
+	
+    <!--TestComplete-->
+	<div class="panel panel-default" ng-controller="ControllerQASITESAUTOMATIZADO" ng-init="inicialistas()" style="margin-left: 0%; margin-top: 0.5%; width: 100%; min-width: 16.5%; %; float:left" ng-show='true'>
+		<div class="panel-heading">
+			<a id="a" ng-class="btninfoblock" data-toggle="collapse" data-parent="#accordion" ng-href="#TestesAutomatizados">Testes Automatizados</a>
+		</div>
+		<div id="TestesAutomatizados" class="panel-collapse collapse" >
+		<div style="margin-left: 2%; margin-top: 0.5%; width: 100%; min-width: 16.5%;">
+			<button ng-class="btninfoblock + ' glyphicon glyphicon-download-alt'" ng-disabled="botaobloqueado3"   style="margin-left: 0.3%; margin-top:2px; width:40px; float:left" ng-click="baixafontes()" data-toggle="Baixa Fonte" title="Atualiza o Repositório dos Fontes..."></button>
+			<button ng-class="btninfoblock + ' glyphicon glyphicon-play-circle'" ng-disabled="botaobloqueado2" style="margin-left: 0.3%; margin-top:2px; width:40px; float:left" ng-click="executateste()" data-toggle="tooltip" title="Executa os Testes Automatizados..."></button>
+		</div>
+			 <div class="jumbotron">
+				   <div ng-class="formcontrol" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80px; width: 80%;">
+						<div>
+						<div style="width: 100px; float:left">
+								<label id="tkt-trunk" style="margin-left: 5px; display: hidden" ng-click="alterafiltro()" data-toggle="tooltip" title="Mostrar {{oposto}}">{{mostrando}}</label>
+								<input type="button" id="refresh" ng-disabled="botaobloqueado" style="margin-top: 0.1%; background-color: white; border: none; background-image: url(Gifs/lx_refresh.png); background-size: cover; width:20px; height:17px; background-repeat:no-repeat ;" ng-click="listatkt()" data-toggle="tooltip" title="Atualizar Lista..."/>
+						</div>	
+						</div>
+							<select ng-class="formcontrol" ng-model="tkt" ng-options="t.nome for t in tkts2 | orderBy:'-nome' | filter: filtra"></select>
+				   </div>
+				   <div ng-class="formcontrol" style="margin-left: 10%; margin-top: 0.5%;  margin-right: 80%; height: 80px; width: 80%;">
+					   <label style="margin-left: 5px;">Sites:</label>
+					   <select ng-class="formcontrol" ng-model="site" ng-options="s.nome for s in sites2"></select>
+				   </div>
+				   <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
+					   <input type="button" ng-class="btnprimaryblock" value="{{label}}" ng-click="retorno()" ng-disabled="botaobloqueado" style="float: left"/>
+				   </div>
+				<div style="background-color: #eee; width: 100%;">
+					<img style="width: 40px; height: 40px;" src="Gifs\loading2.gif" ng-show="loading" />
+				</div>
+				   <div ng-class="formcontrol" style="margin-left: 10%; margin-top: 50px;  margin-right: 80%; height: 80px; width: 80%;">
+					   <label style="margin-left: 5px;">Logs:</label>
+					   <input type="button" id="refresh" ng-disabled="botaobloqueado2" style="margin-top: 0.1%; background-color: white; border: none; background-image: url(Gifs/lx_refresh.png); background-size: cover; width:20px; height:17px; background-repeat:no-repeat ;" ng-click="listalogs()" data-toggle="tooltip" title="Atualizar Lista..."/>
+					   <select ng-class="formcontrol" ng-model="log" ng-options="l.nome for l in logs | orderBy:'-nome'"></select>
+				   </div>
+				   <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
+					   <input type="button" ng-class="btnprimaryblock" value="{{label2}}" ng-click="lelog()" ng-disabled="botaobloqueado4" style="float: left"/>
+				   </div>		
+					<div style="margin-left:7%; width:86%; margin-top:70px; "  ng-show="temresultado">
+					<div style="margin-top:7px; margin-left:7%; %; float:left"> <label> Visualizando o log: {{nomedoarquivo}}, </label> </div> 
+						<div style="margin-left:5px; margin-top:7px; %; float:left;"> <label>Itens por página: </label> </div> 
+						<select ng-class="formcontrol" style="margin-left:5px; width:80px; %; float:left"  ng-model="ver" ng-change="alteraitensporpagina(ver)"><option>3</option><option>5</option><option>10</option><option>20</option><option>40</option><option>80</option><option>100</option><option>200</option><option>300</option><option>400</option><option>500</option></select> 
+						<div style="margin-left:5px; margin-top:7px; float:left;"><label>Procurar por trecho em específico: </label></div> <input type="text" placeholder="Digite qualquer trecho de qualquer coluna para filtrar." class="form-control" style="width:54%; float:left" ng-model="buscarpor" />
+					<br/>
+					
+						<table class="table" style="margin-left:7%; width:86%; margin-top:7px; %; float:left" ng-show="temresultado">
+						  <thead>
+							<!--<tr style="background-color:#99bbe8">-->
+							<tr style="background-color:RGB(51,122,183); color:white;">
+							  <th ng-click="sort('oexec')" data-toggle="tooltip" title="Clique para ordenar por esta coluna" >Ordem de Execução <div ng-class="getsortclass('oexec')"> </div> </th>
+							  <th ng-click="sort('nome')" data-toggle="tooltip" title="Clique para ordenar por esta coluna" >Caso <div ng-class="getsortclass('nome')"> </div> </th>
+							  <th ng-click="sort('caminho')" data-toggle="tooltip" title="Clique para ordenar por esta coluna">Caminho <div ng-class="getsortclass('caminho')"> </div></th>
+							  <th ng-click="sort('tipo')" data-toggle="tooltip" title="Clique para ordenar por esta coluna">Situação <div ng-class="getsortclass('tipo')"> </div></th>
+							</tr>
+						  </thead>
+						  <tbody>
+							<tr ng-repeat="caso in casos2 =(casos | orderBy:sortc:revers | filter:filtrar).slice(((paginaatual-1)*itensporpagina), ((paginaatual)*itensporpagina))" style="background-color:{{caso.tipo | cor}}">
+							  <td>{{caso.oexec}}</td>
+							  <td>{{caso.nome}}</td>
+							  <td>{{caso.caminho}}</td>
+							  <td>{{caso.tipo | status}}</td>
+							</tr>
+						  </tbody>
+						</table>
+						<pagination total-items="(casos  | filter:filtrar).length" ng-model="paginaatual" class="pagination-sm" previous-text="&lsaquo;" next-text="&rsaquo;" items-per-page="itensporpagina" style="margin-left:7%; width:86%; margin-top:7px; " ng-show="temresultado"></pagination>
+					</div>
+
+				   
+			</div>		
+		</div>
+    </div>		
+	<!--Final do TestComplete-->
+
+
+</div>
+<!--Final do grupo de accordion -->

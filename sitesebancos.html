@@ -1,0 +1,121 @@
+ <!--<input type="button" ng-click="listatktesite()"/>-->
+    <div class="panel-group" id="accordion" style="height: 80%; width: 100%; %; float:left">
+        <!-- PAINEL ACCORDION PARA SITES -->
+        <div class="panel panel-default" ng-controller="ControllerQASITES" ng-init="listatktesite()" style="margin-left: 0%; margin-top: 0.5%; width: 100%; min-width: 16.5%; %; float:left">
+            <div class="panel-heading">
+                <a id="a" class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" ng-href="#sites">Atualização de Sites</a>
+            </div>
+            <div id="sites" class="panel-collapse collapse">
+                <div class="jumbotron">
+                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80px; width: 80%;">
+						<div>
+							<div style="width: 100px; float:left">
+								<label id="tkt-trunk" style="margin-left: 5px; display: hidden" ng-click="alterafiltro()" data-toggle="tooltip" title="Mostrar {{oposto}}">{{mostrando}}</label>
+								<input type="button" id="refresh" ng-disabled="botaobloqueado" style="margin-top: 0.1%; background-color: white; border: none; background-image: url(Gifs/lx_refresh.png); background-size: cover; width:20px; height:17px; background-repeat:no-repeat ;" ng-click="listatktesite()" data-toggle="tooltip" title="Atualizar..."/>
+							</div>	
+						</div>
+							<select class="form-control" ng-model="tkt" ng-options="t.nome for t in tkts2 | orderBy:'-nome' | filter: filtra"></select>
+                    </div>
+                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%;  margin-right: 80%; height: 80px; width: 80%;">
+                        <label style="margin-left: 5px;">Sites:</label>
+                        <select class="form-control" ng-model="site" ng-options="s.nome for s in sites2"></select>
+                    </div>
+                    <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
+                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-click="retorno()" ng-disabled="botaobloqueado" style="float: left"/>
+                    </div>
+					<div style="background-color: #eee; width: 100%;">
+						<img style="width: 40px; height: 40px;" src="Gifs\loading2.gif" ng-show="loading" />
+					</div>
+                </div>
+            </div>
+        </div>
+        <!-- FIM DO PAINEL ACCORDION PARA SITES -->
+        <!-- PAINEL ACCORDION PARA BANCOS -->
+        <div class="panel panel-default" ng-controller="ControllerQADB" ng-init="inicializa()" style="margin-left: 0%; margin-top: 0.5%; width: 100%; min-width: 16.5%; %; float:left">
+            <div class="panel-heading">
+                <a class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" ng-href="#bancos">Restauração de Banco</a>
+            </div>
+            <div id="bancos" class="panel-collapse collapse">
+                <div class="jumbotron" style="height: 70%; width: 100%; margin-bottom:-4%; %; float:left">
+				<div style="margin-left: 7%; margin-top: 0%; width: 93%; min-width: 10px; %; float:left" >
+                    <div class="form-control" style="margin-left: 0%; margin-top: 0.5%; height: auto; min-height: 266px; min-width: 356px; width: 46%; float:left">
+                        <legend> Configurações do Ambiente </legend>
+                        <div style="margin-left: 1%; margin-top: 5%; margin-right: 1%; height: auto; width: 100%;">
+                            <label>Tipo Sistema:</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="sweb" ng-model="tiposistema">Seller Web</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="cpbr" ng-model="tiposistema" >CPBR</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="servicos" ng-model="tiposistema">Serviço</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="auditoria" ng-model="tiposistema" >Auditoria</label>
+                        </div>
+                        <div style="margin-left: 1%; margin-top: 5%; margin-right: 1%; height: auto; width: auto;">
+                            <label>Tipo Ambiente:</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="teste" ng-model="tipoambiente">Teste</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="desenv" ng-model="tipoambiente">Desenvolvimento</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="homolog" ng-model="tipoambiente">Homologação</label>
+                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="documentacao" ng-model="tipoambiente">Documentação</label>
+                        </div>
+                    </div>
+                    <div class="form-control" style="margin-top: 0.5%; margin-right: 0%; height: auto; min-height: 257px; min-width: 356px; width: 46.5%; %;float:left">
+                        <legend> Informações do Ambiente </legend>
+                        <label style="margin-left: 5%;">Projeto:</label>
+                        <input id="projeto" style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do projeto." ng-model="projeto"/>
+                        <label style="margin-left: 5%;">Cliente:</label>
+                        <input id="cliente" style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do cliente." ng-model="cliente" />
+                        <label style="margin-left: 5%;">Criador:</label>
+                        <input id="criador" style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do criador." ng-model="criador"/>
+						<label id="nomesite" style="margin-left: 5%; font-size: 10px; font-style: oblique">Nome do banco: {{nomesite()}}</label>
+                    </div>
+				</div>				
+				<div style="margin-left: -3%; margin-top: 0%;margin-bottom: 1%; height: auto; min-height: 257px; width: 100%; min-width: 412px; %; float:left" >				
+                    <div id="banco" class="form-control;" style="margin-top: 0.5%; margin-bottom: 0.5%; margin-right: 10%; height: auto; min-height: 257px; width: 100%; min-width: 356px; %; float:left">
+                        <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80%; width: 86%;">
+                            <legend> Restaurar Base de Dados </legend>
+                            <label>Backup (BAK):</label> <label style="margin-left: 0.5%; font-size: 11px;"> \\172.16.137.227\Backups\</label>
+							<input id="bak" class="form-control" type="text" placeholder="Informe o caminho do arquivo .BAK." ng-model="bak" data-toggle="tooltip" title="Inicie com \\ para caminho em rede, ou com unidade:\ para caminho no servidor de bancos."/>
+                            <label>Destino:</label> <label style="margin-left: 0.5%; font-size: 11px;"> G:\Data  ,  E:\SQL_SERVER\MSSQL11.SQL2012\MSSQL\Data  ou  \\minhamaquina\pasta</label>
+							<input id="destino" class="form-control" type="text" placeholder="Informe o caminho de destino do arquivo .MDF." ng-model="destino" data-toggle="tooltip" title="Inicie com \\ para caminho em rede, ou com unidade:\ para caminho no servidor de bancos." />
+                        </div>
+                        <div class="form-control" style="margin-left: 10%; margin-top: 0.5%;  margin-right: 80%; height: 130px; width: 86%;">
+                            <legend> Personalização </legend>
+                            <div id="mail" style="margin-top: 0.5%; height: 50% ;width: 50%; float:left">
+                                <label style="float:left; margin-top: 5px">E-mail:</label><input id="email" class="form-control" style="margin-left: 4.5% height: 30px; width: 90%;" type="text"
+                                                                                placeholder="E-mail." ng-model="email" />
+                            </div>
+                            <div id="check1" style="margin-left: 50%; height:10%;width: 50%;">
+                                <input style="margin-left: 5%; margin-top:20px" type="checkbox" value="senha" ng-model="alterarsenhas" />Alterar Senhas
+                                <input style="margin-left: 5%; margin-top:20px" type="checkbox" value="nfe" ng-model="usanfe" />Usa NF-e
+                                <input style="margin-left: 5%; margin-top:20px  margin-bottom:20px" type="checkbox" value="nfce" ng-model="usanfce" />Usa NFC-e
+                            </div>
+                        </div>
+						
+						
+						<div class="panel-heading" style="width: 88%; margin-left: 9%;">
+							<a class="btn btn-primary btn-block" data-toggle="collapse" data-parent="#accordion2" ng-href="#PPDV" style="margin-top: 0.5%; margin-left: 0%; height: auto; min-height: 10px; min-width: 356px; width: 100%; background-color:#FFFFFF; color:black; %;float:left;">Configurar PDV</a>
+						</div>						
+						<div id="PPDV" class="panel-collapse collapse" style="margin-top: 0.5%; margin-left: 10%; height: auto; min-height: 10px; min-width: 356px; width: 86%; background-color:#FFFFFF; color:black; %;float:left;">
+								<div class="form-control" style="margin-top: 0%; margin-bottom: 0%; margin-left: 0%; height: auto; min-height: 10px; min-width: 356px; width: 100%; %;float:left">
+												<label style="float:left; margin-top: 5px">Nome Máquina:</label><input id="nomemaquina" class="form-control" style="margin-left: 2%; height: 30px; width: 40%; float:left" type="text" maxlength=20 placeholder="Nome da máquina." ng-model="nomemaquina" />
+												<label style="margin-left: 2%; margin-top: 5px">Ativar Pista:</label><input style="margin-left: 0.5%;margin-top: 10px" type="checkbox" value="pista" ng-model="ativarpista" /><br>
+												<div style="margin-right: 90%; margin-top:2%; height: 30%; width: 90%;">
+													<label style="margin-left: 0.5%; float:left; margin-top: 5px">ECF:</label><input style="margin-left: 0.5%; float:left; margin-top: 7px" type="checkbox" value="ecf" ng-model="criaecf" />
+													<label style="margin-left: 0.9%; float:left; margin-top: 5px">Serial:</label><input style="margin-left: 0.5%; width: 80px; float:left" class="form-control"  id="serial"  type="number" name="quantity" placeholder="1 - 9" ng-model="serial">
+													<label style="margin-left: 0.9%; float:left; margin-top: 5px">Marca ECF:</label>
+													<select class="form-control"  style="margin-left: 0.5%; width: 122px; float:left" ng-model="marcaecf" ng-options="mecf.nome for mecf in marcasecf"></select>
+													<label style="margin-left: 0.9%; float:left; margin-top: 5px">Nº Série:</label><input class="form-control" id="serieecf" style="margin-left: 0.5%; width: 200px; float:left" type="text"
+																											 maxlength=20 placeholder="Nº de série do ECF." ng-model="serieecf" />
+													<label style="margin-left: 0.9%; float:left; margin-top: 5px">Nº Equipamento:</label><input class="form-control" id="numeroequipamento" style="margin-left: 0.5%; width: 80px; float:left" type="number" name="quantity" placeholder="1 - 99" ng-model="numeroequipamento">
+												</div>					
+								</div>			
+						</div> 
+					</div>
+					<div style="margin-left: 25.5%; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
+                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-click="ciarbanco()" ng-disabled="botaobloqueado" style="float: left"/>
+                    </div>
+					<div style="background-color: #eee; width: 100%;">
+						<img style="width: 40px; height: 40px;" src="Gifs\loading2.gif" ng-show="loading" />
+					</div>	
+				</div>
+				</div>
+            </div>
+        </div> <!-- FIM DO PAINEL ACCORDION PARA BANCOS -->
+    </div> <!-- FIM DO GRUPO DE ACCORDIONS -->

@@ -1,168 +1,88 @@
 ﻿<!DOCTYPE html>
 <html ng-app="Module">
-
+<!--[if lte IE 10]><script>
+    ie = 7;
+	alert("O navegador está desatualizado, Versão atual "+ ie+ " Versão mínima 10");
+	location.href="./erro.html"
+</script><![endif]-->
 <head>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
     <script>
         window.angular || document.write('<script src="Scripts/angular.js"> <\/script/>');
     </script>
 
-    <script src="Scripts/ScriptsJSQA.js?1"></script>
-    <script src="Scripts/scripts.js"></script>
-    <script src="Scripts/Services.js"></script>
-
+    <script src="Scripts/ScriptsJSQA.js?14"></script>
+    <script src="Scripts/scripts.js?3"></script>
+    <script src="Scripts/Services.js?14"></script>
+	<script src="Scripts/Filters.js?4"></script>
+	<link href="StylesProprios/StylesProprios.css" rel="stylesheet" />
+	
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script>
-        window.jquery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
+        window.jQuery || document.write('<script src="JQuery/jquery-3.2.1.min.js"><\/script>');
     </script>
-
+	<!-- Tem que ajustar o head da pagina quando usar essa referencia, pois ele gera um espaço que não identifiquei a origem -->
+	<!--<link href="booststrap-linx/linx-bootstrap.css" rel="stylesheet"/> -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script>
-        window.bootstrap || document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
+	if (!verificaestilo('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'))
+	{	
+		document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
+	}	
+        //window.bootstrap || document.write('<link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet"\/>');
     </script>
-
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
-        window.bootstrapjs || document.write('<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"><\/script>');
+        window.jQuery.fn.modal || document.write('<script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"><\/script>');
     </script>
 	
 	
-	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script>
-        window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+	if (!verificaestilo('https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css'))
+	{
+		document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
+	}	
+        //window.jqueryuicss || document.write('<link href="JQuery/jquery-ui.min.css" rel="stylesheet"\/>');
     </script>
 	
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<script>
-        window.jqueryuijs || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
+        window.jQuery.ui || document.write('<script src="JQuery/jquery-ui.min.js"><\/script>');
     </script>
 
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular-cookies.min.js"></script>
+		<script>
+			//pendente
+			window.cookiesjs || document.write('<script src="Scripts/angular-cookies.js"> <\/script/>');
+		</script>
+		<!--baixar localmente depois-->
+		<script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.11.0.js"></script>
+		
+		
 	<link rel="icon" type="image/x-icon" href="favicon.ico"> 
-    <title> Atualiza Sites</title>
+    <title> QA Seller </title>
+	<base href="./Accordion">
 </head>
 
-<body  onload="desabPDV()"  >
-
-	<div class="jumbotron text-center">
-		<h3>QA Seller - Gerencimento de Versões</h3>
+<body  ng-controller="paginas" ng-init="trocatema()" >
+	<div style="background-color: #eee; float: left">
+		<button ng-class="btninfoblock + ' glyphicon glyphicon-off'" style="margin-left: 0.3%; margin-top:2x; width:40px" ng-click="desloga()" data-toggle="tooltip" title="Logoff..."></button>
 	</div>
-
-    <!--<input type="button" ng-click="listatktesite()"/>-->
-    <div class="panel-group" id="accordion">
-        <!-- PAINEL ACCORDION PARA SITES -->
-        <div class="panel panel-default" ng-controller="ControllerQASITES" ng-init="listatktesite()">
-            <div class="panel-heading">
-                <a class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" href="#sites">Atualização de Sites</a>
-            </div>
-            <div id="sites" class="panel-collapse collapse">
-                <div class="jumbotron">
-                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80px; width: 80%;">
-                        <label style="margin-left: 1%;">TKTs:</label>
-                        <select class="form-control" ng-model="tkt" ng-options="t.nome for t in tkts2"></select>
-                    </div>
-                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80px; width: 80%;">
-                        <label style="margin-left: 1%;">Sites:</label>
-                        <select class="form-control" ng-model="site" ng-options="s.nome for s in sites2"></select>
-                    </div>
-                    <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
-                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-click="retorno()" ng-disabled="botaobloqueado" style="float: left"/>
-                    </div>
-					<div>
-						<img style="width: 3%; height: 3%;" src="Gifs\loading2.gif" ng-show="loading" />
-					</div>
-                </div>
-            </div>
-        </div>
-        <!-- FIM DO PAINEL ACCORDION PARA SITES -->
-        <!-- PAINEL ACCORDION PARA BANCOS -->
-        <div class="panel panel-default" ng-controller="ControllerQADB" ng-init="inicializa()">
-            <div class="panel-heading">
-                <a class="btn btn-info btn-block" data-toggle="collapse" data-parent="#accordion" href="#bancos">Restauração de Banco</a>
-            </div>
-            <div id="bancos" class="panel-collapse collapse">
-                <div class="jumbotron">
-                    <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; height: 257px; width: 35%; float:left">
-                        <legend> Configurações do Ambiente </legend>
-                        <div style="margin-left: 1%; margin-top: 5%; margin-right: 1%; height: auto; width: 100%;">
-                            <label>Tipo Sistema:</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="sweb" ng-model="tiposistema">Seller Web</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="cpbr" ng-model="tiposistema" >CPBR</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="servicos" ng-model="tiposistema">Serviço</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optsist" value="auditoria" ng-model="tiposistema" >Auditoria</label>
-                        </div>
-                        <div style="margin-left: 1%; margin-top: 5%; margin-right: 1%; height: auto; width: auto;">
-                            <label>Tipo Ambiente:</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="teste" ng-model="tipoambiente">Teste</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="desenv" ng-model="tipoambiente">Desenvolvimento</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="homolog" ng-model="tipoambiente">Homologação</label>
-                            <label style="margin-left: 1%; width: auto;" class="radio-inline"><input type="radio" name="optamb" value="documentacao" ng-model="tipoambiente">Documentação</label>
-                        </div>
-                    </div>
-                    <div class="form-control" style="margin-left: 45%; margin-top: 0.5%; margin-right: 10%; height: 257px; width: 45%;">
-                        <legend> Informações do Ambiente </legend>
-                        <label style="margin-left: 5%;">Projeto:</label>
-                        <input id="projeto" style="margin-left: 5%; width: 90%;" onblur="caracteres()" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do projeto." ng-model="projeto"/>
-                        <label style="margin-left: 5%;">Cliente:</label>
-                        <input style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do cliente." ng-model="cliente"/>
-                        <label style="margin-left: 5%;">Criador:</label>
-                        <input style="margin-left: 5%; width: 90%;" class="form-control" type="text" maxlength=20 placeholder="Informe o nome do criador." ng-model="criador"/>
-						<label style="margin-left: 5%; font-size: 10px; font-style: oblique">Nome do banco: {{nomesite()}}</label>
-                    </div>
-                    <div id="banco" class="form-control;" style="margin-top: 0.5%;">
-                        <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 80%; width: 80%;">
-                            <legend> Restaurar Base de Dados </legend>
-                            <label>Backup (BAK):</label><input class="form-control" type="text" placeholder="Informe o caminho do arquivo .BAK." ng-model="bak"/>
-                            <label>Destino:</label><input class="form-control" type="text" placeholder="Informe o caminho de destino do arquivo .MDF." ng-model="destino" />
-                        </div>
-                        <div class="form-control" style="margin-left: 10%; margin-top: 0.5%; margin-right: 80%; height: 120px; width: 80%;">
-                            <legend> Personalização </legend>
-                            <div id="mail" style="margin-top: 0.5%; height: 50% ;width: 50%;float:left">
-                                <label style="float:left">E-mail:</label><input class="form-control" style="height: 30px; width: 90%;" type="text"
-                                                                                placeholder="e-mail." ng-model="email" />
-                            </div>
-                            <div id="check1" style="margin-left: 50%; height:10%;width: 50%;">
-                                <input style="margin-left: 5%;" type="checkbox" value="senha" ng-model="alterarsenhas" />Alterar Senhas
-                                <input style="margin-left: 5%;" type="checkbox" value="nfe" ng-model="usanfe" />Usa NF-e
-                                <input style="margin-left: 5%;" type="checkbox" value="nfce" ng-model="usanfce" />Usa NFC-e
-                            </div>
-                        </div>
-                        <div class="form-control" id="aumentar" style="margin-left: 10%; margin-top: 0%; margin-right: 80%; height: 10%; width: 80%;">
-                            <label onclick="marcaCheck()"> PDV </label><input id="criaPDV" style="margin-left: 2%" type="checkbox" value="pdv" />
-                            <div id="pdv" style="margin-top: 0.1%; height: 80% ;width: 100%;float:left">
-                                <div id="dados" style="margin-top: 1%">
-                                    <label style="float:left">Nome Máquina:</label><input class="form-control" style="margin-left: 2%; height: 30px; width: 40%; float:left" type="text" maxlength=20 placeholder="Nome da máquina." ng-model="nomemaquina" />
-                                    <label style="margin-left: 2%">Ativar Pista:</label><input style="margin-left: 0.1%" type="checkbox" value="pista" ng-model="ativarpista" /><br>
-                                    <div style="margin-right: 90%; margin-top:2%; height: 30px; width: 90%;">
-                                        <label style="margin-left: 0.5%;">ECF:</label><input style="margin-left: 0.5%" type="checkbox" value="ecf" ng-model="criaecf" />
-                                        <label style="margin-left: 0.5%">Serial:</label><input style="margin-left: 0.5%" type="number" name="quantity" min="1" max="9" placeholder="1 - 9" ng-model="serial">
-                                        <label style="margin-left: 0.5%">Marca ECF:</label>
-										<select cstyle="margin-left: 0.5%" ng-model="marcaecf" ng-options="mecf.nome for mecf in marcasecf"></select>
-                                        <label style="margin-left: 0.5%">Nº Série:</label><input style="margin-left: 0.5%; height: 20px; width: 150px;" type="text"
-                                                                                                 maxlength=20 placeholder="Nº de série do ECF." ng-model="serieecf" />
-                                        <label style="margin-left: 0.5%">Nº Equipamento:</label><input style="margin-left: 0.5%" type="number" name="quantity" min="1" max="99" placeholder="1 - 99" ng-model="numeroequipamento">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div style="margin-left: auto; margin-right: auto; margin-top: 0.5%; height: 100%; width: 55%;">
-                        <input type="button" class="btn btn-primary btn-block" value="{{label}}" ng-disabled="botaobloqueado" ng-click="ciarbanco()" style="float: left" />
-                    </div>
-					<div style="background-color: #eee;">
-						<img style="width: 3%; height: 3%; background-color: #eee;" src="Gifs\loading2.gif" ng-show="loading" />
-					</div>
-                </div>
-                <!-- Fim do Jumbotron -->
-            </div>
-            <!-- Fim do id=bancos -->
-        </div>
-        <!-- Fim do panel-default do accordion bancos -->
-        <!-- FIM DO PAINEL ACCORDION PARA BANCOS -->
-    </div>
-    <!-- DEVERIA FECHAR O PANEL-CONTROL -->
+	<div style="background-color: #eee; margin-left:37px;">
+		<button ng-class="btninfoblock + ' glyphicon glyphicon-cog'" style="margin-left: 0.3%; margin-top:2px; width:40px" ng-click="Alterarasenha()" data-toggle="tooltip" title="Alterar Senha..."></button>
+	</div>
+	<div style="background-color: #eee">
+		<button ng-class="btninfoblock" style="width:200px;" ng-click="trocatema()" ng-show=0>Troca tema para o {{tema}}</button>
+	</div>
+	<div class="jumbotron" style="height: 5px;margin-top: 0px">		
+		<h3 style="margin-top: -20px" class="text-center">QA Seller - Gerenciamento de Versões</h3>
+		<h4 style="margin-top: 10px" class="text-center">Bem-vindo {{nomedousuario}}</h4>
+	</div>
+	
+	<div ng-include="pag('sitesebancos')">  </div>
+	<div ng-include="'sitesexternos.html'">  </div>
+	
 </body>
-<script>
-
-</script>
 </html>

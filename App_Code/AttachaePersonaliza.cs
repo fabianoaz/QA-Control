@@ -18,61 +18,58 @@ public class AttachaePersonaliza : System.Web.Services.WebService
 {		
     [WebMethod]
     public void attacha(string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string bak, string caminho,
-	string nomemaquina,bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email)
+	string nomemaquina,bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email,string user)
     {                                                            
         /*fazer a logica para chama a classe para attachar*/    
+		LogApp log = new LogApp();
+		log.logar("Solicitção de vinculo de banco de dados, cache sol:'"+user+ "' ambiente: '"+tipoambiente+ "' projeto: '"+projeto+"' cliente: '"+cliente+"' criador: '"+criador+"' bak: '"+bak+"' caminho: '"+caminho+"'");
+		
 		
 		string maquinabanco="POASRVVM0011\\SQL2012";
 		string ipsite="172.16.148.110";
 		AttachaPersonaliza AP = new AttachaPersonaliza();
-		
-		tiposistema=tiposistema.Replace(" ","");
-		tipoambiente=tipoambiente.Replace(" ","");
-		projeto=projeto.Replace(" ","");
-		cliente=cliente.Replace(" ","");
-		criador=criador.Replace(" ","");
-		
-		AP.attachabanco(tiposistema,tipoambiente, projeto, cliente, criador, maquinabanco, bak, caminho,ipsite);
 		List<string> retorno = new List<string>();
-		if(AP.erro!="")
+		Loga l = new Loga();
+		if(l.verificalogin(user))
 		{
-			retorno.Add(AP.erro);
-			//retorno.Add(AP.str);
-		}
-		else
-		{
-			retorno.Add(AP.str);
+			tiposistema=tiposistema.Replace(" ","");
+			tipoambiente=tipoambiente.Replace(" ","");
+			projeto=projeto.Replace(" ","");
+			cliente=cliente.Replace(" ","");
+			criador=criador.Replace(" ","");
+			AP.attachabanco(tiposistema,tipoambiente, projeto, cliente, criador, maquinabanco, bak, caminho,ipsite);
+			log.logar("saiu da rotina");			
 			
-			AP.personaliza(tiposistema,tipoambiente,projeto,cliente,criador,nomemaquina,alterarsenhas,utilizarnfe,utilizarnfce,criarmaquina,ativapista,ecf,portaserial,marca,serie,num,email);
 			if(AP.erro!="")
 			{
 				retorno.Add(AP.erro);
+				log.logar("Erro ao realizar o vínculo com a base, cache sol:'"+user+ "' ambiente: '"+tipoambiente+ "' projeto: '"+projeto+"' cliente: '"+cliente+"' criador: '"+criador+"' bak: '"+bak+"' caminho: '"+caminho+"'");
+				//retorno.Add(AP.str);
 			}
 			else
 			{
 				retorno.Add(AP.str);
-			}
+				log.logar("Base vinculada com sucesso, cache sol:'"+user+ "' ambiente: '"+tipoambiente+ "' projeto: '"+projeto+"' cliente: '"+cliente+"' criador: '"+criador+"' bak: '"+bak+"' caminho: '"+caminho+"'");			
+				AP.personaliza(tiposistema,tipoambiente,projeto,cliente,criador,nomemaquina,alterarsenhas,utilizarnfe,utilizarnfce,criarmaquina,ativapista,ecf,portaserial,marca,serie,num,email);
+				if(AP.erro!="")
+				{
+					retorno.Add(AP.erro);
+					log.logar("Erro ao personalizar a base, cache sol:'"+user+ "' ambiente: '"+tipoambiente+ "' projeto: '"+projeto+"' cliente: '"+cliente+"' criador: '"+criador+"' bak: '"+bak+"' caminho: '"+caminho+"'");
+				}
+				else
+				{
+					retorno.Add(AP.str);
+					log.logar("Base personalizada com sucesso, cache sol:'"+user+ "' ambiente: '"+tipoambiente+ "' projeto: '"+projeto+"' cliente: '"+cliente+"' criador: '"+criador+"' bak: '"+bak+"' caminho: '"+caminho+"'");
+				}
+			}		
 		}
-		
-		/*
-string tiposistema, string tipoambiente, string projeto, string cliente, string criador, string nomemaquina,
-	bool alterarsenhas, bool utilizarnfe,bool utilizarnfce,bool criarmaquina,bool ativapista, bool ecf,int portaserial,int marca,string serie, int num, string email		
-		*/
-		
-		
-		
+		else
+		{
+				retorno.Add("A data de Login nesta máquina, não corresponde ao último login realizado por este usuário. </br>Faça login novamente.");
+		}
         JavaScriptSerializer js = new JavaScriptSerializer();
         Context.Response.Write(js.Serialize(retorno));		
     }
 
-  //  [WebMethod]
-    public void personaliza(string tiposistema,string tipoambiente, string projeto, string cliente, string criador,
-	bool alterarsenhas, bool utilizanfe, bool utilizanfce, bool criarmaquina, bool ativapista, bool criarecf,
-	string nomemaquina, string portaserial, string serie, string marca, string numero, string email)
-    {
-        /*fazer a logica para chama a classe para personaliza*/
-		//tiposistema; tipoambiente; projeto; cliente; criador; nomemaquina; alterarsenhas; utilizanfe; utilizanfce; criarmaquina; 
-		//ativapista; criarecf; portaserial; marca; serie; numero, email
-		//string a="";
-    }	
+
 }

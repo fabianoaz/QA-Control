@@ -1,0 +1,3 @@
+12/07/2017 14:30:58 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_giullia Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip
+12/07/2017 15:13:01 * Solicitção de atualização de site, Site: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip
+12/07/2017 15:39:05 * Site atualizado: E:\SitesSeller\DefaultWebSite\sweb_teste_manutencao_aux_bruno com o Tkt:\\192.168.56.87\public\sellerweb\TKT\tkt-16691.zip
